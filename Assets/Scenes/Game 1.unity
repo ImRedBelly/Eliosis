@@ -1077,6 +1077,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1144068932 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2515942595251910014, guid: 77661cf05a0ebe145aaebd84b5212c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889055600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1288015941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,7 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1389632432}
   animator: {fileID: 1389632434}
-  animatorWeapon: {fileID: 1496487335}
+  animatorWeapon: {fileID: 2066089773}
   runSpeed: 40
   Raduis: 3
   BashAbleObj: {fileID: 0}
@@ -1414,7 +1420,7 @@ MonoBehaviour:
   damageSlider: {fileID: 908358597}
   damageValue: 1
   attackCheck: {fileID: 493510213}
-  animator: {fileID: 1083147521}
+  animatorWeapon: {fileID: 1144068932}
   canAttack: 1
   isTimeToCheck: 0
   cam: {fileID: 519420028}
@@ -1446,7 +1452,7 @@ MonoBehaviour:
   animator: {fileID: 1083147521}
   particleJumpUp: {fileID: 1913935197}
   particleJumpDown: {fileID: 1624274635}
-  animatorWeapon: {fileID: 1496487335}
+  animatorWeapon: {fileID: 2066089773}
   OnFallEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1499,12 +1505,6 @@ Rigidbody2D:
 --- !u!95 &1389632434 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2515942595558481628, guid: 77661cf05a0ebe145aaebd84b5212c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 1889055600}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1496487335 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5738741747548007347, guid: 77661cf05a0ebe145aaebd84b5212c95,
     type: 3}
   m_PrefabInstance: {fileID: 1889055600}
   m_PrefabAsset: {fileID: 0}
@@ -2130,11 +2130,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1436601545148592563, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515942595251910014, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0b2cfe33525c26b42ab6ec15c1d20124, type: 2}
     - target: {fileID: 2515942595558481628, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d6c65f27ab25134459591db99e7a443d, type: 2}
+    - target: {fileID: 2515942597429693238, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ef0cecccd2f470643958592575cefa9f, type: 2}
     - target: {fileID: 2524914967342912200, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_Mass
@@ -2159,6 +2174,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573204149851697590, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573204150397539434, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2573204152045988878, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
@@ -2223,12 +2248,17 @@ PrefabInstance:
     - target: {fileID: 2573917095594946122, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2573917095753902252, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573917098113217480, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2574913810415932489, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
@@ -2273,7 +2303,7 @@ PrefabInstance:
     - target: {fileID: 3626285636729998079, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5738741747548007347, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
@@ -2415,7 +2445,7 @@ MonoBehaviour:
   damageSlider: {fileID: 908358597}
   damageValue: 1
   attackCheck: {fileID: 493510213}
-  animator: {fileID: 1389632434}
+  animatorWeapon: {fileID: 0}
   canAttack: 1
   isTimeToCheck: 0
   cam: {fileID: 519420028}
@@ -2713,6 +2743,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2066089773 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2515942597429693238, guid: 77661cf05a0ebe145aaebd84b5212c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1889055600}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2068316716
 PrefabInstance:
   m_ObjectHideFlags: 0

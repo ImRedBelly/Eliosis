@@ -11,8 +11,7 @@ public class Attack : MonoBehaviour
     float sliderMaxValue = 50;
 
     public Transform attackCheck;
-
-    public Animator animator;
+    public Animator animatorWeapon;
     public bool canAttack = true;
     public bool isTimeToCheck = false;
 
@@ -40,7 +39,7 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;
-            animator.SetBool("IsAttacking", true);
+            animatorWeapon.SetBool("IsAttacking", true);
             DoDashDamage();
             StartCoroutine(AttackCooldown());
         }
