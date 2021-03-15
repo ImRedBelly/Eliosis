@@ -2230,10 +2230,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3626285636729998079, guid: 77661cf05a0ebe145aaebd84b5212c95,
+    - target: {fileID: 2574913810415932489, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2574913810415932493, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626285636729998079, guid: 77661cf05a0ebe145aaebd84b5212c95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5738741747548007347, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
@@ -2243,7 +2283,7 @@ PrefabInstance:
     - target: {fileID: 7970549721488257854, guid: 77661cf05a0ebe145aaebd84b5212c95,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2555195494344771996, guid: 77661cf05a0ebe145aaebd84b5212c95, type: 3}
