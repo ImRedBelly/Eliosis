@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shield
+  - FxTemporaire
+  - Bullet
+  - Torch
+  - BashPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +20,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Boss
   - 
   - 
   - 
