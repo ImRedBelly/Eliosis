@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     public CharacterController2D controller;
     public Animator animator;
+    public Animator animatorWeapon;
+
 
     public float runSpeed = 40f;
 
@@ -60,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
+        animatorWeapon.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
@@ -88,11 +92,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnFall()
     {
         animator.SetBool("IsJumping", true);
+        animatorWeapon.SetBool("IsJumping", true);
+
     }
 
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
+        animatorWeapon.SetBool("IsJumping", false);
     }
 
     void FixedUpdate()

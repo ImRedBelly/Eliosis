@@ -15,8 +15,12 @@ public class JumpStateBehaviour : StateMachineBehaviour
         {
             animator.SetBool("JumpUp", false);
             audioSource = animator.transform.GetComponent<AudioSource>();
-            audioSource.clip = audioJump;
-            audioSource.Play();
+            if (audioSource)
+            {
+                audioSource.clip = audioJump;
+                audioSource.Play();
+            }
+
         }
     }
 
