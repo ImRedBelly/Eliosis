@@ -64,7 +64,7 @@ public class CharacterController2D : MonoBehaviour
             OnLandEvent = new UnityEvent();
     }
 
-
+    public ReversLook reversLook;
     private void FixedUpdate()
     {
         bool wasGrounded = m_Grounded;
@@ -98,6 +98,9 @@ public class CharacterController2D : MonoBehaviour
                 {
                     isDashing = false;
                     m_IsWall = true;
+
+
+                    reversLook.enabled = false;
                 }
             }
             prevVelocityX = m_Rigidbody2D.velocity.x;
@@ -138,6 +141,11 @@ public class CharacterController2D : MonoBehaviour
     {
         if (canMove)
         {
+            if (!m_IsWall)
+            {
+                reversLook.enabled = true;
+            }
+
 
             if (dash && canDash && !isWallSliding)
             {
@@ -240,7 +248,7 @@ public class CharacterController2D : MonoBehaviour
                     animator.SetBool("IsWallSliding", false);
                     animatorWeapon.SetBool("IsWallSliding", false);
                     oldWallSlidding = false;
-                    m_WallCheck.localPosition = new Vector3(Mathf.Abs(m_WallCheck.localPosition.x), m_WallCheck.localPosition.y, 0);
+                    m_WallCheck.localPosition = new Vector3(Mathf.Abs( m_WallCheck.localPosition.x), m_WallCheck.localPosition.y, 0); ///////////////
                     canMove = false;
                 }
                 else if (dash && canDash)
