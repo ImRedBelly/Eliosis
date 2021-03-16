@@ -594,6 +594,140 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &520159750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9028025907648731851, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+    type: 3}
+  m_PrefabInstance: {fileID: 6841423364335255831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &520159751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520159750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5504d8869b1fdd84d896b4a37cb33d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+  - weaponType: 0
+    fireRate: 0
+    bulletPrefab: {fileID: 0}
+    powerUp: {fileID: 0}
+    weigth: 0
+    isMelee: 0
+    placeWeapon: {fileID: 0}
+    placeFire: {fileID: 0}
+    hand1: {fileID: 0}
+    hand2: {fileID: 0}
+    handfist1: {fileID: 0}
+    handfist2: {fileID: 0}
+--- !u!95 &520159756
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520159750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6c65f27ab25134459591db99e7a443d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &571837067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -905,7 +1039,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 520159750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0fa54cde6c5a4c458ee785433ed2d8c, type: 3}
@@ -917,7 +1051,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 520159750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e3149b8693f14449661fd3de5b2c79, type: 3}
@@ -1926,6 +2060,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6841423363270591510, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841423363569015463, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 520159756}
     - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: cam
@@ -1956,6 +2100,11 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1938563983}
+    - target: {fileID: 6841423363569015483, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 520159756}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: m_RootOrder
