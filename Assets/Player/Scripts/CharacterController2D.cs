@@ -108,7 +108,7 @@ public class CharacterController2D : MonoBehaviour
             if (m_Rigidbody2D.velocity.y < -0.5f)
                 limitVelOnWallJump = false;
 
-            jumpWallDistX = (jumpWallStartX - transform.position.x) * (transform.localScale.x * 4);  // ÝÒÎ ÂËÈßÅÒ ÍÀ CanMove
+            jumpWallDistX = (jumpWallStartX - transform.position.x) * (transform.localScale.x * 5);  // ÝÒÎ ÂËÈßÅÒ ÍÀ CanMove
             if (jumpWallDistX < -0.5f && jumpWallDistX > -1f)
             {
                 //print("true");
@@ -138,9 +138,9 @@ public class CharacterController2D : MonoBehaviour
     {
         if (canMove)
         {
+
             if (dash && canDash && !isWallSliding)
             {
-                //m_Rigidbody2D.AddForce(new Vector2(transform.localScale.x * m_DashForce, 0f));
                 StartCoroutine(DashCooldown());
             }
             // If crouching, check to see if the character can stand up
@@ -172,15 +172,11 @@ public class CharacterController2D : MonoBehaviour
                     Flip();
                 }
             }
-            // If the player should jump...
+
             if (m_Grounded && jump)
             {
-                // Add a vertical force to the player.
                 animator.SetBool("IsJumping", true);
-                animator.SetBool("JumpUp", true);
-
                 animatorWeapon.SetBool("IsJumping", true);
-                animatorWeapon.SetBool("JumpUp", true);
 
 
                 m_Grounded = false;
@@ -191,11 +187,12 @@ public class CharacterController2D : MonoBehaviour
             }
             else if (!m_Grounded && jump && canDoubleJump && !isWallSliding)
             {
+                animator.SetBool("IsDoubleJumping", true);
+                animatorWeapon.SetBool("IsDoubleJumping", true);
+
                 canDoubleJump = false;
                 m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce / 1.2f));
-                animator.SetBool("IsDoubleJumping", true);
-                animatorWeapon.SetBool("IsDoubleJumping", true);
 
             }
 
@@ -230,12 +227,8 @@ public class CharacterController2D : MonoBehaviour
 
                 if (jump && isWallSliding)
                 {
-                    print("jump");
                     animator.SetBool("IsJumping", true);
-                    animator.SetBool("JumpUp", true);
-
                     animatorWeapon.SetBool("IsJumping", true);
-                    animatorWeapon.SetBool("JumpUp", true);
 
 
                     m_Rigidbody2D.velocity = new Vector2(0f, 0f);
@@ -252,6 +245,8 @@ public class CharacterController2D : MonoBehaviour
                 }
                 else if (dash && canDash)
                 {
+                   
+
                     isWallSliding = false;
                     animator.SetBool("IsWallSliding", false);
                     animatorWeapon.SetBool("IsWallSliding", false);
@@ -283,26 +278,6 @@ public class CharacterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-    //public void ApplyDamage(float damage, Vector3 position) 
-    //{
-    //	if (!invincible)
-    //	{
-    //		animator.SetBool("Hit", true);
-    //		life -= damage;
-    //		Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f ;
-    //		m_Rigidbody2D.velocity = Vector2.zero;
-    //		m_Rigidbody2D.AddForce(damageDir * 10);
-    //		if (life <= 0)
-    //		{
-    //			StartCoroutine(WaitToDead());
-    //		}
-    //		else
-    //		{
-    //			StartCoroutine(MakeInvincible(1f));
-    //		}
-    //	}
-    //}
 
     IEnumerator DashCooldown()
     {

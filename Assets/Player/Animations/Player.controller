@@ -291,12 +291,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: JumpUp
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: IsDoubleJumping
     m_Type: 4
     m_DefaultFloat: 0
@@ -396,7 +390,13 @@ AnimatorStateTransition:
     m_ConditionEvent: IsWallSliding
     m_EventTreshold: 0
   - m_ConditionMode: 2
+    m_ConditionEvent: IsAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
     m_ConditionEvent: IsDoubleJumping
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsDashing
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1225822576591758590}
@@ -483,17 +483,16 @@ AnimatorStateMachine:
     m_Position: {x: 130, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1048212525317609998}
-    m_Position: {x: 130, y: -110, z: 0}
+    m_Position: {x: 130, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6809129630209392453}
     m_Position: {x: -120, y: -90, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
-  - {fileID: -7152108794425288791}
   - {fileID: -6239140292265956308}
-  - {fileID: 5988870177519306053}
   - {fileID: 953768019122814312}
-  - {fileID: -2049269518496401223}
+  - {fileID: 5988870177519306053}
+  - {fileID: -7152108794425288791}
   - {fileID: 3565792024008305380}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
@@ -588,10 +587,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsDashing
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1464832619606552705}
   m_Solo: 0
@@ -606,6 +602,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &5087634371556437287
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4c7be07ce59254391335f799b76c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameter: IsJumping
 --- !u!1101 &5988870177519306053
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
