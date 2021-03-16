@@ -12,7 +12,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_WallCheck;                             //Posicion que controla si el personaje toca una pared
 
-    const float k_GroundedRadius = 0.2f; // Radius of the overlap circle to determine if grounded
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool m_Grounded;            // Whether or not the player is grounded.
     public Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -52,10 +52,6 @@ public class CharacterController2D : MonoBehaviour
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
 
-
-
-    public ReversLook reversLook;
-
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -73,14 +69,6 @@ public class CharacterController2D : MonoBehaviour
     {
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
-
-        if (!m_IsWall)
-        {
-            reversLook.enabled = true;
-        }  
-        
-
-
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
         for (int i = 0; i < colliders.Length; i++)
@@ -110,8 +98,6 @@ public class CharacterController2D : MonoBehaviour
                 {
                     isDashing = false;
                     m_IsWall = true;
-
-                    reversLook.enabled = false;
                 }
             }
             prevVelocityX = m_Rigidbody2D.velocity.x;
@@ -122,7 +108,7 @@ public class CharacterController2D : MonoBehaviour
             if (m_Rigidbody2D.velocity.y < -0.5f)
                 limitVelOnWallJump = false;
 
-            jumpWallDistX = (jumpWallStartX - transform.position.x) * Mathf.Abs(transform.localScale.x * 5);  // ÝÒÎ ÂËÈßÅÒ ÍÀ CanMove
+            jumpWallDistX = (jumpWallStartX - transform.position.x) * (transform.localScale.x * 5);  // ÝÒÎ ÂËÈßÅÒ ÍÀ CanMove
             if (jumpWallDistX < -0.5f && jumpWallDistX > -1f)
             {
                 //print("true");
@@ -153,8 +139,6 @@ public class CharacterController2D : MonoBehaviour
         if (canMove)
         {
 
-
-
             if (dash && canDash && !isWallSliding)
             {
                 StartCoroutine(DashCooldown());
@@ -167,7 +151,6 @@ public class CharacterController2D : MonoBehaviour
             //only control the player if grounded or airControl is turned on
             else if (m_Grounded || m_AirControl)
             {
-
                 if (m_Rigidbody2D.velocity.y < -limitFallSpeed)
                     m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, -limitFallSpeed);
                 // Move the character by finding the target velocity
@@ -217,8 +200,6 @@ public class CharacterController2D : MonoBehaviour
             {
                 if (!oldWallSlidding && m_Rigidbody2D.velocity.y < 0 || isDashing)
                 {
-
-
                     isWallSliding = true;
                     m_WallCheck.localPosition = new Vector3(-m_WallCheck.localPosition.x, m_WallCheck.localPosition.y, 0);
                     Flip();
@@ -277,9 +258,6 @@ public class CharacterController2D : MonoBehaviour
             }
             else if (isWallSliding && !m_IsWall && canCheck)
             {
-                
-
-
                 isWallSliding = false;
                 animator.SetBool("IsWallSliding", false);
                 animatorWeapon.SetBool("IsWallSliding", false);
