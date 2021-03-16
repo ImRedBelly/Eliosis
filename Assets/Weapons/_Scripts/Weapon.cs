@@ -26,13 +26,14 @@ public class Weapon : MonoBehaviour
 		public bool isMelee;
 		public Transform placeWeapon;
 		public Transform placeFire;
-		public SpriteRenderer hand1;
-		public SpriteRenderer hand2;
-		public SpriteRenderer handfist1;
-		public SpriteRenderer handfist2;
 	}
 
 	public WeaponSlot[] weapons;
+
+	public SpriteRenderer hand1;
+	public SpriteRenderer hand2;
+	public SpriteRenderer handfist1;
+	public SpriteRenderer handfist2;
 
 	private WeaponType currentWeapon;
 	private int numberOfWeapons;
