@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000010359666076}
   - component: {fileID: 198000013849478586}
   - component: {fileID: 199000011503459492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_Glow_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4589,7 +4589,7 @@ GameObject:
   - component: {fileID: 198000010194221258}
   - component: {fileID: 82000011929241258}
   - component: {fileID: 6713977842215264394}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Assault_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9402,7 +9402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013868336024}
   - component: {fileID: 96000014193242182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9540,7 +9540,7 @@ GameObject:
   - component: {fileID: 4000012365151048}
   - component: {fileID: 198000013200029916}
   - component: {fileID: 199000010247446726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000011633320766}
   - component: {fileID: 198000013047002782}
   - component: {fileID: 199000013870410388}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4584,7 +4584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000010934541964}
   - component: {fileID: 96000011720472234}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pistol_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4726,7 +4726,7 @@ GameObject:
   - component: {fileID: 198000013768350654}
   - component: {fileID: 82000012801648474}
   - component: {fileID: -7428713448922713643}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pistol_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9558,7 +9558,7 @@ GameObject:
   - component: {fileID: 4000010218828960}
   - component: {fileID: 198000010228507352}
   - component: {fileID: 199000012462107146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Projectile_Glow_Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

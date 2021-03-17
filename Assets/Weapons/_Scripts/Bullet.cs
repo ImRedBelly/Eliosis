@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
 
 	void Start()
 	{
-		rb.velocity = transform.right * speed;
+		rb.velocity = transform.right * (PlayerMovement.instance.transform.localScale.x * 5) * speed;
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
