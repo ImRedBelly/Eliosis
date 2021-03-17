@@ -164,31 +164,34 @@ public class Weapon : MonoBehaviour
 		//todo sound
 
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
-										weapons[(int)currentWeapon].placeFire.position, 
+										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
 	}
 
 	private void CheckFire()
 	{
-		if (currentWeapon == WeaponType.MACHINEGUN)
+
+
+		if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
 		{
-			if (Input.GetButtonDown("Fire1"))
+			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
+
+			if (nextFire <= 0)
 			{
-				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
-
-				if (nextFire <= 0)
-				{
-					Shoot();
-				}
-
-			}
-
-			if (Input.GetButtonUp("Fire1"))
-			{
-				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
+				Shoot();
 			}
 		}
-		else
+
+		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
+		{
+			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
+		}
+
+		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE)
+		{
+			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
+		}
+
 		if (Input.GetButton("Fire1") && nextFire <= 0)
 		{
 			nextFire = weapons[(int)currentWeapon].fireRate;
