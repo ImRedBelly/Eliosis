@@ -101,7 +101,7 @@ public class Weapon : MonoBehaviour
 
 		if (reversLook.isReversLook)
 		{
-			weapons[(int)currentWeapon].placeWeapon.right = -direction;
+			weapons[(int)currentWeapon].placeWeapon.right = direction;
 		}
 		else
 		{
@@ -111,7 +111,6 @@ public class Weapon : MonoBehaviour
 		if (reversLook.isReversLook && controller.isWallSliding)
 		{
 			weapons[(int)currentWeapon].placeWeapon.right = direction;
-			print("111");
 		}
 		else
 		{

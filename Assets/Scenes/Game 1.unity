@@ -974,7 +974,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1584978884}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0fa54cde6c5a4c458ee785433ed2d8c, type: 3}
@@ -986,7 +986,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1584978884}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8e3149b8693f14449661fd3de5b2c79, type: 3}
@@ -995,6 +995,12 @@ MonoBehaviour:
 --- !u!50 &1389632433 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6841423363569015462, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+    type: 3}
+  m_PrefabInstance: {fileID: 6841423364335255831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1584978884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9028025907648731851, guid: 7b4416fc672aa3a4494c2cc64df9f821,
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
@@ -2006,6 +2012,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124108335, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: reversObject
+      value: 
+      objectReference: {fileID: 1584978884}
     - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: cam
