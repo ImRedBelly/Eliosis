@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
 
     public float dmgValue = 4;
     public float meleeDist = 1.5f;
+    public float shootDist = 10f;
 
     private bool canAttack = true;
 
@@ -48,8 +49,6 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // print(Mathf.Abs(distToPlayer));
-
         if (life <= 0)
             StartCoroutine(DestroyEnemy());
 
@@ -57,23 +56,24 @@ public class EnemyController : MonoBehaviour
         {
             distToPlayer = enemy.transform.position.x - transform.position.x;
 
-            if (Mathf.Abs(distToPlayer) < meleeDist && timerMeleeAttack <= 0)
-            {
-                activState = BossState.MELEEATTACK;
-                timerMeleeAttack = 3;
-            }
-            else
-            {
-                timerMeleeAttack -= Time.deltaTime;
-            }
+            //if (Mathf.Abs(distToPlayer) < meleeDist && timerMeleeAttack <= 0)
+            //{
+            //    activState = BossState.MELEEATTACK;
+            //    timerMeleeAttack = 3;
+            //}
+            //else
+            //{
+            //    timerMeleeAttack -= Time.deltaTime;
+            //}
 
             switch (activState)
             {
                 case BossState.IDLE:
                     Idle();
-                    if (Mathf.Abs(distToPlayer) < 10)
-                    {
 
+                    if (Mathf.Abs(distToPlayer) > shootDist)
+                    {
+                        activState = BossState.SHOOT;
                     }
 
 
@@ -135,8 +135,6 @@ public class EnemyController : MonoBehaviour
                         animatorHand.SetTrigger("MeleeAttack");
                         StartCoroutine(WaitToAttack(0.5f));
                     }
-
-
                     break;
             }
         }
