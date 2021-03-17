@@ -1355,7 +1355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1876759219023450428
 Transform:
   m_ObjectHideFlags: 0
@@ -2075,6 +2075,7 @@ MonoBehaviour:
   animator: {fileID: 520159756}
   particleJumpUp: {fileID: 6643153504376566384}
   particleJumpDown: {fileID: 6642895508024745824}
+  reversLook: {fileID: 124108335}
   animatorWeapon: {fileID: 8943007821942525413}
   OnFallEvent:
     m_PersistentCalls:
@@ -2104,7 +2105,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  reversLook: {fileID: 124108335}
 --- !u!95 &520159756
 Animator:
   serializedVersion: 3
@@ -2145,6 +2145,7 @@ MonoBehaviour:
     isMelee: 1
     placeWeapon: {fileID: 1876759219023450428}
     placeFire: {fileID: 0}
+    animator: {fileID: 1249051238307715540}
   - weaponType: 1
     fireRate: 1
     bulletPrefab: {fileID: 0}
@@ -2153,6 +2154,7 @@ MonoBehaviour:
     isMelee: 1
     placeWeapon: {fileID: 9026416275480677089}
     placeFire: {fileID: 0}
+    animator: {fileID: 8943007810704754457}
   - weaponType: 2
     fireRate: 1
     bulletPrefab: {fileID: 1000012176153370, guid: 93c3cfa0b5e89d14d91510b5f09bde3a,
@@ -2162,6 +2164,7 @@ MonoBehaviour:
     isMelee: 0
     placeWeapon: {fileID: 9026416270167812519}
     placeFire: {fileID: 9026416278272212523}
+    animator: {fileID: 8943007821138025131}
   - weaponType: 3
     fireRate: 1
     bulletPrefab: {fileID: 1000013256060682, guid: 8482466905b6d3946a69ed5b3fe2ccd4,
@@ -2171,6 +2174,7 @@ MonoBehaviour:
     isMelee: 0
     placeWeapon: {fileID: 9026416277065119697}
     placeFire: {fileID: 9026416277288873439}
+    animator: {fileID: 8943007821478787409}
   - weaponType: 4
     fireRate: 3
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2180,6 +2184,7 @@ MonoBehaviour:
     isMelee: 0
     placeWeapon: {fileID: 9026416276392918851}
     placeFire: {fileID: 9026416270008639769}
+    animator: {fileID: 8943007821942525413}
   - weaponType: 5
     fireRate: 2
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2189,6 +2194,7 @@ MonoBehaviour:
     isMelee: 0
     placeWeapon: {fileID: 9026416275608350713}
     placeFire: {fileID: 9026416274844518237}
+    animator: {fileID: 8943007821380696571}
   - weaponType: 6
     fireRate: 10
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2198,6 +2204,7 @@ MonoBehaviour:
     isMelee: 0
     placeWeapon: {fileID: 9026416274730702405}
     placeFire: {fileID: 9026416277474762417}
+    animator: {fileID: 8943007809618965759}
   hand1: {fileID: 0}
   hand2: {fileID: 0}
   handfist1: {fileID: 0}
@@ -2215,6 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reversObject: {fileID: 9028025907648731851}
+  isReversLook: 0
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,7 +2651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416275365690597
 Transform:
   m_ObjectHideFlags: 0
@@ -3100,7 +3108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416277396240255
 Transform:
   m_ObjectHideFlags: 0
@@ -5060,7 +5068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416276802537753
 Transform:
   m_ObjectHideFlags: 0
@@ -5230,7 +5238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416275845445571
 Transform:
   m_ObjectHideFlags: 0
@@ -5536,7 +5544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416276806776555
 Transform:
   m_ObjectHideFlags: 0
@@ -5989,7 +5997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416270167812519
 Transform:
   m_ObjectHideFlags: 0
@@ -11070,7 +11078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9028025910622527969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15, y: 0.281, z: 0}
+  m_LocalPosition: {x: 5.72, y: 0.281, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9026416275767940939}
@@ -11123,7 +11131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416276487792141
 Transform:
   m_ObjectHideFlags: 0
