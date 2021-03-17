@@ -41,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
     private float jumpWallDistX = 0; //Distance between player and wall
     private bool limitVelOnWallJump = false; //For limit wall jump distance with low fps
 
+    public ReversLook reversLook;
     public Animator animatorWeapon;
 
     [Header("Events")]
@@ -64,7 +65,6 @@ public class CharacterController2D : MonoBehaviour
             OnLandEvent = new UnityEvent();
     }
 
-    public ReversLook reversLook;
     private void FixedUpdate()
     {
         bool wasGrounded = m_Grounded;
