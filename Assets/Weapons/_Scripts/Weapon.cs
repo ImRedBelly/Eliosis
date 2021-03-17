@@ -48,9 +48,16 @@ public class Weapon : MonoBehaviour
 
 	private LayerMask whatIsEnemy;
 
+	Animator currentWeaponAnimator;
+	CharacterController2D controller;
+	PlayerMovement player;
+
 	private void Awake()
 	{
 		reversLook = GetComponent<ReversLook>();
+		controller = GetComponent<CharacterController2D>();
+		player = GetComponent<PlayerMovement>();
+
 	}
 
 	private void Start()
@@ -59,8 +66,9 @@ public class Weapon : MonoBehaviour
 		numberOfWeapons = Enum.GetNames(typeof(WeaponType)).Length;
 
 		currentWeapon = WeaponType.NONE;
-
+		SetWeaponAnimator((int)currentWeapon);
 		ShowWeapon((int)currentWeapon);
+
 	}
 
 
@@ -93,12 +101,23 @@ public class Weapon : MonoBehaviour
 
 		if (reversLook.isReversLook)
 		{
+			weapons[(int)currentWeapon].placeWeapon.right = -direction;
+		}
+		else
+		{
 			weapons[(int)currentWeapon].placeWeapon.right = direction;
+		}
+
+		if (reversLook.isReversLook && controller.isWallSliding)
+		{
+			weapons[(int)currentWeapon].placeWeapon.right = direction;
+			print("111");
 		}
 		else
 		{
 			weapons[(int)currentWeapon].placeWeapon.right = -direction;
 		}
+
 	}
 
 	private void ChangeWeapon()
@@ -112,6 +131,17 @@ public class Weapon : MonoBehaviour
 		}
 
 		ShowWeapon((int)currentWeapon);
+		SetWeaponAnimator((int)currentWeapon);
+
+
+
+	}
+
+	void SetWeaponAnimator(int currentWeapon)
+	{
+		currentWeaponAnimator = weapons[currentWeapon].animator;
+		PlayerMovement.instance.animatorWeapon = currentWeaponAnimator;
+		controller.animatorWeapon = currentWeaponAnimator;
 
 	}
 
@@ -134,14 +164,15 @@ public class Weapon : MonoBehaviour
 		//todo sound
 
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
-			weapons[(int)currentWeapon].placeFire.position, weapons[(int)currentWeapon].placeFire.rotation);
+										weapons[(int)currentWeapon].placeFire.position, 
+										weapons[(int)currentWeapon].placeFire.rotation);
 	}
 
 	private void CheckFire()
 	{
 		if (currentWeapon == WeaponType.MACHINEGUN)
 		{
-			if (Input.GetButtonDown("Fire1") ) 
+			if (Input.GetButtonDown("Fire1"))
 			{
 				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
 
@@ -157,7 +188,8 @@ public class Weapon : MonoBehaviour
 				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
 			}
 		}
-		else if (Input.GetButton("Fire1") && nextFire <= 0)
+		else
+		if (Input.GetButton("Fire1") && nextFire <= 0)
 		{
 			nextFire = weapons[(int)currentWeapon].fireRate;
 			weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");

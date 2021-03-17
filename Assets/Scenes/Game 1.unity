@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1493,7 +1493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1389632432}
   animator: {fileID: 0}
-  animatorWeapon: {fileID: 0}
   runSpeed: 40
   Raduis: 3
   BashAbleObj: {fileID: 0}
@@ -1504,6 +1503,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1938563983}
   shield: {fileID: 571837068}
   isLedge: 0
+  animatorWeapon: {fileID: 0}
 --- !u!114 &1938563979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,14 +1939,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420028}
-    - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
-        type: 3}
       propertyPath: damageSlider
       value: 
       objectReference: {fileID: 908358597}
+    - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 6841423363569015481, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: healthSlider
@@ -1959,19 +1959,14 @@ PrefabInstance:
       objectReference: {fileID: 1700490614}
     - target: {fileID: 6841423363569015483, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
-      propertyPath: shield
-      value: 
-      objectReference: {fileID: 571837068}
-    - target: {fileID: 6841423363569015483, guid: 7b4416fc672aa3a4494c2cc64df9f821,
-        type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1938563983}
-    - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+    - target: {fileID: 6841423363569015483, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: shield
+      value: 
+      objectReference: {fileID: 571837068}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1989,11 +1984,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -2006,6 +1996,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}

@@ -42,7 +42,8 @@ public class CharacterController2D : MonoBehaviour
     private bool limitVelOnWallJump = false; //For limit wall jump distance with low fps
 
     public ReversLook reversLook;
-    public Animator animatorWeapon;
+
+    [SerializeField] public Animator animatorWeapon;
 
     [Header("Events")]
     [Space]
@@ -55,6 +56,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
+
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();
 

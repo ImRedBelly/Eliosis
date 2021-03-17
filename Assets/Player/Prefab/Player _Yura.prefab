@@ -1581,7 +1581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416276392918851
 Transform:
   m_ObjectHideFlags: 0
@@ -1988,7 +1988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6841423363569015463}
   animator: {fileID: 520159756}
-  animatorWeapon: {fileID: 8943007821942525413}
   runSpeed: 40
   Raduis: 3
   BashAbleObj: {fileID: 0}
@@ -1999,6 +1998,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   shield: {fileID: 0}
   isLedge: 0
+  animatorWeapon: {fileID: 0}
 --- !u!114 &6841423363569015482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   particleJumpUp: {fileID: 6643153504376566384}
   particleJumpDown: {fileID: 6642895508024745824}
   reversLook: {fileID: 124108335}
-  animatorWeapon: {fileID: 8943007821942525413}
+  animatorWeapon: {fileID: 0}
   OnFallEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - weaponType: 0
-    fireRate: 1
+    fireRate: 0
     bulletPrefab: {fileID: 0}
     powerUp: {fileID: 0}
     weigth: 0
@@ -3512,7 +3512,7 @@ Transform:
   - {fileID: 9026416274933271877}
   - {fileID: 9026416276796514685}
   m_Father: {fileID: 9026416276487792141}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9028025908476811515
 GameObject:
@@ -5997,7 +5997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9026416270167812519
 Transform:
   m_ObjectHideFlags: 0
@@ -6136,7 +6136,7 @@ Transform:
   m_LocalScale: {x: 0.89, y: 0.89, z: 0.89}
   m_Children: []
   m_Father: {fileID: 9026416276487792141}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &9189750407554431025
 ParticleSystemRenderer:
@@ -11143,8 +11143,8 @@ Transform:
   m_LocalPosition: {x: 0.91, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 9026416275480677089}
   - {fileID: 9026416270202087469}
+  - {fileID: 9026416275480677089}
   m_Father: {fileID: 9026416277423124465}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

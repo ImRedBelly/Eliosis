@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     public CharacterController2D controller;
     public Animator animator;
-    public Animator animatorWeapon;
-
 
     public float runSpeed = 40f;
 
@@ -45,9 +43,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ledge")]
     public bool isLedge = false;
 
-
-   
-
+    public Animator animatorWeapon;
 
     private void Start()
     {
@@ -61,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
         animatorWeapon.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
