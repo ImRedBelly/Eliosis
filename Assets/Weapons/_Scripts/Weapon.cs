@@ -172,6 +172,8 @@ public class Weapon : MonoBehaviour
 	{
 
 
+
+
 		if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
 		{
 			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
@@ -184,13 +186,22 @@ public class Weapon : MonoBehaviour
 
 		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
 		{
-			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
+				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);		
 		}
 
-		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE)
+
+
+
+
+		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
 		{
+			nextFire = weapons[(int)currentWeapon].fireRate;
 			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
 		}
+
+
+
+
 
 		if (Input.GetButton("Fire1") && nextFire <= 0)
 		{
