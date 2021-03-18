@@ -6,321 +6,322 @@ using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
 {
-	public enum WeaponType
-	{
-		NONE,
-		KNIFE,
-		PISTOL,
-		SHOTGUN,
-		ASSAULT,
-		SNIPER,
-		MACHINEGUN
-	}
+    public enum WeaponType
+    {
+        NONE,
+        KNIFE,
+        PISTOL,
+        SHOTGUN,
+        ASSAULT,
+        SNIPER,
+        MACHINEGUN
+    }
 
-	[Serializable]
-	public class WeaponSlot
-	{
-		public WeaponType weaponType;
-		public float fireRate;
-		public GameObject bulletPrefab;
-		public GameObject shellPrefab;
-		public GameObject flashPrefab;
+    [Serializable]
+    public class WeaponSlot
+    {
+        public WeaponType weaponType;
+        public float fireRate;
+        public GameObject bulletPrefab;
+        public GameObject shellPrefab;
+        public GameObject flashPrefab;
 
-		public GameObject powerUp;
+        public GameObject powerUp;
 
-		public float weigth;
-		public bool isMelee;
-		public Transform placeWeapon;
+        public float weigth;
+        public bool isMelee;
+        public Transform placeWeapon;
 
-		public Transform placeFire;
-		public Transform placeShell;
-		
+        public Transform placeFire;
+        public Transform placeShell;
 
-		public Animator animator;
-	}
 
-	public string bulletMask;
+        public Animator animator;
+    }
 
-	public WeaponSlot[] weapons;
+    public string bulletMask;
 
-	public SpriteRenderer hand1;
-	public SpriteRenderer hand2;
-	public SpriteRenderer handfist1;
-	public SpriteRenderer handfist2;
+    public WeaponSlot[] weapons;
 
-	private WeaponType currentWeapon;
-	private int numberOfWeapons;
-	ReversLook reversLook;
+    public SpriteRenderer hand1;
+    public SpriteRenderer hand2;
+    public SpriteRenderer handfist1;
+    public SpriteRenderer handfist2;
 
-	private float nextFire;
+    private WeaponType currentWeapon;
+    private int numberOfWeapons;
+    ReversLook reversLook;
 
-	private float hitDistance = 1f;
-	private float hitAngle = 45f;
+    private float nextFire;
 
-	private LayerMask whatIsEnemy;
+    private float hitDistance = 1f;
+    private float hitAngle = 45f;
 
-	Animator currentWeaponAnimator;
-	CharacterController2D controller;
-	PlayerMovement player;
+    private LayerMask whatIsEnemy;
 
-	private void Awake()
-	{
-		reversLook = GetComponent<ReversLook>();
-		controller = GetComponent<CharacterController2D>();
-		player = GetComponent<PlayerMovement>();
+    Animator currentWeaponAnimator;
+    CharacterController2D controller;
+    PlayerMovement player;
 
-	}
+    private void Awake()
+    {
+        reversLook = GetComponent<ReversLook>();
+        controller = GetComponent<CharacterController2D>();
+        player = GetComponent<PlayerMovement>();
 
-	private void Start()
-	{
-		// todo создавать enum на старте
-		numberOfWeapons = Enum.GetNames(typeof(WeaponType)).Length;
+    }
 
-		currentWeapon = WeaponType.NONE;
-		SetWeaponAnimator((int)currentWeapon);
-		ShowWeapon((int)currentWeapon);
+    private void Start()
+    {
+        // todo создавать enum на старте
+        numberOfWeapons = Enum.GetNames(typeof(WeaponType)).Length;
 
-	}
+        currentWeapon = WeaponType.NONE;
+        SetWeaponAnimator((int)currentWeapon);
+        ShowWeapon((int)currentWeapon);
 
+    }
 
 
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.F1))
-		{
-			ChangeWeapon();
-		}
 
-		ChangeDirection();
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            ChangeWeapon();
+        }
 
-		CheckFire();
+        ChangeDirection();
 
-	}
+        CheckFire();
 
+    }
 
 
-	void ChangeDirection()
-	{
-		if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
-		{
-			return;
-		}
 
-		Transform placeWeapon = weapons[(int)currentWeapon].placeWeapon;
+    void ChangeDirection()
+    {
+        if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
+        {
+            return;
+        }
 
-		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		Vector3 direction = mousePosition - placeWeapon.position;
+        Transform placeWeapon = weapons[(int)currentWeapon].placeWeapon;
 
-		Quaternion targetRotation = Quaternion.LookRotation(direction);
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePosition - placeWeapon.position;
 
-		direction.z = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-		float angle = Vector2.SignedAngle(Vector2.right, direction);
-		print(angle);
+        direction.z = 0;
 
+        float angle = Vector2.SignedAngle(Vector2.right, direction);
+        print(angle);
 
-		if (controller.isWallSliding && transform.localScale.x < 0)
-		{
 
-			if (angle < 135 && angle > 0)
-			{
-				placeWeapon.rotation =
-				Quaternion.Euler(0, 0, -45);
-				return;
-			}
+        if (controller.isWallSliding && transform.localScale.x < 0)
+        {
 
-			if (angle > -135 && angle < 0)
-			{
-				placeWeapon.rotation =
-				Quaternion.Euler(0, 0, 45);
-				return;
-			}
-			placeWeapon.right = -direction;
-			return;
-		}
+            if (angle < 135 && angle > 0)
+            {
+                placeWeapon.rotation =
+                Quaternion.Euler(0, 0, -45);
+                return;
+            }
 
+            if (angle > -135 && angle < 0)
+            {
+                placeWeapon.rotation =
+                Quaternion.Euler(0, 0, 45);
+                return;
+            }
+            placeWeapon.right = -direction;
+            return;
+        }
 
-		if (controller.isWallSliding && transform.localScale.x > 0)
-		{
-			if (angle > 45)
-			{
-				placeWeapon.rotation =
-				Quaternion.Euler(0, 0, 45);
-				return;
-			}
 
-			if (angle < -45)
-			{
-				placeWeapon.rotation =
-				Quaternion.Euler(0, 0, -45);
-				return;
-			}
-			placeWeapon.right = direction;
-			return;
-		}
+        if (controller.isWallSliding && transform.localScale.x > 0)
+        {
+            if (angle > 45)
+            {
+                placeWeapon.rotation =
+                Quaternion.Euler(0, 0, 45);
+                return;
+            }
 
+            if (angle < -45)
+            {
+                placeWeapon.rotation =
+                Quaternion.Euler(0, 0, -45);
+                return;
+            }
+            placeWeapon.right = direction;
+            return;
+        }
 
 
 
 
 
-		if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x < 0)
-		{
-			placeWeapon.right = -direction;
-			return;
-		}
 
-		if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x > 0)
-		{
-			placeWeapon.right = direction;
-			return;
-		}
+        if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x < 0)
+        {
+            placeWeapon.right = -direction;
+            return;
+        }
 
+        if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x > 0)
+        {
+            placeWeapon.right = direction;
+            return;
+        }
 
 
 
 
 
-		if (!controller.isWallSliding && transform.localScale.x < 0)
-		{
-			placeWeapon.right = -direction;
-			return;
-		}
 
-		if (!controller.isWallSliding && transform.localScale.x > 0)
-		{
-			placeWeapon.right = direction;
-			return;
-		}
+        if (!controller.isWallSliding && transform.localScale.x < 0)
+        {
+            placeWeapon.right = -direction;
+            return;
+        }
 
+        if (!controller.isWallSliding && transform.localScale.x > 0)
+        {
+            placeWeapon.right = direction;
+            return;
+        }
 
-	}
 
-	private void ChangeWeapon()
-	{
-		currentWeapon++;
+    }
 
-		// todo ротировть только те что находятся в инвентаре
-		if ((int)currentWeapon == numberOfWeapons)
-		{
-			currentWeapon = 0;
-		}
+    private void ChangeWeapon()
+    {
+        currentWeapon++;
 
-		ShowWeapon((int)currentWeapon);
-		SetWeaponAnimator((int)currentWeapon);
-	}
+        // todo ротировть только те что находятся в инвентаре
+        if ((int)currentWeapon == numberOfWeapons)
+        {
+            currentWeapon = 0;
+        }
 
-	public void SetWeapon(WeaponType currentWeapon)
-	{
-		this.currentWeapon = currentWeapon;
+        ShowWeapon((int)currentWeapon);
+        SetWeaponAnimator((int)currentWeapon);
+    }
 
-		ShowWeapon((int)currentWeapon);
-		SetWeaponAnimator((int)currentWeapon);
-	}
+    public void SetWeapon(WeaponType currentWeapon)
+    {
+        this.currentWeapon = currentWeapon;
 
-	private void SetWeaponAnimator(int currentWeapon)
-	{
-		currentWeaponAnimator = weapons[currentWeapon].animator;
-		PlayerMovement.instance.animatorWeapon = currentWeaponAnimator;
-		controller.animatorWeapon = currentWeaponAnimator;
+        ShowWeapon((int)currentWeapon);
+        SetWeaponAnimator((int)currentWeapon);
+    }
 
-	}
+    private void SetWeaponAnimator(int currentWeapon)
+    {
+        currentWeaponAnimator = weapons[currentWeapon].animator;
+        PlayerMovement.instance.animatorWeapon = currentWeaponAnimator;
+        controller.animatorWeapon = currentWeaponAnimator;
 
-	private void ShowWeapon(int currentWeapon)
-	{
-		HideAllWeapon();
-		weapons[currentWeapon].placeWeapon.gameObject.SetActive(true);
-	}
+    }
 
-	private void HideAllWeapon()
-	{
-		for (int i = 0; i < numberOfWeapons; i++)
-		{
-			weapons[i].placeWeapon.gameObject.SetActive(false);
-		}
-	}
+    private void ShowWeapon(int currentWeapon)
+    {
+        HideAllWeapon();
+        weapons[currentWeapon].placeWeapon.gameObject.SetActive(true);
+    }
 
-	private void Shoot()
-	{
-		//todo sound
+    private void HideAllWeapon()
+    {
+        for (int i = 0; i < numberOfWeapons; i++)
+        {
+            weapons[i].placeWeapon.gameObject.SetActive(false);
+        }
+    }
 
-		//вылетает пуля
-		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
-										weapons[(int)currentWeapon].placeFire.position,
-										weapons[(int)currentWeapon].placeFire.rotation);
+    private void Shoot()
+    {
+        //todo sound
 
-		bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
+        //вылетает пуля
+        GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
+                                        weapons[(int)currentWeapon].placeFire.position,
+                                        weapons[(int)currentWeapon].placeFire.rotation);
+        bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5;
 
-		//вылетает гильза
-		GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
-										weapons[(int)currentWeapon].placeShell.position,
-										weapons[(int)currentWeapon].placeShell.rotation);
+        bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
 
-		var shellRb = shell.GetComponent<Rigidbody2D>();
-		shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
-		shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
-		Destroy(shell, 3f);
+        //вылетает гильза
+        GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
+                                        weapons[(int)currentWeapon].placeShell.position,
+                                        weapons[(int)currentWeapon].placeShell.rotation);
 
-		//сверкает вспышка
-		//weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
+        var shellRb = shell.GetComponent<Rigidbody2D>();
+        shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
+        shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
+        Destroy(shell, 3f);
 
-	}
+        //сверкает вспышка
+        //weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
 
-	private void CheckFire()
-	{
+    }
 
+    private void CheckFire()
+    {
 
 
 
-		if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
-		{
-			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
 
-			if (nextFire <= 0)
-			{
-				Shoot();
-			}
-		}
+        if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
+        {
+            weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
 
-		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
-		{
-			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
-		}
+            if (nextFire <= 0)
+            {
+                Shoot();
+            }
+        }
 
+        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
+        {
+            weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
+        }
 
 
 
 
-		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
-		{
-			nextFire = weapons[(int)currentWeapon].fireRate;
-			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
-		}
 
+        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
+        {
+            nextFire = weapons[(int)currentWeapon].fireRate;
+            weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
+        }
 
 
 
 
-		if (Input.GetButton("Fire1") && nextFire <= 0)
-		{
-			nextFire = weapons[(int)currentWeapon].fireRate;
-			weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
 
+        if (Input.GetButton("Fire1") && nextFire <= 0)
+        {
+            nextFire = weapons[(int)currentWeapon].fireRate;
+            weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
 
 
-			if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
-			{
-				return;
-			}
 
-			Shoot();
-		}
+            if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
+            {
+                return;
+            }
 
-		if (nextFire > 0)
-		{
-			nextFire -= Time.deltaTime;
-		}
-	}
+            Shoot();
+        }
+
+        if (nextFire > 0)
+        {
+            nextFire -= Time.deltaTime;
+        }
+    }
 
 }
 
