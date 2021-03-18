@@ -39,6 +39,8 @@ public class Weapon : MonoBehaviour
 		public Animator animator;
 	}
 
+	public string bulletMask;
+
 	public WeaponSlot[] weapons;
 
 	public SpriteRenderer hand1;
@@ -246,6 +248,8 @@ public class Weapon : MonoBehaviour
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
 										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
+
+		bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
 
 		//вылетает гильза
 		GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
