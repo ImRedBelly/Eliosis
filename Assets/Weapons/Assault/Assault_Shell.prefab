@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 50000011441981030}
   - component: {fileID: 61000010716692954}
   m_Layer: 10
-  m_Name: MachineGun_Shell_02
+  m_Name: Assault_Shell_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012363013230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.533, y: 1.751, z: -2}
-  m_LocalScale: {x: 0.31194365, y: 0.31194362, z: 0.31194362}
+  m_LocalPosition: {x: -0.646, y: 1.665, z: -2}
+  m_LocalScale: {x: 0.21777502, y: 0.2766478, z: 0.29073012}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -128,5 +128,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.61, y: 0.12}
+  m_Size: {x: 0.58, y: 0.1}
   m_EdgeRadius: 0
