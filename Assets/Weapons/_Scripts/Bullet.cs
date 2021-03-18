@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-
+		print(collision.gameObject.name);
 		if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
 
 		{

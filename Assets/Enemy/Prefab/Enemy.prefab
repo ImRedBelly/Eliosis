@@ -7448,7 +7448,7 @@ MonoBehaviour:
     animator: {fileID: 7258864480467488068}
   - weaponType: 1
     fireRate: 1
-    bulletPrefab: {fileID: 1000013256060682, guid: 8482466905b6d3946a69ed5b3fe2ccd4,
+    bulletPrefab: {fileID: 1000013256060682, guid: da72291c3678b6540919943ed59ba11e,
       type: 3}
     shellPrefab: {fileID: 1000013034690572, guid: 658b0afcf0b5cc7488c36fd3bf129b8f,
       type: 3}
