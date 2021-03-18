@@ -258,7 +258,7 @@ public class Weapon : MonoBehaviour
 		Destroy(shell, 3f);
 
 		//сверкает вспышка
-		weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
+		//weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
 
 	}
 
