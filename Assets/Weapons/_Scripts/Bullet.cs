@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
 
 		{
 			print("попал");
+			//collision.gameObject.SendMessage("ApplyDamage", Mathf.Sign(direction.x) * 2f);
 		}
 
 		Destroy(gameObject);

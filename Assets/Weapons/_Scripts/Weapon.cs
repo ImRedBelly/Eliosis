@@ -39,6 +39,8 @@ public class Weapon : MonoBehaviour
 		public Animator animator;
 	}
 
+	public string bulletMask;
+
 	public WeaponSlot[] weapons;
 
 	public SpriteRenderer hand1;
@@ -247,6 +249,8 @@ public class Weapon : MonoBehaviour
 										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
 
+		bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
+
 		//вылетает гильза
 		GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
 										weapons[(int)currentWeapon].placeShell.position,
@@ -258,7 +262,7 @@ public class Weapon : MonoBehaviour
 		Destroy(shell, 3f);
 
 		//сверкает вспышка
-		weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
+		//weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
 
 	}
 
