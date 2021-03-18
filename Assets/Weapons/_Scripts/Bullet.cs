@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
 
 	void Start()
 	{
-		rb.velocity = Quaternion.AngleAxis(Random.Range(-5, 5), transform.forward) * transform.right * (PlayerMovement.instance.transform.localScale.x * 5) * speed;
+		
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)

@@ -61,13 +61,12 @@ public class Weapon : MonoBehaviour
 
 	Animator currentWeaponAnimator;
 	CharacterController2D controller;
-	PlayerMovement player;
+
 
 	private void Awake()
 	{
 		reversLook = GetComponent<ReversLook>();
 		controller = GetComponent<CharacterController2D>();
-		player = GetComponent<PlayerMovement>();
 
 	}
 
@@ -248,6 +247,9 @@ public class Weapon : MonoBehaviour
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
 										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
+
+		Rigidbody2D bulletRb = GetComponent<Rigidbody2D>();
+		bulletRb.velocity = Quaternion.AngleAxis(Random.Range(-5, 5), transform.forward) * transform.right * (transform.localScale.x * 5) * 20;
 
 		bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
 
