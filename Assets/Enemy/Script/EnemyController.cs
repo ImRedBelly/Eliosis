@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
     public float shootDist = 10f;
     public float snipeDist = 15f;
 
-    private bool canAttack = true;
+    private bool meleeAttack = false;            //проверка ножа и пушки
     float timerShoot = 2f;
 
     public BossState activState;
@@ -65,7 +65,6 @@ public class EnemyController : MonoBehaviour
                 {
                     if (timerShoot < 0)
                     {
-                        ShootAttack(directionPlayer.normalized);
                         timerShoot = 4;
                     }
                     else
@@ -79,7 +78,7 @@ public class EnemyController : MonoBehaviour
                 {
                     case BossState.IDLE:
                         Idle();
-
+                        meleeAttack = false;
 
                         if (Mathf.Abs(distToPlayer) < shootDist)
                             activState = BossState.SHOOT;
@@ -91,17 +90,27 @@ public class EnemyController : MonoBehaviour
                         if (Mathf.Abs(distToPlayer) > shootDist)
                             activState = BossState.IDLE;
 
-                        if (Mathf.Abs(distToPlayer) > 0 && Mathf.Abs(distToPlayer) < 3)
+                        if (Mathf.Abs(distToPlayer) > 0 && Mathf.Abs(distToPlayer) < 2)
                             activState = BossState.MELEEATTACK;
 
-                        enemyWeapon.SetShotgun();
-                        enemyWeapon.CheckFire();
-
+                        if (!meleeAttack)
+                        {
+                            enemyWeapon.SetShotgun();
+                            enemyWeapon.CheckFire();
+                        }
+                        else
+                        {
+                            enemyWeapon.SetKnife();
+                        }
                         break;
 
                     case BossState.MELEEATTACK:
+
+                        meleeAttack = true;
                         if (Mathf.Abs(distToPlayer) > 3.5f)
                             activState = BossState.SHOOT;
+                        else
+                            Idle();
 
                         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
                         if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
@@ -109,12 +118,6 @@ public class EnemyController : MonoBehaviour
 
                         enemyWeapon.SetKnife();
                         enemyWeapon.CheckFire();
-
-                        if (canAttack)
-                        {
-                            animator.SetTrigger("IsAttacking");
-                            StartCoroutine(WaitToAttack(0.7f));
-                        }
                         break;
                 }
             }
@@ -182,12 +185,6 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    IEnumerator WaitToAttack(float time)
-    {
-        canAttack = false;
-        yield return new WaitForSeconds(time);
-        canAttack = true;
-    }
 
     IEnumerator DestroyEnemy()
     {

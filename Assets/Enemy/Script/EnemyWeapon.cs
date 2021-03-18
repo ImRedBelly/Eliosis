@@ -83,6 +83,7 @@ public class EnemyWeapon : MonoBehaviour
         if (currentWeapon == WeaponType.KNIFE && nextFire <= 0)
         {
             nextFire = weapons[(int)currentWeapon].fireRate;
+            enemyController.MeleeAttack();
             weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
         }
 
@@ -108,10 +109,11 @@ public class EnemyWeapon : MonoBehaviour
                                         weapons[(int)currentWeapon].placeFire.position,
                                         weapons[(int)currentWeapon].placeFire.rotation);
 
+        bullet.GetComponent<Bullet>().direction = -weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 4;
+
         GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
                                         weapons[(int)currentWeapon].placeFire.position,
                                         weapons[(int)currentWeapon].placeFire.rotation);
-
     }
 
 

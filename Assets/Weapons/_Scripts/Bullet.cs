@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+	public Vector2 direction;
 	public float speed;
 	public int damage = -25;
 	Rigidbody2D rb;
@@ -16,8 +16,9 @@ public class Bullet : MonoBehaviour
 
 	void Start()
 	{
-		
+		rb.velocity = Quaternion.AngleAxis(Random.Range(-5, 5), transform.forward) * direction * speed;
 	}
+
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
