@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     [Header("Components")]
     public Rigidbody2D Rigidbody2D;
     public Animator animator;
+    public Animator animatorWeapon;
+    public EnemyWeapon enemyWeapon;
 
     [Header("Options")]
     public float life = 5;
@@ -46,19 +48,20 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (life <= 0)
             StartCoroutine(DestroyEnemy());
 
         else if (enemy != null)
         {
             distToPlayer = enemy.transform.position.x - transform.position.x;
-           
+
             if (isSniper)
             {
                 Idle();
                 Vector2 directionPlayer = enemy.transform.position - transform.position;
 
-                if(Mathf.Abs(distToPlayer) < snipeDist)
+                if (Mathf.Abs(distToPlayer) < snipeDist)
                 {
                     if (timerShoot < 0)
                     {
@@ -68,7 +71,7 @@ public class EnemyController : MonoBehaviour
                     else
                         timerShoot -= Time.deltaTime;
                 }
-                
+
             }
             else
             {
@@ -76,6 +79,7 @@ public class EnemyController : MonoBehaviour
                 {
                     case BossState.IDLE:
                         Idle();
+
 
                         if (Mathf.Abs(distToPlayer) < shootDist)
                             activState = BossState.SHOOT;
@@ -90,28 +94,26 @@ public class EnemyController : MonoBehaviour
                         if (Mathf.Abs(distToPlayer) > 0 && Mathf.Abs(distToPlayer) < 3)
                             activState = BossState.MELEEATTACK;
 
-                        if (timerShoot < 0)
-                        {
-                            ShootAttack(transform.right * (transform.localScale.x * 4));
-                            timerShoot = 2;
-                        }
-                        else
-                            timerShoot -= Time.deltaTime;
+                        enemyWeapon.SetShotgun();
+                        enemyWeapon.CheckFire();
 
                         break;
 
                     case BossState.MELEEATTACK:
-                        if (Mathf.Abs(distToPlayer) > 3)
+                        if (Mathf.Abs(distToPlayer) > 3.5f)
                             activState = BossState.SHOOT;
 
                         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
                         if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
                             Flip();
 
+                        enemyWeapon.SetKnife();
+                        enemyWeapon.CheckFire();
+
                         if (canAttack)
                         {
-                            animator.SetTrigger("MeleeAttack");
-                            StartCoroutine(WaitToAttack(0.5f));
+                            animator.SetTrigger("IsAttacking");
+                            StartCoroutine(WaitToAttack(0.7f));
                         }
                         break;
                 }
@@ -157,7 +159,6 @@ public class EnemyController : MonoBehaviour
 
     public void MeleeAttack()
     {
-        print("Melee Atatack");
         Collider2D[] player = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
         for (int i = 0; i < player.Length; i++)
         {
@@ -169,13 +170,15 @@ public class EnemyController : MonoBehaviour
     public void Run(float position)
     {
         animator.SetBool("IsWaiting", false);
+        animatorWeapon.SetBool("IsWaiting", false);
         Rigidbody2D.velocity = new Vector2(position / Mathf.Abs(position) * speed, Rigidbody2D.velocity.y);
     }
 
     public void Idle()
     {
-        Rigidbody2D.velocity = new Vector2(0f, Rigidbody2D.velocity.y);
         animator.SetBool("IsWaiting", true);
+        animatorWeapon.SetBool("IsWaiting", true);
+        Rigidbody2D.velocity = new Vector2(0f, Rigidbody2D.velocity.y);
     }
 
 
