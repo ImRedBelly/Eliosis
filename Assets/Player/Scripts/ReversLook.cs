@@ -21,4 +21,8 @@ public class ReversLook : MonoBehaviour
 		}
 
 	}
+	private void OnDisable()
+	{
+		isReversLook = false;
+	}
 }

@@ -23,7 +23,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float m_DashForce = 25f;
     private bool canDash = true;
     private bool isDashing = false; //If player is dashing
-    private bool m_IsWall = false; //If there is a wall in front of the player
+    public bool m_IsWall = false; //If there is a wall in front of the player
     public bool isWallSliding = false; //If player is sliding in a wall
     private bool oldWallSlidding = false; //If player is sliding in a wall in the previous frame
     private float prevVelocityX = 0f;
