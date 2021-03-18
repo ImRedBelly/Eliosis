@@ -39,7 +39,7 @@ public class Attack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
             canAttack = false;
-            animatorWeapon.SetBool("IsAttacking", true);
+            //animatorWeapon.SetBool("IsAttacking", true);
             DoDashDamage();
             StartCoroutine(AttackCooldown());
         }

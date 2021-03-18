@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
 {
@@ -23,12 +24,18 @@ public class Weapon : MonoBehaviour
 		public float fireRate;
 		public GameObject bulletPrefab;
 		public GameObject shellPrefab;
+		public GameObject flashPrefab;
+
 		public GameObject powerUp;
+
 		public float weigth;
 		public bool isMelee;
 		public Transform placeWeapon;
+
 		public Transform placeFire;
 		public Transform placeShell;
+		
+
 		public Animator animator;
 	}
 
@@ -199,12 +206,17 @@ public class Weapon : MonoBehaviour
 
 		ShowWeapon((int)currentWeapon);
 		SetWeaponAnimator((int)currentWeapon);
-
-
-
 	}
 
-	void SetWeaponAnimator(int currentWeapon)
+	public void SetWeapon(WeaponType currentWeapon)
+	{
+		this.currentWeapon = currentWeapon;
+
+		ShowWeapon((int)currentWeapon);
+		SetWeaponAnimator((int)currentWeapon);
+	}
+
+	private void SetWeaponAnimator(int currentWeapon)
 	{
 		currentWeaponAnimator = weapons[currentWeapon].animator;
 		PlayerMovement.instance.animatorWeapon = currentWeaponAnimator;
@@ -226,18 +238,27 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
-	public void Shoot()
+	private void Shoot()
 	{
 		//todo sound
 
+		//вылетает пуля
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
 										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
 
+		//вылетает гильза
 		GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
-										weapons[(int)currentWeapon].placeFire.position,
-										weapons[(int)currentWeapon].placeFire.rotation);
+										weapons[(int)currentWeapon].placeShell.position,
+										weapons[(int)currentWeapon].placeShell.rotation);
 
+		var shellRb = shell.GetComponent<Rigidbody2D>();
+		shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
+		shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
+		Destroy(shell, 3f);
+
+		//сверкает вспышка
+		weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
 
 	}
 
