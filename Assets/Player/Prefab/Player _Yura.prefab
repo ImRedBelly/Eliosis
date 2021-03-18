@@ -1581,7 +1581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9026416276392918851
 Transform:
   m_ObjectHideFlags: 0
@@ -2070,6 +2070,7 @@ MonoBehaviour:
   m_Rigidbody2D: {fileID: 6841423363569015462}
   canDoubleJump: 1
   m_DashForce: 100
+  m_IsWall: 0
   isWallSliding: 0
   canMove: 1
   animator: {fileID: 520159756}
@@ -2140,70 +2141,89 @@ MonoBehaviour:
   - weaponType: 0
     fireRate: 0
     bulletPrefab: {fileID: 0}
+    shellPrefab: {fileID: 0}
     powerUp: {fileID: 0}
     weigth: 0
     isMelee: 1
     placeWeapon: {fileID: 1876759219023450428}
     placeFire: {fileID: 0}
+    placeShell: {fileID: 0}
     animator: {fileID: 1249051238307715540}
   - weaponType: 1
     fireRate: 1
     bulletPrefab: {fileID: 0}
+    shellPrefab: {fileID: 0}
     powerUp: {fileID: 1000010148783770, guid: 6c8647df68716bb46a6a15f45a1d91cb, type: 3}
     weigth: 1
     isMelee: 1
     placeWeapon: {fileID: 9026416275480677089}
     placeFire: {fileID: 0}
+    placeShell: {fileID: 0}
     animator: {fileID: 8943007810704754457}
   - weaponType: 2
     fireRate: 1
     bulletPrefab: {fileID: 1000012176153370, guid: 93c3cfa0b5e89d14d91510b5f09bde3a,
+      type: 3}
+    shellPrefab: {fileID: 1000012363013230, guid: 2c349f97f7a7d0e4da544ce116fe869b,
       type: 3}
     powerUp: {fileID: 1000013379212706, guid: 98aa4ea9a23a9354396107ad2a606e4d, type: 3}
     weigth: 1
     isMelee: 0
     placeWeapon: {fileID: 9026416270167812519}
     placeFire: {fileID: 9026416278272212523}
+    placeShell: {fileID: 9026416275878251123}
     animator: {fileID: 8943007821138025131}
   - weaponType: 3
     fireRate: 1
     bulletPrefab: {fileID: 1000013256060682, guid: 8482466905b6d3946a69ed5b3fe2ccd4,
+      type: 3}
+    shellPrefab: {fileID: 1000013034690572, guid: 658b0afcf0b5cc7488c36fd3bf129b8f,
       type: 3}
     powerUp: {fileID: 1000012425905944, guid: a08049b392cbfc6458845f8aa4c40293, type: 3}
     weigth: 2
     isMelee: 0
     placeWeapon: {fileID: 9026416277065119697}
     placeFire: {fileID: 9026416277288873439}
+    placeShell: {fileID: 9026416274959976987}
     animator: {fileID: 8943007821478787409}
   - weaponType: 4
     fireRate: 3
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
+      type: 3}
+    shellPrefab: {fileID: 1000012363013230, guid: ca31063a8dfa29848b644d743a77e607,
       type: 3}
     powerUp: {fileID: 1000010653749668, guid: ff7e3c470549aaf489757e88af5723fd, type: 3}
     weigth: 2
     isMelee: 0
     placeWeapon: {fileID: 9026416276392918851}
     placeFire: {fileID: 9026416270008639769}
+    placeShell: {fileID: 9026416277466609049}
     animator: {fileID: 8943007821942525413}
   - weaponType: 5
     fireRate: 2
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
+      type: 3}
+    shellPrefab: {fileID: 1000012363013230, guid: 27063fa156b2f47469e0d2bb4d3270e8,
       type: 3}
     powerUp: {fileID: 1000013864500368, guid: 6f77a98f145e1024d88ec010b7f0dd10, type: 3}
     weigth: 2
     isMelee: 0
     placeWeapon: {fileID: 9026416275608350713}
     placeFire: {fileID: 9026416274844518237}
+    placeShell: {fileID: 9026416276006277065}
     animator: {fileID: 8943007821380696571}
   - weaponType: 6
     fireRate: 10
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
+      type: 3}
+    shellPrefab: {fileID: 1000012363013230, guid: f3d7a49b2eaee0640bb0ce2f56b6af54,
       type: 3}
     powerUp: {fileID: 1000011649319712, guid: 1b164dd425232b4429272ae54efbaf0c, type: 3}
     weigth: 5
     isMelee: 0
     placeWeapon: {fileID: 9026416274730702405}
     placeFire: {fileID: 9026416277474762417}
+    placeShell: {fileID: 9026416276397177021}
     animator: {fileID: 8943007809618965759}
   hand1: {fileID: 0}
   hand2: {fileID: 0}
@@ -3497,7 +3517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9026416275480677089
 Transform:
   m_ObjectHideFlags: 0

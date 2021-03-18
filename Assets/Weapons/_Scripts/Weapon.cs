@@ -22,11 +22,13 @@ public class Weapon : MonoBehaviour
 		public WeaponType weaponType;
 		public float fireRate;
 		public GameObject bulletPrefab;
+		public GameObject shellPrefab;
 		public GameObject powerUp;
 		public float weigth;
 		public bool isMelee;
 		public Transform placeWeapon;
 		public Transform placeFire;
+		public Transform placeShell;
 		public Animator animator;
 	}
 
@@ -95,27 +97,93 @@ public class Weapon : MonoBehaviour
 			return;
 		}
 
+		Transform placeWeapon = weapons[(int)currentWeapon].placeWeapon;
+
 		Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		Vector3 direction = mousePosition - weapons[(int)currentWeapon].placeWeapon.position;
+		Vector3 direction = mousePosition - placeWeapon.position;
+
+		Quaternion targetRotation = Quaternion.LookRotation(direction);
+
 		direction.z = 0;
 
-		if (reversLook.isReversLook)
+		float angle = Vector2.SignedAngle(Vector2.right, direction);
+		print(angle);
+
+
+		if (controller.isWallSliding && transform.localScale.x < 0)
 		{
-			weapons[(int)currentWeapon].placeWeapon.right = direction;
-		}
-		else
-		{
-			weapons[(int)currentWeapon].placeWeapon.right = direction;
+
+			if (angle < 135 && angle > 0)
+			{
+				placeWeapon.rotation =
+				Quaternion.Euler(0, 0, -45);
+				return;
+			}
+
+			if (angle > -135 && angle < 0)
+			{
+				placeWeapon.rotation =
+				Quaternion.Euler(0, 0, 45);
+				return;
+			}
+			placeWeapon.right = -direction;
+			return;
 		}
 
-		if (reversLook.isReversLook && controller.isWallSliding)
+
+		if (controller.isWallSliding && transform.localScale.x > 0)
 		{
-			weapons[(int)currentWeapon].placeWeapon.right = direction;
+			if (angle > 45)
+			{
+				placeWeapon.rotation =
+				Quaternion.Euler(0, 0, 45);
+				return;
+			}
+
+			if (angle < -45)
+			{
+				placeWeapon.rotation =
+				Quaternion.Euler(0, 0, -45);
+				return;
+			}
+			placeWeapon.right = direction;
+			return;
 		}
-		else
+
+
+
+
+
+
+		if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x < 0)
 		{
-			weapons[(int)currentWeapon].placeWeapon.right = -direction;
+			placeWeapon.right = -direction;
+			return;
 		}
+
+		if (!controller.isWallSliding && controller.m_IsWall && transform.localScale.x > 0)
+		{
+			placeWeapon.right = direction;
+			return;
+		}
+
+
+
+
+
+
+		if (!controller.isWallSliding && transform.localScale.x < 0)
+		{
+			placeWeapon.right = -direction;
+			return;
+		}
+
+		if (!controller.isWallSliding && transform.localScale.x > 0)
+		{
+			placeWeapon.right = direction;
+			return;
+		}
+
 
 	}
 
@@ -165,6 +233,12 @@ public class Weapon : MonoBehaviour
 		GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
 										weapons[(int)currentWeapon].placeFire.position,
 										weapons[(int)currentWeapon].placeFire.rotation);
+
+		GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
+										weapons[(int)currentWeapon].placeFire.position,
+										weapons[(int)currentWeapon].placeFire.rotation);
+
+
 	}
 
 	private void CheckFire()
@@ -185,7 +259,7 @@ public class Weapon : MonoBehaviour
 
 		if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
 		{
-				weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);		
+			weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
 		}
 
 
