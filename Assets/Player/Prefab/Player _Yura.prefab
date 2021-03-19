@@ -2255,6 +2255,10 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 9b0b1f11c800b6b40a92b1252565d697, type: 3}
   cursorMode: 0
   hotSpot: {x: 32, y: 32}
+  isUseHardwareCursor: 0
+  distanceFromPlayer: 2
+  prefabCursor: {fileID: 1994914800290252609, guid: 592a67b504c168643885fb6032344e16,
+    type: 3}
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0

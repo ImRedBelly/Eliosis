@@ -1,14 +1,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
+    public Animator animatorWeapon;
     public static PlayerMovement instance;
     public CharacterController2D controller;
-    public Animator animator;
 
-    public float runSpeed = 40f;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -28,22 +29,34 @@ public class PlayerMovement : MonoBehaviour
     private float BashTimeReset;
 
 
- 
-
-
     [Header("Shield")]
     public GameObject shield;
 
 
-    [Header("Ledge")]
-    public bool isLedge = false;
+    [Header("Speed Parameters")]
+    public Slider speedSlider;
+    public float runSpeed = 40f;
+    public float maxRunSpeed = 140f;
 
-    public Animator animatorWeapon;
-
+    public float RunSpeed
+    {
+        get
+        {
+            return runSpeed;
+        }
+        set
+        {
+            runSpeed = value; 
+            speedSlider.value = runSpeed;
+        }
+    }
     private void Start()
     {
         instance = this;
         BashTimeReset = BashTime;
+
+        speedSlider.maxValue = maxRunSpeed;
+        speedSlider.value = runSpeed;
     }
     void Update()
     {
@@ -180,7 +193,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    
+    public void UpdateMaxSpeed(float damagePoint)
+    {
+        RunSpeed += damagePoint;
+    }
     //void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(transform.position, Raduis);

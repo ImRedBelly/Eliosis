@@ -13,6 +13,7 @@ TagManager:
   - Sand
   - Platform
   - Ground
+  - Money
   layers:
   - Default
   - TransparentFX
