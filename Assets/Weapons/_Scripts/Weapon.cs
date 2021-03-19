@@ -342,15 +342,10 @@ public class Weapon : MonoBehaviour
         }
 
 
-
-
-
         if (Input.GetButton("Fire1") && nextFire <= 0)
         {
             nextFire = weapons[(int)currentWeapon].fireRate;
             weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
-
-
 
             if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
             {
