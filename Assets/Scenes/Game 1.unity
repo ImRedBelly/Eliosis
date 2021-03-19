@@ -460,12 +460,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6841423364335255831}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &493510213 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6841423364383874898, guid: 7b4416fc672aa3a4494c2cc64df9f821,
-    type: 3}
-  m_PrefabInstance: {fileID: 6841423364335255831}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,13 +1548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6e5482f1b3b8d4c8ea7635f1311ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSlider: {fileID: 908358597}
-  damageValue: 1
-  attackCheck: {fileID: 493510213}
   animatorWeapon: {fileID: 0}
   canAttack: 1
   isTimeToCheck: 0
-  cam: {fileID: 519420028}
 --- !u!114 &1938563976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,6 +2096,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1994914800290252609, guid: 592a67b504c168643885fb6032344e16,
         type: 3}
+    - target: {fileID: 761274379, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: distanceFromPlayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: damageSlider

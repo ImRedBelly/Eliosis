@@ -60,15 +60,26 @@ public class Weapon : MonoBehaviour
 
     private LayerMask whatIsEnemy;
 
-    
+
 
     Animator currentWeaponAnimator;
     CharacterController2D controller;
     PlayerMovement player;
 
 
-    [Header("Melee Attack")]
+
+    [Space]
+    [Header("Laser Aim")]
+    LineRenderer lr;
+    float rayLaserDistance;
+
+
+
+
+
+    [Space][Header("Melee Attack")]
     public GameObject cam;
+
     public Slider damageSlider;
     public Transform attackCheck;
 
@@ -318,6 +329,8 @@ public class Weapon : MonoBehaviour
 
     private void CheckFire()
     {
+        //---------- MACHINEGUN
+
         if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
         {
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
@@ -333,13 +346,39 @@ public class Weapon : MonoBehaviour
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
         }
 
-        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
+
+        //---------- SNIPER
+
+        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.SNIPER)
+        {
+            RaycastHit2D rayLaser = Physics2D.Raycast(weapons[(int)currentWeapon].placeFire.position, 
+                                                      weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5 * rayLaserDistance);
+
+            if (rayLaser)
+            {
+                lr.SetPosition(1, rayLaser.point);
+                return;
+            }
+
+            lr.SetPosition(1, weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5 * rayLaserDistance);
+            return;
+        }
+
+        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.SNIPER)
         {
 
-            
+        }
+
+
+        //---------- KNIFE
+
+        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
+        {       
             nextFire = weapons[(int)currentWeapon].fireRate;
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
         }
+
+
 
 
         if (Input.GetButton("Fire1") && nextFire <= 0)
