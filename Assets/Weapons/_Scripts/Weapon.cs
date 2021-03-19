@@ -69,9 +69,11 @@ public class Weapon : MonoBehaviour
 
     [Header("Melee Attack")]
     public GameObject cam;
-    public Slider damageSlider;
     public Transform attackCheck;
 
+
+    [Header("Damage Parameters")]
+    public Slider damageSlider;
     public float damageValue = 1;
     float sliderMaxValue = 50;
 

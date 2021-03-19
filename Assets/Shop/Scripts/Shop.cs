@@ -61,6 +61,11 @@ public class Shop : MonoBehaviour
     public void BuySpeed()
     {
         maxPriceSpeed = Purse.instance.Spend(maxPriceSpeed);
+        if (Purse.instance.Buy())  //return bool
+        {
+            PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
+            playerMovement.UpdateMaxSpeed(1);
+        }
         ShopOn();
 
     }
