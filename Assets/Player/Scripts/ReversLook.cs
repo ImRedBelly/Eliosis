@@ -5,6 +5,7 @@ public class ReversLook : MonoBehaviour
 	public GameObject reversObject;
 	Vector2 mousePosition;
 	public bool isReversLook;
+
 	void Update()
 	{
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

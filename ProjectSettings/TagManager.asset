@@ -11,6 +11,8 @@ TagManager:
   - BashPoint
   - Enemy
   - Sand
+  - Platform
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -23,9 +25,9 @@ TagManager:
   - Player
   - Boss
   - BulletPlayer
-  - 
-  - 
-  - 
+  - Ground
+  - Platform
+  - Enemy
   - 
   - 
   - 

@@ -244,27 +244,46 @@ public class Weapon : MonoBehaviour
     {
         //todo sound
 
-        //вылетает пуля
-        GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
-                                        weapons[(int)currentWeapon].placeFire.position,
-                                        weapons[(int)currentWeapon].placeFire.rotation);
-        bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5;
+        //вылетают пули
+        int numberOfBullets;
+        if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби
+        {
+            numberOfBullets = 5; 
+        }
+        else
+        {
+            numberOfBullets = 1;
+        }
 
-        bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
+        for (int i = 0; i < numberOfBullets; i++) 
+        {
+            GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
+                            weapons[(int)currentWeapon].placeFire.position,
+                            weapons[(int)currentWeapon].placeFire.rotation);
+            bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5;
+            bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
+        }
+
+
 
         //вылетает гильза
         GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
                                         weapons[(int)currentWeapon].placeShell.position,
                                         weapons[(int)currentWeapon].placeShell.rotation);
 
-        var shellRb = shell.GetComponent<Rigidbody2D>();
+
+        Rigidbody2D shellRb = shell.GetComponent<Rigidbody2D>();
         shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
         shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
         Destroy(shell, 3f);
 
         //сверкает вспышка
-        //weapons[(int)currentWeapon].flashPrefab.GetComponent<ParticleSystem>();
+        GameObject flash = Instantiate(weapons[(int)currentWeapon].flashPrefab,
+                                       weapons[(int)currentWeapon].placeFire.position,
+                                       weapons[(int)currentWeapon].placeFire.rotation);
+        flash.transform.right = flash.transform.right * transform.localScale.x * 5;
 
+        Destroy(flash, 1f);
     }
 
     private void CheckFire()

@@ -2137,6 +2137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5504d8869b1fdd84d896b4a37cb33d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletMask: BulletPlayer
   weapons:
   - weaponType: 0
     fireRate: 0
@@ -2168,7 +2169,8 @@ MonoBehaviour:
       type: 3}
     shellPrefab: {fileID: 1000012363013230, guid: 2c349f97f7a7d0e4da544ce116fe869b,
       type: 3}
-    flashPrefab: {fileID: 0}
+    flashPrefab: {fileID: 1000014229440472, guid: 003f2339bb47a914cab8326b44d01ab6,
+      type: 3}
     powerUp: {fileID: 1000013379212706, guid: 98aa4ea9a23a9354396107ad2a606e4d, type: 3}
     weigth: 1
     isMelee: 0
@@ -2182,7 +2184,8 @@ MonoBehaviour:
       type: 3}
     shellPrefab: {fileID: 1000013034690572, guid: 658b0afcf0b5cc7488c36fd3bf129b8f,
       type: 3}
-    flashPrefab: {fileID: 0}
+    flashPrefab: {fileID: 1000014229440472, guid: 9da9639304e4c1d4b80b3817b9b8ed52,
+      type: 3}
     powerUp: {fileID: 1000012425905944, guid: a08049b392cbfc6458845f8aa4c40293, type: 3}
     weigth: 2
     isMelee: 0
@@ -2196,7 +2199,8 @@ MonoBehaviour:
       type: 3}
     shellPrefab: {fileID: 1000012363013230, guid: 1d1e244a78664964a83d996de82b615e,
       type: 3}
-    flashPrefab: {fileID: 0}
+    flashPrefab: {fileID: 1000010311714792, guid: c8f97677291220442b8f00b42c9b520d,
+      type: 3}
     powerUp: {fileID: 1000010653749668, guid: ff7e3c470549aaf489757e88af5723fd, type: 3}
     weigth: 2
     isMelee: 0
@@ -2210,7 +2214,8 @@ MonoBehaviour:
       type: 3}
     shellPrefab: {fileID: 1000012363013230, guid: 27063fa156b2f47469e0d2bb4d3270e8,
       type: 3}
-    flashPrefab: {fileID: 0}
+    flashPrefab: {fileID: 1000010311714792, guid: c8f97677291220442b8f00b42c9b520d,
+      type: 3}
     powerUp: {fileID: 1000013864500368, guid: 6f77a98f145e1024d88ec010b7f0dd10, type: 3}
     weigth: 2
     isMelee: 0
@@ -2224,7 +2229,8 @@ MonoBehaviour:
       type: 3}
     shellPrefab: {fileID: 1000012363013230, guid: f3d7a49b2eaee0640bb0ce2f56b6af54,
       type: 3}
-    flashPrefab: {fileID: 0}
+    flashPrefab: {fileID: 1000013715491564, guid: 3ae339c3d0cefae47a16e226b5e488d3,
+      type: 3}
     powerUp: {fileID: 1000011649319712, guid: 1b164dd425232b4429272ae54efbaf0c, type: 3}
     weigth: 5
     isMelee: 0

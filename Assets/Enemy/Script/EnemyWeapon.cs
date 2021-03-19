@@ -109,7 +109,7 @@ public class EnemyWeapon : MonoBehaviour
                                         weapons[(int)currentWeapon].placeFire.position,
                                         weapons[(int)currentWeapon].placeFire.rotation);
 
-        bullet.GetComponent<Bullet>().direction = -weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 4;
+        bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 4;
 
         GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
                                         weapons[(int)currentWeapon].placeShell.position,

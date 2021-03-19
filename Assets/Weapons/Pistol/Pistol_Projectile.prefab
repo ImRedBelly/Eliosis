@@ -370,7 +370,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -405,7 +405,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -9545,8 +9545,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca62b7746e5c0045949f5801f367374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
   speed: 20
-  damage: -25
+  sandPrefab: {fileID: 1000011772094258, guid: e251c14d64604e54aaa5db2698951596, type: 3}
+  platformPrefab: {fileID: 1000014022289910, guid: efc00ae131f8d86498732bf05e786740,
+    type: 3}
+  bloodPrefab: {fileID: 1000013456865522, guid: 95d294d51813f6647a44ffabd2129820,
+    type: 3}
 --- !u!1 &1000012696942032
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +9922,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -9952,7 +9957,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
