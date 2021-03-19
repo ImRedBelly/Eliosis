@@ -67,6 +67,7 @@ public class Shop : MonoBehaviour
     public void BuyHealth()
     {
         maxPriceHealth = Purse.instance.Spend(maxPriceHealth);
+
         if (Purse.instance.Buy())
         {
             HealthPlayer health = FindObjectOfType<HealthPlayer>();
@@ -79,8 +80,8 @@ public class Shop : MonoBehaviour
         maxPriceDamage = Purse.instance.Spend(maxPriceDamage);
         if (Purse.instance.Buy())
         {
-            Attack attack = FindObjectOfType<Attack>();
-            attack.UpdateMaxDamage(1);
+            Weapon weapon = FindObjectOfType<Weapon>();
+            weapon.UpdateMaxDamage(1);
         }
 
         ShopOn();

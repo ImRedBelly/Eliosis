@@ -15,7 +15,7 @@ public class Purse : MonoBehaviour
         if (money <= 0)
         {
             isBuy = false;
-            // print("Денег нет");
+            //print("Денег нет");
         }
         else
         {

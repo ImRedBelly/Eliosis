@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Weapon : MonoBehaviour
@@ -59,9 +60,33 @@ public class Weapon : MonoBehaviour
 
     private LayerMask whatIsEnemy;
 
+    
+
     Animator currentWeaponAnimator;
     CharacterController2D controller;
     PlayerMovement player;
+
+
+    [Header("Melee Attack")]
+    public GameObject cam;
+    public Slider damageSlider;
+    public Transform attackCheck;
+
+    public float damageValue = 1;
+    float sliderMaxValue = 50;
+
+    public float MeleeDamage
+    {
+        get
+        {
+            return damageValue;
+        }
+        set
+        {
+            damageValue = value;
+            damageSlider.value = damageValue;
+        }
+    }
 
     private void Awake()
     {
@@ -79,6 +104,10 @@ public class Weapon : MonoBehaviour
         currentWeapon = WeaponType.NONE;
         SetWeaponAnimator((int)currentWeapon);
         ShowWeapon((int)currentWeapon);
+
+
+        damageSlider.maxValue = sliderMaxValue;
+        damageSlider.value = damageValue;
 
     }
 
@@ -248,14 +277,14 @@ public class Weapon : MonoBehaviour
         int numberOfBullets;
         if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби
         {
-            numberOfBullets = 5; 
+            numberOfBullets = 5;
         }
         else
         {
             numberOfBullets = 1;
         }
 
-        for (int i = 0; i < numberOfBullets; i++) 
+        for (int i = 0; i < numberOfBullets; i++)
         {
             GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
                             weapons[(int)currentWeapon].placeFire.position,
@@ -289,10 +318,6 @@ public class Weapon : MonoBehaviour
 
     private void CheckFire()
     {
-
-
-
-
         if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
         {
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
@@ -308,18 +333,13 @@ public class Weapon : MonoBehaviour
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
         }
 
-
-
-
-
         if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
         {
+
+            
             nextFire = weapons[(int)currentWeapon].fireRate;
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
         }
-
-
-
 
 
         if (Input.GetButton("Fire1") && nextFire <= 0)
@@ -327,10 +347,9 @@ public class Weapon : MonoBehaviour
             nextFire = weapons[(int)currentWeapon].fireRate;
             weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
 
-
-
             if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
             {
+                DoDashDamage();
                 return;
             }
 
@@ -341,6 +360,34 @@ public class Weapon : MonoBehaviour
         {
             nextFire -= Time.deltaTime;
         }
+    }
+
+    public void DoDashDamage()
+    {
+        damageValue = Mathf.Abs(damageValue);
+        Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
+        for (int i = 0; i < collidersEnemies.Length; i++)
+        {
+            if (collidersEnemies[i].gameObject.tag == "Enemy" || collidersEnemies[i].gameObject.tag == "DeathCopy")
+            {
+                if (collidersEnemies[i].transform.position.x - transform.position.x < 0)
+                {
+                    damageValue = -damageValue;
+                }
+                collidersEnemies[i].gameObject.SendMessage("ApplyDamage", damageValue);
+                cam.GetComponent<CameraFollow>().ShakeCamera();
+            }
+
+            if (collidersEnemies[i].gameObject.tag == "Torch")
+            {
+                collidersEnemies[i].GetComponent<Torch>().Fire();
+            }
+        }
+    }
+
+    public void UpdateMaxDamage(float damagePoint)
+    {
+        MeleeDamage += damagePoint;
     }
 
 }

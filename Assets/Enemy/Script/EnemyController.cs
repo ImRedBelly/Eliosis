@@ -148,6 +148,7 @@ public class EnemyController : MonoBehaviour
     }
     public void ApplyDamage(float damage)
     {
+        print("Dead");
         damage = Mathf.Abs(damage);
         animator.SetBool("Hit", true);
         life -= damage;
@@ -185,7 +186,7 @@ public class EnemyController : MonoBehaviour
     }
 
 
-
+    
     IEnumerator DestroyEnemy()
     {
         CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
