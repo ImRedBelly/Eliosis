@@ -8,19 +8,21 @@ public class HealthPlayer : MonoBehaviour
 {
     public Slider healthSlider;
 
+    [Header("Options")]
     public bool imLife = true;
     public bool invincible = false;
 
     public float health = 15;
+
     float minHealth = 0;
     float maxHealth = 15;
 
-    float sliderMaxValue = 50;
+    float sliderMaxValue = 50; //максимально допустимое значение
     public float Life
     {
         get
         {
-            healthSlider.value = health;
+            healthSlider.value = maxHealth;
             return health;
         }
         set
@@ -29,12 +31,13 @@ public class HealthPlayer : MonoBehaviour
             {
                 health = minHealth;
                 StartCoroutine(WaitToDead());
-
             }
+
             else if (value >= maxHealth)
             {
                 health = maxHealth;
             }
+
             else
             {
                 health = value;
@@ -46,14 +49,12 @@ public class HealthPlayer : MonoBehaviour
 
     Rigidbody2D rb;
     Animator animator;
-
     CharacterController2D controller2D;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
         controller2D = GetComponent<CharacterController2D>();
 
 
@@ -66,13 +67,14 @@ public class HealthPlayer : MonoBehaviour
     {
         if (!invincible)
         {
-            animator.SetBool("Hit", true);
             Life -= damage;
             Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f;
             rb.velocity = Vector2.zero;
             rb.AddForce(damageDir * 10);
         }
+
     }
+
     public void Healing(float healthPoint)
     {
         Life += healthPoint;
@@ -83,6 +85,9 @@ public class HealthPlayer : MonoBehaviour
         maxHealth += healthPoint;
         healthSlider.value = maxHealth;
     }
+
+
+
 
 
     IEnumerator MakeInvincible(float time)
@@ -109,11 +114,8 @@ public class HealthPlayer : MonoBehaviour
         rb.velocity = new Vector2(0, rb.velocity.y);
 
         GameManager.instance.SavePosition();
-        
 
         yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene(0);
     }
-
-
 }

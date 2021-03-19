@@ -1806,7 +1806,6 @@ GameObject:
   - component: {fileID: 6841423363569015483}
   - component: {fileID: 6841423363569015482}
   - component: {fileID: 6841423363569015481}
-  - component: {fileID: 6841423363569015480}
   - component: {fileID: 6841423363569015463}
   - component: {fileID: 520159756}
   - component: {fileID: 520159751}
@@ -2028,25 +2027,6 @@ MonoBehaviour:
   imLife: 1
   invincible: 0
   health: 15
---- !u!114 &6841423363569015480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028025907648731851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6e5482f1b3b8d4c8ea7635f1311ae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageSlider: {fileID: 0}
-  damageValue: 1
-  attackCheck: {fileID: 6841423364383874898}
-  animatorWeapon: {fileID: 8943007821942525413}
-  canAttack: 1
-  isTimeToCheck: 0
-  cam: {fileID: 0}
 --- !u!114 &6841423363569015463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2222,10 @@ MonoBehaviour:
   hand2: {fileID: 0}
   handfist1: {fileID: 0}
   handfist2: {fileID: 0}
+  cam: {fileID: 0}
+  damageSlider: {fileID: 0}
+  attackCheck: {fileID: 6841423364383874898}
+  damageValue: 1
 --- !u!114 &124108335
 MonoBehaviour:
   m_ObjectHideFlags: 0

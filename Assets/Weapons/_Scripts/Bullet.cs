@@ -51,7 +51,6 @@ public class Bullet : MonoBehaviour
             GameObject platform = Instantiate(bloodPrefab, transform.position, transform.rotation);
             Destroy(platform, 1f);
 
-            print("попал");
             //collision.gameObject.SendMessage("ApplyDamage", Mathf.Sign(direction.x) * 2f);
         }
 

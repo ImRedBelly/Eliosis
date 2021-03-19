@@ -11,4 +11,8 @@ public class Aim : MonoBehaviour
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
+    private void Start()
+    {
+        
+    }
 }

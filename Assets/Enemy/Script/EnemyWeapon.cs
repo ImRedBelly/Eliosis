@@ -124,7 +124,6 @@ public class EnemyWeapon : MonoBehaviour
 
         for (int i = 0; i < numberOfBullets; i++)
         {
-            print(i);
             GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
                                         weapons[(int)currentWeapon].placeFire.position,
                                         weapons[(int)currentWeapon].placeFire.rotation);
