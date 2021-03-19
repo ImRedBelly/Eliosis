@@ -9390,8 +9390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca62b7746e5c0045949f5801f367374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
   speed: 20
-  damage: -25
+  sandPrefab: {fileID: 0}
+  platformPrefab: {fileID: 0}
+  bloodPrefab: {fileID: 1000013456865522, guid: 95d294d51813f6647a44ffabd2129820,
+    type: 3}
 --- !u!1 &1000010718109922
 GameObject:
   m_ObjectHideFlags: 0

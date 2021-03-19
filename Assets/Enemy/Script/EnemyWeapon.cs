@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
 public class EnemyWeapon : MonoBehaviour
 {
     public enum WeaponType
@@ -17,8 +19,11 @@ public class EnemyWeapon : MonoBehaviour
     {
         public WeaponType weaponType;
         public float fireRate;
+
         public GameObject bulletPrefab;
         public GameObject shellPrefab;
+        public GameObject flashPrefab;
+
         public GameObject powerUp;
         public float weigth;
         public bool isMelee;
@@ -28,6 +33,7 @@ public class EnemyWeapon : MonoBehaviour
         public Animator animator;
     }
     private float nextFire;
+    public string bulletMask;
 
 
     public WeaponSlot[] weapons;
@@ -105,15 +111,42 @@ public class EnemyWeapon : MonoBehaviour
     }
     public void Shoot()
     {
-        GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
+
+        int numberOfBullets;
+        if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби
+        {
+            numberOfBullets = 5;
+        }
+        else
+        {
+            numberOfBullets = 1;
+        }
+
+        for (int i = 0; i < numberOfBullets; i++)
+        {
+            print(i);
+            GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
                                         weapons[(int)currentWeapon].placeFire.position,
                                         weapons[(int)currentWeapon].placeFire.rotation);
 
-        bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 4;
-
+            bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 4;
+            bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
+        }
         GameObject shell = Instantiate(weapons[(int)currentWeapon].shellPrefab,
                                         weapons[(int)currentWeapon].placeShell.position,
                                         weapons[(int)currentWeapon].placeShell.rotation);
+        Rigidbody2D shellRb = shell.GetComponent<Rigidbody2D>();
+        shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
+        shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
+        Destroy(shell, 3f);
+
+
+        GameObject flash = Instantiate(weapons[(int)currentWeapon].flashPrefab,
+                                      weapons[(int)currentWeapon].placeFire.position,
+                                      weapons[(int)currentWeapon].placeFire.rotation);
+        flash.transform.right = flash.transform.right * transform.localScale.x * 5;
+
+        Destroy(flash, 1f);
     }
 
 
@@ -126,7 +159,7 @@ public class EnemyWeapon : MonoBehaviour
 
         ShowWeapon((int)currentWeapon);
         SetWeaponAnimator((int)currentWeapon);
-    } 
+    }
     public void SetAssault()
     {
         currentWeapon = WeaponType.ASSAULT;

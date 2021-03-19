@@ -1811,6 +1811,7 @@ GameObject:
   - component: {fileID: 520159756}
   - component: {fileID: 520159751}
   - component: {fileID: 124108335}
+  - component: {fileID: 761274379}
   m_Layer: 8
   m_Name: Player _Yura
   m_TagString: Player
@@ -1995,7 +1996,6 @@ MonoBehaviour:
   BashPower: 2000
   BashTime: 0.2
   Arrow: {fileID: 0}
-  spriteRenderer: {fileID: 0}
   shield: {fileID: 0}
   isLedge: 0
   animatorWeapon: {fileID: 0}
@@ -2256,6 +2256,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reversObject: {fileID: 9028025907648731851}
   isReversLook: 0
+--- !u!114 &761274379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028025907648731851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a83d6780e8c364db197c3d9244b85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 9b0b1f11c800b6b40a92b1252565d697, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 32, y: 32}
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0

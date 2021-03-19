@@ -28,12 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float BashTimeReset;
 
 
-    [Header("Teleport")]
-    public SpriteRenderer spriteRenderer;
-    Material material;
-    float fade = 1f;
-    Coroutine start;
-    Coroutine end;
+ 
 
 
     [Header("Shield")]
@@ -49,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
     {
         instance = this;
         BashTimeReset = BashTime;
-        material = spriteRenderer.material;
     }
     void Update()
     {
@@ -186,42 +180,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public void TeleportMinus()
-    {
-        start = StartCoroutine(Minus());
-    }
-    IEnumerator Minus()
-    {
-        while (fade >= 0)
-        {
-            yield return new WaitForSeconds(0.1f);
-            fade -= 0.1f;
-            if (fade < 0)
-            {
-                StopCoroutine(start);
-                fade = 0;
-            }
-            material.SetFloat("_Fade", fade);
-        }
-    }
-    public void TeleportPlus()
-    {
-        end = StartCoroutine(Plus());
-    }
-    IEnumerator Plus()
-    {
-        while (fade <= 1)
-        {
-            yield return new WaitForSeconds(0.1f);
-            fade += 0.1f;
-            if (fade > 1)
-            {
-                StopCoroutine(end);
-                fade = 1;
-            }
-            material.SetFloat("_Fade", fade);
-        }
-    }
+    
     //void OnDrawGizmos()
     //{
     //    Gizmos.DrawWireSphere(transform.position, Raduis);
