@@ -1657,7 +1657,6 @@ MonoBehaviour:
   BashPower: 2000
   BashTime: 0.2
   Arrow: {fileID: 1700490614}
-  spriteRenderer: {fileID: 1938563983}
   shield: {fileID: 571837068}
   isLedge: 0
   animatorWeapon: {fileID: 0}
@@ -2094,6 +2093,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 761274379, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: cursorMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 761274379, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: isUseHardwareCursor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 761274379, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: prefabCursor
+      value: 
+      objectReference: {fileID: 1994914800290252609, guid: 592a67b504c168643885fb6032344e16,
+        type: 3}
     - target: {fileID: 6841423363569015480, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: damageSlider
