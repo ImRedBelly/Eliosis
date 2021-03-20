@@ -85,8 +85,8 @@ public class Shop : MonoBehaviour
         maxPriceDamage = Purse.instance.Spend(maxPriceDamage);
         if (Purse.instance.Buy())
         {
-            Weapon weapon = FindObjectOfType<Weapon>();
-            weapon.UpdateMaxDamage(1);
+            ValueManagerPlayer weapon = FindObjectOfType<ValueManagerPlayer>();
+            weapon.bulletValue.UpdateMaxDamage(1); // прокачка урона
         }
 
         ShopOn();

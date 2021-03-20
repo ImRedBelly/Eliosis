@@ -78,12 +78,8 @@ public class Weapon : MonoBehaviour
 
     [Space][Header("Melee Attack")]
     public GameObject cam;
-
-    public Slider damageSlider;
     public Transform attackCheck;
-
     public float damageValue = 1;
-    float sliderMaxValue = 50;
 
     public float MeleeDamage
     {
@@ -94,7 +90,6 @@ public class Weapon : MonoBehaviour
         set
         {
             damageValue = value;
-            damageSlider.value = damageValue;
         }
     }
 
@@ -116,8 +111,6 @@ public class Weapon : MonoBehaviour
         ShowWeapon((int)currentWeapon);
 
 
-        damageSlider.maxValue = sliderMaxValue;
-        damageSlider.value = damageValue;
 
     }
 
@@ -154,7 +147,6 @@ public class Weapon : MonoBehaviour
         direction.z = 0;
 
         float angle = Vector2.SignedAngle(Vector2.right, direction);
-        print(angle);
 
 
         if (controller.isWallSliding && transform.localScale.x < 0)

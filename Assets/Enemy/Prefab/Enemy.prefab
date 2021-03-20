@@ -7219,6 +7219,7 @@ GameObject:
   - component: {fileID: 6458806765693801824}
   - component: {fileID: 6458806765693801817}
   - component: {fileID: 167281900165245410}
+  - component: {fileID: 4598581400878082827}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -7494,6 +7495,18 @@ MonoBehaviour:
     placeShell: {fileID: 3741922105269121554}
     animator: {fileID: 5554035006860908759}
   currentWeapon: 0
+--- !u!114 &4598581400878082827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6458806765693801822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44267a129f744da44ac824d160436add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6458806765719792752
 GameObject:
   m_ObjectHideFlags: 0

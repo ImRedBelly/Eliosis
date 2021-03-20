@@ -764,6 +764,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8198760235230458911, guid: 9e1dfdf491abedd40aa319c3a8b99a70,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 796828212}
+    - target: {fileID: 8198760235230458911, guid: 9e1dfdf491abedd40aa319c3a8b99a70,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 8198760235392905240, guid: 9e1dfdf491abedd40aa319c3a8b99a70,
         type: 3}
       propertyPath: m_IsActive
@@ -1010,6 +1020,15 @@ PrefabInstance:
       propertyPath: weapons.Array.data[0].fireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 761274379, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670903741145323386, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
+      propertyPath: bulletValue.damageSlider
+      value: 
+      objectReference: {fileID: 1843672057}
     - target: {fileID: 6841423363569015481, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: healthSlider
@@ -1088,6 +1107,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4416fc672aa3a4494c2cc64df9f821, type: 3}
+--- !u!114 &796828212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2012978645830568790, guid: 9e1dfdf491abedd40aa319c3a8b99a70,
+    type: 3}
+  m_PrefabInstance: {fileID: 631259744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c23db430443c7944870e6f140aa66d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &818228224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
@@ -3266,6 +3297,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237142115403891393, guid: 18f6b12f122ba8146af1997866d64195,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237142115403891393, guid: 18f6b12f122ba8146af1997866d64195,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237142115403891393, guid: 18f6b12f122ba8146af1997866d64195,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8237142116130750724, guid: 18f6b12f122ba8146af1997866d64195,
         type: 3}

@@ -1774,6 +1774,7 @@ GameObject:
   - component: {fileID: 6841423363569015485}
   - component: {fileID: 520159756}
   - component: {fileID: 6841423363569015463}
+  - component: {fileID: 4670903741145323386}
   - component: {fileID: 6841423363569015483}
   - component: {fileID: 6841423363569015481}
   - component: {fileID: 124108335}
@@ -2020,6 +2021,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4670903741145323386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028025907648731851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d1a51f1b4a0a14eaea28262854bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletValue:
+    damageSlider: {fileID: 0}
+    speed: 20
+    damageBullet: 2
 --- !u!114 &6841423363569015483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,7 +2210,6 @@ MonoBehaviour:
   handfist1: {fileID: 0}
   handfist2: {fileID: 0}
   cam: {fileID: 0}
-  damageSlider: {fileID: 0}
   attackCheck: {fileID: 6841423364383874898}
   damageValue: 1
 --- !u!114 &6841423363569015482
