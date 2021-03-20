@@ -1064,12 +1064,12 @@ PrefabInstance:
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.6
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.8
+      value: 6.9
       objectReference: {fileID: 0}
     - target: {fileID: 9026416277993332329, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
@@ -2318,6 +2318,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 105671617079420929, guid: 069bc3634c2c26f4789d10d0f62004ae,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300060, guid: fee10258c5e73e844b93fb16ac6959d9,
+        type: 3}
+    - target: {fileID: 105671619488419571, guid: 069bc3634c2c26f4789d10d0f62004ae,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300070, guid: fee10258c5e73e844b93fb16ac6959d9,
+        type: 3}
     - target: {fileID: 253831760217251037, guid: 069bc3634c2c26f4789d10d0f62004ae,
         type: 3}
       propertyPath: m_Name
@@ -2378,6 +2390,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 806074540613527067, guid: 069bc3634c2c26f4789d10d0f62004ae,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 100000, guid: a9903a25450340e4cbbe0ea907bda329, type: 3}
+    - target: {fileID: 5958764280542491348, guid: 069bc3634c2c26f4789d10d0f62004ae,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 100000, guid: a9903a25450340e4cbbe0ea907bda329, type: 3}
     - target: {fileID: 8438390848560601260, guid: 069bc3634c2c26f4789d10d0f62004ae,
         type: 3}
       propertyPath: m_Layer

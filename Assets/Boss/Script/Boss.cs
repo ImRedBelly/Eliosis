@@ -24,7 +24,6 @@ public class Boss : MonoBehaviour
     public GameObject shooting;
 
     public GameObject shockWave;
-    public GameObject bullet;
     public Transform positionWave;
 
     public GameObject enemy;
@@ -162,7 +161,7 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            enemy = GameObject.Find("DrawCharacter");
+            enemy = GameObject.Find("Player _Yura");
         }
 
 
