@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
+    public UnityEvent dead;
     [Header("Components")]
     public Rigidbody2D Rigidbody2D;
     public Animator animator;
@@ -238,6 +240,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
+        dead.Invoke();
         CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
         capsule.size = new Vector2(1f, 0.25f);
         capsule.offset = new Vector2(0f, -0.8f);

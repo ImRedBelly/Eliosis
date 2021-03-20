@@ -68,15 +68,17 @@ public class Weapon : MonoBehaviour
 
 
 
-    [Space][Header("Laser Aim")]
+    [Space]
+    [Header("Laser Aim")]
     LineRenderer lr;
-    float rayLaserDistance;
+    float rayLaserDistance = 5;
 
 
 
 
 
-    [Space][Header("Melee Attack")]
+    [Space]
+    [Header("Melee Attack")]
     public GameObject cam;
     public Transform attackCheck;
     public float damageValue = 1;
@@ -98,7 +100,7 @@ public class Weapon : MonoBehaviour
         reversLook = GetComponent<ReversLook>();
         controller = GetComponent<CharacterController2D>();
         player = GetComponent<PlayerMovement>();
-
+        lr = GetComponent<LineRenderer>();
     }
 
     private void Start()
@@ -339,31 +341,41 @@ public class Weapon : MonoBehaviour
 
         //---------- SNIPER
 
-        if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.SNIPER)
+        if (Input.GetButton("Fire1") && currentWeapon == WeaponType.SNIPER)
         {
-            RaycastHit2D rayLaser = Physics2D.Raycast(weapons[(int)currentWeapon].placeFire.position, 
-                                                      weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5 * rayLaserDistance);
+            lr.enabled = true;
+            RaycastHit2D rayLaser = Physics2D.Raycast(weapons[(int)currentWeapon].placeFire.position,
+                                                      weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5);
 
             if (rayLaser)
             {
+                lr.SetPosition(0, weapons[(int)currentWeapon].placeFire.position);
                 lr.SetPosition(1, rayLaser.point);
                 return;
             }
+            else
+            {
+                lr.SetPosition(0, weapons[(int)currentWeapon].placeFire.position);
 
-            lr.SetPosition(1, weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5 * rayLaserDistance);
+                var dir = weapons[(int)currentWeapon].placeFire.position -
+                                                      weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * -100;
+
+                lr.SetPosition(1, dir);
+            }
             return;
         }
 
         if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.SNIPER)
         {
-
+            lr.enabled = false;
+            Shoot();
         }
 
 
         //---------- KNIFE
 
         if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.KNIFE && nextFire <= 0)
-        {       
+        {
             nextFire = weapons[(int)currentWeapon].fireRate;
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
         }

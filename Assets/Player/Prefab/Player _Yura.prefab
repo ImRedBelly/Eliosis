@@ -1084,9 +1084,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trajectoryRenderer: {fileID: 6841423362705581214}
-  grenadePrefab: {fileID: 4200832072341536973, guid: 09f076ed68c22e542b233ac7b2aa02b3,
+  grenadePrefab: {fileID: 6031483753634655041, guid: f90ea296a08948c42b4748e0241838d4,
     type: 3}
+  effectBoom: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
   power: 50
+  damageValue: 5
+  cam: {fileID: 0}
 --- !u!1 &6841423364207951884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2110,7 @@ MonoBehaviour:
   bulletMask: BulletPlayer
   weapons:
   - weaponType: 0
-    fireRate: 0
+    fireRate: 1
     bulletPrefab: {fileID: 0}
     shellPrefab: {fileID: 0}
     flashPrefab: {fileID: 0}
@@ -2232,7 +2235,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9028025907648731851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87a83d6780e8c364db197c3d9244b85f, type: 3}
   m_Name: 

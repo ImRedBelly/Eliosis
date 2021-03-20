@@ -17,6 +17,7 @@ public class ValueManagerPlayer : MonoBehaviour
     {
         bulletValue.StartSlider();
     }
+
     [Serializable]
     public class BulletValue
     {
