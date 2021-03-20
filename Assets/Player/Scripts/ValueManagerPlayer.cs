@@ -21,7 +21,7 @@ public class ValueManagerPlayer : MonoBehaviour
     public class BulletValue
     {
         public Slider damageSlider;
-        float sliderMaxValue = 50;
+        float sliderMaxValue = 30;
 
         public float speed = 20;
         public float damageBullet = 2;

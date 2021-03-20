@@ -2061,7 +2061,7 @@ MonoBehaviour:
   shield: {fileID: 0}
   speedSlider: {fileID: 0}
   runSpeed: 40
-  maxRunSpeed: 140
+  maxRunSpeed: 100
 --- !u!114 &6841423363569015481
 MonoBehaviour:
   m_ObjectHideFlags: 0

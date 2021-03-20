@@ -16,7 +16,7 @@ public class HealthPlayer : MonoBehaviour
     float minHealth = 0;
     float maxHealth = 15;
 
-    float sliderMaxValue = 50; //максимально допустимое значение
+    float sliderMaxValue = 30; //максимально допустимое значение
     public float Life
     {
         get

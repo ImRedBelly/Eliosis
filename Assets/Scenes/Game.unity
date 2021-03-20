@@ -1041,6 +1041,12 @@ PrefabInstance:
       objectReference: {fileID: 1134500371}
     - target: {fileID: 6841423364080703876, guid: 7b4416fc672aa3a4494c2cc64df9f821,
         type: 3}
+      propertyPath: effectBoom
+      value: 
+      objectReference: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
+        type: 3}
+    - target: {fileID: 6841423364080703876, guid: 7b4416fc672aa3a4494c2cc64df9f821,
+        type: 3}
       propertyPath: grenadePrefab
       value: 
       objectReference: {fileID: 6031483753634655041, guid: f90ea296a08948c42b4748e0241838d4,
