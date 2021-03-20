@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
+    ValueManagerPlayer valuePlayer;
+
+
     public TrajectoryRenderer trajectoryRenderer;
     public GameObject grenadePrefab;
     public GameObject effectBoom;
     public float power = 50;
+    public float damageValue = 5;
+    public GameObject cam;
 
     GameObject grenade;
-
+    private void Start()
+    {
+        valuePlayer = ValueManagerPlayer.instance;
+    }
     void Update()
     {
         float enter;
@@ -41,9 +49,28 @@ public class Grenade : MonoBehaviour
             StartCoroutine(Boom());
         }
     }
+    void DoDashDamage()
+    {
+        damageValue = Mathf.Abs(damageValue);
+        Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(grenade.transform.position, 0.9f);
+        for (int i = 0; i < collidersEnemies.Length; i++)
+        {
+            if (collidersEnemies[i].gameObject.tag == "Enemy" || collidersEnemies[i].gameObject.tag == "DeathCopy")
+            {
+                if (collidersEnemies[i].transform.position.x - transform.position.x < 0)
+                {
+                    damageValue = -damageValue;
+                }
+                collidersEnemies[i].gameObject.SendMessage("ApplyDamage", valuePlayer.bulletValue.damageBullet * 3);
+                cam.GetComponent<CameraFollow>().ShakeCamera();
+            }
+        }
+    }
+
     IEnumerator Boom()
     {
         yield return new WaitForSeconds(2f);
+        DoDashDamage();
         Instantiate(effectBoom, grenade.transform.position, Quaternion.identity);
         Destroy(grenade);
     }
