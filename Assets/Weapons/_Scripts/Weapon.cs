@@ -68,8 +68,7 @@ public class Weapon : MonoBehaviour
 
 
 
-    [Space]
-    [Header("Laser Aim")]
+    [Space][Header("Laser Aim")]
     LineRenderer lr;
     float rayLaserDistance;
 
@@ -134,7 +133,6 @@ public class Weapon : MonoBehaviour
         ChangeDirection();
 
         CheckFire();
-
     }
 
 

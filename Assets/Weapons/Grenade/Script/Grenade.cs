@@ -22,7 +22,7 @@ public class Grenade : MonoBehaviour
         if (Input.GetKey(KeyCode.G))
         {
             trajectoryRenderer.gameObject.SetActive(true);
-            trajectoryRenderer.ShowTrajectory(transform.position, -speed);
+            trajectoryRenderer.ShowTrajectory(transform.position, speed);
         }
 
 
@@ -35,15 +35,15 @@ public class Grenade : MonoBehaviour
         {
             trajectoryRenderer.gameObject.SetActive(false);
             Rigidbody2D grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-            grenade.AddForce(-speed, ForceMode2D.Impulse);
+            grenade.AddForce(speed, ForceMode2D.Impulse);
             StartCoroutine(IsTrigger(grenade.gameObject));
         }
     }
 
     IEnumerator IsTrigger(GameObject grenade)
     {
-        grenade.GetComponent<CircleCollider2D>().isTrigger = true;
+        grenade.GetComponent<CapsuleCollider2D>().isTrigger = true;
         yield return new WaitForSeconds(0.1f);
-        grenade.GetComponent<CircleCollider2D>().isTrigger = false;
+        grenade.GetComponent<CapsuleCollider2D>().isTrigger = false;
     }
 }
