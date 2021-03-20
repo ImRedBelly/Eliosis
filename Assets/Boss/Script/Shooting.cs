@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
             GameObject throwable = Instantiate(bullet, new Vector2(Random.Range(0, 30), transform.position.y), Quaternion.identity);
-            throwable.GetComponent<ThrowableProjectile>().direction = -transform.up;
+            throwable.GetComponent<ElectricBullet>().direction = -transform.up;
 
             StopAllCoroutines();
         }
