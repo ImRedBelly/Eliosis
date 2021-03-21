@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
     public float snipeDist = 15f;
 
     private bool meleeAttack = false;            //проверка ножа и пушки
-    float timerShoot = 2f;
 
     public BossState activState;
     public enum BossState
@@ -59,18 +58,15 @@ public class EnemyController : MonoBehaviour
             if (isSniper)
             {
                 Idle();
-                Vector2 directionPlayer = enemy.transform.position - transform.position;
 
                 if (Mathf.Abs(distToPlayer) < snipeDist)
-                {
-                    if (timerShoot < 0)
-                    {
-                        timerShoot = 4;
-                    }
-                    else
-                        timerShoot -= Time.deltaTime;
-                }
+                    enemyWeapon.CheckFire();
 
+
+                // СДЕЛАТЬ ТАЙММЕР ДЛЯ ЛАЗЕРА, обычно включен, а при выстреле выключается чЧЕРЕЗ КОРОТИНУ
+                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
+                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
+                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
             }
             else
             {
@@ -186,7 +182,7 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    
+
     IEnumerator DestroyEnemy()
     {
         CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
