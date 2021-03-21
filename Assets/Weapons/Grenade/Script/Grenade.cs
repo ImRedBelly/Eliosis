@@ -6,8 +6,11 @@ public class Grenade : MonoBehaviour
 {
     ValueManagerPlayer valuePlayer;
 
+    public RTrajectotyTwo trajectoryRenderer;
 
-    public TrajectoryRenderer trajectoryRenderer;
+
+
+
     public GameObject grenadePrefab;
     public GameObject effectBoom;
     public float power = 50;
@@ -28,6 +31,8 @@ public class Grenade : MonoBehaviour
 
         Vector3 speed = (mouseInWorld - transform.position);
 
+
+
         if (Input.GetKey(KeyCode.G))
         {
             trajectoryRenderer.gameObject.SetActive(true);
@@ -37,7 +42,6 @@ public class Grenade : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-
         }
 
         if (Input.GetKeyUp(KeyCode.G))
@@ -45,6 +49,7 @@ public class Grenade : MonoBehaviour
             trajectoryRenderer.gameObject.SetActive(false);
             grenade = Instantiate(grenadePrefab, transform.position, Quaternion.identity);
             grenade.GetComponent<Rigidbody2D>().AddForce(speed, ForceMode2D.Impulse);
+            trajectoryRenderer.AddBody(grenade.GetComponent<Rigidbody2D>());
             StartCoroutine(IsTrigger(grenade.gameObject));
             StartCoroutine(Boom());
         }
@@ -69,6 +74,7 @@ public class Grenade : MonoBehaviour
 
     IEnumerator Boom()
     {
+        trajectoryRenderer.RemoveBody(grenade.GetComponent<Rigidbody2D>());
         yield return new WaitForSeconds(2f);
         DoDashDamage();
         Instantiate(effectBoom, grenade.transform.position, Quaternion.identity);
@@ -76,7 +82,6 @@ public class Grenade : MonoBehaviour
     }
     IEnumerator IsTrigger(GameObject grenade)
     {
-        grenade.GetComponent<CapsuleCollider2D>().isTrigger = true;
         yield return new WaitForSeconds(0.1f);
         grenade.GetComponent<CapsuleCollider2D>().isTrigger = false;
     }

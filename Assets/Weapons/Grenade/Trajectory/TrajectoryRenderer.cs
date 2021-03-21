@@ -5,6 +5,10 @@ using UnityEngine;
 public class TrajectoryRenderer : MonoBehaviour
 {
     public LineRenderer lineRenderer;
+    private void Start()
+    {
+        
+    }
     public void ShowTrajectory(Vector3 origin, Vector3 speed)
     {
         Vector3[] points = new Vector3[100];

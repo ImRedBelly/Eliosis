@@ -86,7 +86,7 @@ public class Boss : MonoBehaviour
                         int randomAct = Random.Range(0, 2);
                         if (randomAct == 0)
                         {
-                            print("0");
+                           // print("0");
 
                             activState = BossState.MELEEEASYATTACK;
 
@@ -95,7 +95,7 @@ public class Boss : MonoBehaviour
                         }
                         else if (randomAct == 1)
                         {
-                            print("1");
+                           // print("1");
 
                             activState = BossState.MELEEHARDATTACK;
 
