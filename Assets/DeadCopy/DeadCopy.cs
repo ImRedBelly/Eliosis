@@ -8,6 +8,7 @@ public class DeadCopy : MonoBehaviour
 
     [Header("Components")]
     public Animator animator;
+    public Animator weaponAnimator;
 
     [Header("Options")]
     public float life = 10;
@@ -68,7 +69,11 @@ public class DeadCopy : MonoBehaviour
                 if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist && Mathf.Abs(distToPlayerY) < 2f) // Melee Damage
                 {
                     if (canAttack)
+                    {
+                        weaponAnimator.SetTrigger("IsAttacking");
                         MeleeAttack();
+                    }
+
                 }
             }
 
@@ -98,7 +103,8 @@ public class DeadCopy : MonoBehaviour
 
     public void MeleeAttack()
     {
-        //animator.SetBool("Attack", true);
+
+
         Collider2D[] collidersEnemies = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
         for (int i = 0; i < collidersEnemies.Length; i++)
         {
@@ -136,7 +142,7 @@ public class DeadCopy : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        // animator.SetBool("IsDead", true);
+        animator.SetBool("IsDead", true);
         PlayerMovement.instance.GetComponent<Purse>().TakeMoney(money);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
