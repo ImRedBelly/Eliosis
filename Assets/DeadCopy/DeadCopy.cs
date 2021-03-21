@@ -32,7 +32,7 @@ public class DeadCopy : MonoBehaviour
     [Header("Fly Fire")]
     public GameObject[] fire;
 
-
+    public GameObject deadEffect;
     Rigidbody2D rb;
     private void Awake()
     {
@@ -55,7 +55,7 @@ public class DeadCopy : MonoBehaviour
             distToPlayer = enemy.transform.position.x - transform.position.x;
             distToPlayerY = enemy.transform.position.y - transform.position.y;
 
-            isEnemy = Physics2D.OverlapCircle(transform.position, 5, enemyMask);
+            isEnemy = Physics2D.OverlapCircle(transform.position, 10, enemyMask);
             print(isEnemy);
 
             for (int i = 0; i < fire.Length; i++)
@@ -94,7 +94,7 @@ public class DeadCopy : MonoBehaviour
 
     private void Remove()
     {
-        RTrajectotyTwo trajectoryRenderer = FindObjectOfType<RTrajectotyTwo>();
+        TrajectoryRenderer trajectoryRenderer = FindObjectOfType<TrajectoryRenderer>();
         trajectoryRenderer.RemoveBody(rb);
     }
     void Flip()
@@ -155,9 +155,11 @@ public class DeadCopy : MonoBehaviour
     IEnumerator DestroyEnemy()
     {
         Remove();
-        animator.SetBool("IsDead", true);
         PlayerMovement.instance.GetComponent<Purse>().TakeMoney(money);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
+        Instantiate(deadEffect, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
+        yield return new WaitForSeconds(0.1f);
+
         Destroy(gameObject);
     }
 
@@ -167,6 +169,6 @@ public class DeadCopy : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 5);
+        Gizmos.DrawWireSphere(transform.position, 10);
     }
 }

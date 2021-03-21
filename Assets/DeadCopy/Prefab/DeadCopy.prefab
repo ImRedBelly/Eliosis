@@ -595,6 +595,7 @@ MonoBehaviour:
   fire:
   - {fileID: 9150095011517546894}
   - {fileID: 6093146468607867233}
+  deadEffect: {fileID: 1280141305896002, guid: 987b7da36284f234598f1f78e82e7ecc, type: 3}
 --- !u!1 &4255850023718208071
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Grenade : MonoBehaviour
 {
     ValueManagerPlayer valuePlayer;
 
-    public RTrajectotyTwo trajectoryRenderer;
+    public TrajectoryRenderer trajectoryRenderer;
 
 
 
