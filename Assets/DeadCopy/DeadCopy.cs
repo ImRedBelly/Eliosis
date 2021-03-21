@@ -56,7 +56,6 @@ public class DeadCopy : MonoBehaviour
             distToPlayerY = enemy.transform.position.y - transform.position.y;
 
             isEnemy = Physics2D.OverlapCircle(transform.position, 10, enemyMask);
-            print(isEnemy);
 
             for (int i = 0; i < fire.Length; i++)
             {
@@ -92,11 +91,7 @@ public class DeadCopy : MonoBehaviour
         }
     }
 
-    private void Remove()
-    {
-        TrajectoryRenderer trajectoryRenderer = FindObjectOfType<TrajectoryRenderer>();
-        trajectoryRenderer.RemoveBody(rb);
-    }
+    
     void Flip()
     {
         facingRight = !facingRight;
@@ -164,7 +159,11 @@ public class DeadCopy : MonoBehaviour
     }
 
 
-
+    private void Remove()
+    {
+        TrajectoryRenderer trajectoryRenderer = FindObjectOfType<TrajectoryRenderer>();
+        trajectoryRenderer.RemoveBody(rb);
+    }
 
     private void OnDrawGizmos()
     {

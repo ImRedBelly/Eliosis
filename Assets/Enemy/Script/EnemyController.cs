@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     public Transform attackCheck;
 
     public GameObject enemy;
-    public GameObject bullet;
+    //public GameObject bullet;
 
     private float distToPlayer;
 
@@ -155,11 +155,11 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    public void ShootAttack(Vector2 position)
-    {
-        GameObject throwable = Instantiate(bullet, attackCheck.position, Quaternion.identity);
-        throwable.GetComponent<ElectricBullet>().direction = position;
-    }
+    //public void ShootAttack(Vector2 position)
+    //{
+    //    GameObject throwable = Instantiate(bullet, attackCheck.position, Quaternion.identity);
+    //    throwable.GetComponent<ElectricBullet>().direction = position;
+    //}
 
     public void MeleeAttack()
     {

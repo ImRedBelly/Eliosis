@@ -7408,7 +7408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cbf1748c873d54e9da70d71d269003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSniper: 0
+  isSniper: 1
   Rigidbody2D: {fileID: 6417741307387342650}
   animator: {fileID: 6408698185579979566}
   animatorWeapon: {fileID: 0}
@@ -7507,6 +7507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44267a129f744da44ac824d160436add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletValue:
+    speed: 20
+    damageBullet: 1
 --- !u!1 &6458806765719792752
 GameObject:
   m_ObjectHideFlags: 0

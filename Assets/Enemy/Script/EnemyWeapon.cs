@@ -57,7 +57,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         numberOfWeapons = Enum.GetNames(typeof(WeaponType)).Length;
 
-        currentWeapon = WeaponType.SHOTGUN;
+        currentWeapon = WeaponType.SNIPER;
 
         SetWeaponAnimator((int)currentWeapon);
         ShowWeapon((int)currentWeapon);

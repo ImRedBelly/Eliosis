@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrajectoryRenderer : MonoBehaviour
 {
+    public static TrajectoryRenderer instance;
     public LineRenderer lineRenderer;
     public GameObject grenadePrefab;
     GameObject grenade;
@@ -11,6 +12,11 @@ public class TrajectoryRenderer : MonoBehaviour
     private Dictionary<Rigidbody2D, BodyData> saveBodies = new Dictionary<Rigidbody2D, BodyData>();
 
     Vector3[] maxPoints = new Vector3[100];
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
     private void Start()
     {
         foreach (var rb in FindObjectsOfType<Rigidbody2D>())
