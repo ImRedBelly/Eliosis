@@ -55,11 +55,19 @@ public class Bullet : MonoBehaviour
             collision.gameObject.SendMessage("ApplyDamage", valuePlayer.bulletValue.damageBullet);
             Destroy(platform, 1f);
         }
+        //Remove();
         Destroy(gameObject);
     }
 
+    //private void Remove()
+    //{
+    //    RTrajectotyTwo trajectoryRenderer = FindObjectOfType<RTrajectotyTwo>();
+    //    trajectoryRenderer.RemoveBody(rb);
+    //}
+
     private void OnBecameInvisible()
     {
+       // Remove();
         Destroy(gameObject);
     }
 }
