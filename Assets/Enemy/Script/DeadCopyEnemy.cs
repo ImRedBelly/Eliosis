@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class DeadCopyEnemy : MonoBehaviour
 {
+    public SpriteRenderer spriteHead;
+    public SpriteRenderer spriteBody;
     public Transform[] bodyParts;
     public GameObject deadEffect;
 
     void Start()
     {
+
         for (int i = 0; i < bodyParts.Length; i++)
         {
             bodyParts[i].GetComponent<Rigidbody2D>().AddForce(transform.up * Random.Range(5, 10), ForceMode2D.Impulse);
@@ -16,6 +19,7 @@ public class DeadCopyEnemy : MonoBehaviour
         }
         StartCoroutine(Dead());
     }
+
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(0.5f);

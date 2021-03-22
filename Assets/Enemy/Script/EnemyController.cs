@@ -49,6 +49,7 @@ public class EnemyController : MonoBehaviour
     }
 
     [Header("Dead Effect")]
+    public SpriteRenderer[] spriteForDeadCopy;
     public GameObject deadCopy;
 
     float time = 0;
@@ -222,7 +223,10 @@ public class EnemyController : MonoBehaviour
     void DestroyEnemy()
     {
         
-        Instantiate(deadCopy, transform.position, Quaternion.identity);
+        GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
+        Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
+        Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
+
         Destroy(gameObject);
 
 

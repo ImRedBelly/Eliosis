@@ -7432,13 +7432,11 @@ MonoBehaviour:
   shootDist: 10
   snipeDist: 15
   activState: 0
-  bodyParts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  spriteForDeadCopy:
+  - {fileID: 6580018451414583152}
+  - {fileID: 6580018450083324290}
+  deadCopy: {fileID: 6458806765693801822, guid: ff34ea8cf9345bc4cb324e7e699e7707,
+    type: 3}
 --- !u!114 &167281900165245410
 MonoBehaviour:
   m_ObjectHideFlags: 0
