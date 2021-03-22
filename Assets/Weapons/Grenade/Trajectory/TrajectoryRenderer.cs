@@ -57,7 +57,7 @@ public class TrajectoryRenderer : MonoBehaviour
             Physics2D.Simulate(Time.fixedDeltaTime);
             if (i < 5)
             {
-                grenade.GetComponent<CapsuleCollider2D>().isTrigger = false;
+                grenade.GetComponent<CircleCollider2D>().isTrigger = false;
             }
             maxPoints[i] = grenade.transform.position;
         }

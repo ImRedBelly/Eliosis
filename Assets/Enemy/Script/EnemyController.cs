@@ -4,11 +4,13 @@ using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header("Sniper Options")]
     public bool isSniper;
+    bool isShotSniper = true;
+    public float[] patrolAngles;
     public GameObject rootSniper;
+    public LayerMask player;
 
-
-    float timeLaser = 4;
     [Header("Components")]
     public Animator animator;
     public Rigidbody2D Rigidbody2D;
@@ -28,7 +30,6 @@ public class EnemyController : MonoBehaviour
     public Transform placeFire;
 
     public GameObject enemy;
-    //public GameObject bullet;
 
     private float distToPlayer;
 
@@ -47,6 +48,9 @@ public class EnemyController : MonoBehaviour
         SHOOT
     }
 
+    [Header("Dead Effect")]
+    public GameObject deadCopy;
+
     float time = 0;
     private void Start()
     {
@@ -57,7 +61,7 @@ public class EnemyController : MonoBehaviour
     {
 
         if (life <= 0)
-            StartCoroutine(DestroyEnemy());
+            DestroyEnemy();
 
         else if (enemy != null)
         {
@@ -66,17 +70,7 @@ public class EnemyController : MonoBehaviour
             if (isSniper)
             {
                 Idle();
-                time += Time.deltaTime;
-                rootSniper.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, 30), Quaternion.Euler(0, 0, -30), Mathf.Abs(Mathf.Sin(time * 0.5f)));
-
-                //if (Mathf.Abs(distToPlayer) < snipeDist)
-                // ShotSniper();
-
-
-                // СДЕЛАТЬ ТАЙММЕР ДЛЯ ЛАЗЕРА, обычно включен, а при выстреле выключается чЧЕРЕЗ КОРОТИНУ
-                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
-                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
-                // ТУТ НАДО СДЕЛАТЬ ЛАЗЕР ВРАГУ
+                ShotSniper();
             }
             else
             {
@@ -161,12 +155,6 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    //public void ShootAttack(Vector2 position)
-    //{
-    //    GameObject throwable = Instantiate(bullet, attackCheck.position, Quaternion.identity);
-    //    throwable.GetComponent<ElectricBullet>().direction = position;
-    //}
-
     public void MeleeAttack()
     {
         Collider2D[] player = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
@@ -194,52 +182,60 @@ public class EnemyController : MonoBehaviour
 
     void ShotSniper()
     {
+        var directionToEndPoint = placeFire.position - placeFire.right * transform.localScale.x * -50; // конечная точка луча если не видит игрока
+        var directionToPlayer = placeFire.transform.position - directionToEndPoint; //расстояние RayCast до игрока
 
-        if (timeLaser > 0)
+        RaycastHit2D hit = Physics2D.Raycast(placeFire.position, placeFire.right * transform.localScale.x * 4, directionToPlayer.magnitude, player);
+
+        if (hit.collider != null)
         {
-            timeLaser -= Time.deltaTime;
-            lineRenderer.enabled = true;
-
-            RaycastHit2D rayLaser = Physics2D.Raycast(placeFire.position, placeFire.right * transform.localScale.x * 4);
-
-            if (rayLaser)
+            if (isShotSniper)
+                StartCoroutine(TimerShotSniper());
+            else    // нацеливает луч на игрока если тот попадает на луч
             {
-                lineRenderer.SetPosition(0, placeFire.position);
-                lineRenderer.SetPosition(1, rayLaser.point);
-            }
-            else
-            {
-                lineRenderer.SetPosition(0, placeFire.position);
-                var dir = placeFire.position - placeFire.right * transform.localScale.x * -100;
-
-                lineRenderer.SetPosition(1, dir);
+                Vector2 directionToPlayerOffLerp = enemy.transform.position - placeFire.transform.position;
+                directionToPlayerOffLerp.y += 1;
+                rootSniper.transform.right = directionToPlayerOffLerp;
             }
         }
         else
         {
-            lineRenderer.enabled = false;
-            enemyWeapon.Shoot();
-            timeLaser = 4;
-            // StartCoroutine(Timer());
+            time += Time.deltaTime;
+            rootSniper.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, patrolAngles[0]), Quaternion.Euler(0, 0, patrolAngles[1]), Mathf.Abs(Mathf.Sin(time * 0.5f)));
         }
+        lineRenderer.SetPosition(0, placeFire.position);
+        lineRenderer.SetPosition(1, directionToEndPoint);
     }
 
-    IEnumerator Timer()
+    IEnumerator TimerShotSniper()
     {
+        isShotSniper = false;
+
         yield return new WaitForSeconds(1);
-
-    }
-    IEnumerator DestroyEnemy()
-    {
-        CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
-        capsule.size = new Vector2(1f, 0.25f);
-        capsule.offset = new Vector2(0f, -0.8f);
-        capsule.direction = CapsuleDirection2D.Horizontal;
-        transform.GetComponent<Animator>().SetBool("IsDead", true);
+        lineRenderer.enabled = false;
         yield return new WaitForSeconds(0.25f);
-        Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
-        yield return new WaitForSeconds(1f);
+        enemyWeapon.Shoot();
+
+        lineRenderer.enabled = true;
+        isShotSniper = true;
+    }
+    void DestroyEnemy()
+    {
+        
+        Instantiate(deadCopy, transform.position, Quaternion.identity);
         Destroy(gameObject);
+
+
+
+        //CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
+        //capsule.size = new Vector2(1f, 0.25f);
+        //capsule.offset = new Vector2(0f, -0.8f);
+        //capsule.direction = CapsuleDirection2D.Horizontal;
+        //transform.GetComponent<Animator>().SetBool("IsDead", true);
+        //yield return new WaitForSeconds(0.25f);
+        //Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
+        //yield return new WaitForSeconds(1f);
+        //Destroy(gameObject);
     }
 }
 

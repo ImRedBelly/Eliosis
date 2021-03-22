@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6031483753634655040}
-  - component: {fileID: 7575816982657758391}
   - component: {fileID: 5902983929000765003}
   - component: {fileID: -5277801721889250880}
+  - component: {fileID: -1182187405233023517}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -35,22 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &7575816982657758391
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6031483753634655041}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 430dbef61b4ad504ebd96cfdcd191a3f, type: 2}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.27020648, y: 0.7601929}
-  m_Size: {x: 1.5808182, y: 2.5511677}
-  m_Direction: 0
 --- !u!50 &5902983929000765003
 Rigidbody2D:
   serializedVersion: 4
@@ -89,6 +73,22 @@ MonoBehaviour:
   damageValue: 5
   power: 50
   cam: {fileID: 0}
+--- !u!58 &-1182187405233023517
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031483753634655041}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 430dbef61b4ad504ebd96cfdcd191a3f, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.25854865, y: 0.78964233}
+  serializedVersion: 2
+  m_Radius: 1.0869852
 --- !u!1 &6031483754038361883
 GameObject:
   m_ObjectHideFlags: 0

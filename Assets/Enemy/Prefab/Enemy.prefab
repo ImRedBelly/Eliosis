@@ -7410,7 +7410,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSniper: 1
+  patrolAngles:
+  - 30
+  - -30
   rootSniper: {fileID: 2984873875475206753}
+  player:
+    serializedVersion: 2
+    m_Bits: 256
   animator: {fileID: 6408698185579979566}
   Rigidbody2D: {fileID: 6417741307387342650}
   animatorWeapon: {fileID: 0}
@@ -7426,6 +7432,13 @@ MonoBehaviour:
   shootDist: 10
   snipeDist: 15
   activState: 0
+  bodyParts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &167281900165245410
 MonoBehaviour:
   m_ObjectHideFlags: 0

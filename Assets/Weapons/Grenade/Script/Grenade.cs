@@ -55,6 +55,6 @@ public class Grenade : MonoBehaviour
     IEnumerator IsTrigger(GameObject grenade)
     {
         yield return new WaitForSeconds(0.1f);
-        grenade.GetComponent<CapsuleCollider2D>().isTrigger = false;
+        grenade.GetComponent<CircleCollider2D>().isTrigger = false;
     }
 }
