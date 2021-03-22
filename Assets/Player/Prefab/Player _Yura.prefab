@@ -94,17 +94,17 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8867924, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0.792252, b: 0.06132078, a: 1}
-      key2: {r: 1, g: 0.71985435, b: 0, a: 0}
+      key0: {r: 0.9245283, g: 0, b: 0.21741681, a: 1}
+      key1: {r: 0.9245283, g: 0, b: 0.21741681, a: 1}
+      key2: {r: 1, g: 0.792252, b: 0.06132078, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 64825
-      ctime2: 65535
+      ctime1: 65535
+      ctime2: 64825
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -119,7 +119,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 3
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -463,6 +463,36 @@ Transform:
   - {fileID: 9028151800440230701}
   m_Father: {fileID: 2265482188276482962}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3281196614677596861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8588222054122189724}
+  m_Layer: 8
+  m_Name: Rocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8588222054122189724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3281196614677596861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52, y: 6.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9026416277423124465}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3489316578732736857
 GameObject:
@@ -1088,10 +1118,6 @@ MonoBehaviour:
   trajectoryRenderer: {fileID: 197592988}
   grenadePrefab: {fileID: 6031483753634655041, guid: f90ea296a08948c42b4748e0241838d4,
     type: 3}
-  effectBoom: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
-  power: 50
-  damageValue: 5
-  cam: {fileID: 0}
 --- !u!1 &6841423364207951884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1812,7 @@ GameObject:
   - component: {fileID: 520159751}
   - component: {fileID: 6841423363569015482}
   - component: {fileID: 1376555370}
+  - component: {fileID: 2046448618896675287}
   m_Layer: 8
   m_Name: Player _Yura
   m_TagString: Player
@@ -2327,6 +2354,28 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &2046448618896675287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028025907648731851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c997286dfdc2994f933938a74a16866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsNumbers: 6
+  placeRocket: {fileID: 8588222054122189724}
+  prefabAimRocket: {fileID: 2346602570528084914, guid: 535fae34688281d4eb29da8dccf2490c,
+    type: 3}
+  prefabRocket: {fileID: 1423813174171091651, guid: 239f5f49cd02dcb47b0cc1e31d9bd567,
+    type: 3}
+  prefabBoom: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  damageValue: 5
+  power: 50
+  cam: {fileID: 0}
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,6 +5292,7 @@ Transform:
   - {fileID: 9026416276487792141}
   - {fileID: 5556961674575053780}
   - {fileID: 2265482188276482962}
+  - {fileID: 8588222054122189724}
   m_Father: {fileID: 9026416277993332329}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

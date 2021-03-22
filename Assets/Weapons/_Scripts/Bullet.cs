@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         valuePlayer = ValueManagerPlayer.instance;
         valueEnemy = ValueManagerEnemy.instance;
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Start()

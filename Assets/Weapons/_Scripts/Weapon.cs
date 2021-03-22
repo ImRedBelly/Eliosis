@@ -351,7 +351,6 @@ public class Weapon : MonoBehaviour
             {
                 lr.SetPosition(0, weapons[(int)currentWeapon].placeFire.position);
                 lr.SetPosition(1, rayLaser.point);
-                return;
             }
             else
             {
