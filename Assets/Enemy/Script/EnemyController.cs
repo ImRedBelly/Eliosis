@@ -5,12 +5,17 @@ using System.Collections.Generic;
 public class EnemyController : MonoBehaviour
 {
     public bool isSniper;
+    public GameObject rootSniper;
 
+
+    float timeLaser = 4;
     [Header("Components")]
-    public Rigidbody2D Rigidbody2D;
     public Animator animator;
+    public Rigidbody2D Rigidbody2D;
     public Animator animatorWeapon;
     public EnemyWeapon enemyWeapon;
+
+    public LineRenderer lineRenderer;
 
     [Header("Options")]
     public float life = 5;
@@ -20,6 +25,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attack")]
     public Transform attackCheck;
+    public Transform placeFire;
 
     public GameObject enemy;
     //public GameObject bullet;
@@ -40,6 +46,8 @@ public class EnemyController : MonoBehaviour
         MELEEATTACK,
         SHOOT
     }
+
+    float time = 0;
     private void Start()
     {
         activState = BossState.IDLE;
@@ -58,9 +66,11 @@ public class EnemyController : MonoBehaviour
             if (isSniper)
             {
                 Idle();
+                time += Time.deltaTime;
+                rootSniper.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, 30), Quaternion.Euler(0, 0, -30), Mathf.Abs(Mathf.Sin(time * 0.5f)));
 
-                if (Mathf.Abs(distToPlayer) < snipeDist)
-                    enemyWeapon.CheckFire();
+                //if (Mathf.Abs(distToPlayer) < snipeDist)
+                // ShotSniper();
 
 
                 // СДЕЛАТЬ ТАЙММЕР ДЛЯ ЛАЗЕРА, обычно включен, а при выстреле выключается чЧЕРЕЗ КОРОТИНУ
@@ -182,7 +192,43 @@ public class EnemyController : MonoBehaviour
     }
 
 
+    void ShotSniper()
+    {
 
+        if (timeLaser > 0)
+        {
+            timeLaser -= Time.deltaTime;
+            lineRenderer.enabled = true;
+
+            RaycastHit2D rayLaser = Physics2D.Raycast(placeFire.position, placeFire.right * transform.localScale.x * 4);
+
+            if (rayLaser)
+            {
+                lineRenderer.SetPosition(0, placeFire.position);
+                lineRenderer.SetPosition(1, rayLaser.point);
+            }
+            else
+            {
+                lineRenderer.SetPosition(0, placeFire.position);
+                var dir = placeFire.position - placeFire.right * transform.localScale.x * -100;
+
+                lineRenderer.SetPosition(1, dir);
+            }
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+            enemyWeapon.Shoot();
+            timeLaser = 4;
+            // StartCoroutine(Timer());
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(1);
+
+    }
     IEnumerator DestroyEnemy()
     {
         CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
