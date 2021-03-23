@@ -1,0 +1,2000 @@
+fileFormatVersion: 2
+guid: 644240d007080f2459183ca3586e02c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 736013416173110442
+    second: weapon constructor_0
+  - first:
+      213: -3475762414737797270
+    second: weapon constructor_1
+  - first:
+      213: 6241739470401814890
+    second: weapon constructor_2
+  - first:
+      213: -4760407621749281861
+    second: weapon constructor_3
+  - first:
+      213: -8470770416775633072
+    second: weapon constructor_4
+  - first:
+      213: 2636168550265738811
+    second: weapon constructor_5
+  - first:
+      213: 1218823479825042925
+    second: weapon constructor_6
+  - first:
+      213: -8316319650028106223
+    second: weapon constructor_7
+  - first:
+      213: -2584825629155201559
+    second: weapon constructor_8
+  - first:
+      213: 6177990674235999294
+    second: weapon constructor_9
+  - first:
+      213: -7127510809702960871
+    second: weapon constructor_10
+  - first:
+      213: 628815684306991172
+    second: weapon constructor_11
+  - first:
+      213: 5652846849810499830
+    second: weapon constructor_12
+  - first:
+      213: -5172811578834871
+    second: weapon constructor_13
+  - first:
+      213: 433983052369643411
+    second: weapon constructor_14
+  - first:
+      213: 5919341621792268698
+    second: weapon constructor_15
+  - first:
+      213: -3227161817849308580
+    second: weapon constructor_16
+  - first:
+      213: 5533266534086789111
+    second: weapon constructor_17
+  - first:
+      213: 8373245468843610951
+    second: weapon constructor_18
+  - first:
+      213: -3996269761226759341
+    second: weapon constructor_19
+  - first:
+      213: -4988299887703535910
+    second: weapon constructor_20
+  - first:
+      213: -2427063791057242896
+    second: weapon constructor_21
+  - first:
+      213: -1473221948415802354
+    second: weapon constructor_22
+  - first:
+      213: 1007042918037118157
+    second: weapon constructor_23
+  - first:
+      213: -890325005832699438
+    second: weapon constructor_24
+  - first:
+      213: -6828424096336777556
+    second: weapon constructor_25
+  - first:
+      213: -8760090715501723878
+    second: weapon constructor_26
+  - first:
+      213: 6800174195418804610
+    second: weapon constructor_27
+  - first:
+      213: -4576893502855820718
+    second: weapon constructor_28
+  - first:
+      213: -3238746387937300548
+    second: weapon constructor_29
+  - first:
+      213: 8225215694561731453
+    second: weapon constructor_30
+  - first:
+      213: -5882820915151883987
+    second: weapon constructor_31
+  - first:
+      213: -4325844687627774739
+    second: weapon constructor_32
+  - first:
+      213: 8547922497952607900
+    second: weapon constructor_33
+  - first:
+      213: -8194295309615335145
+    second: weapon constructor_34
+  - first:
+      213: -6054976789065456109
+    second: weapon constructor_35
+  - first:
+      213: 1373212937038615166
+    second: weapon constructor_36
+  - first:
+      213: -4542739333135427215
+    second: weapon constructor_37
+  - first:
+      213: -8325154947229078907
+    second: weapon constructor_38
+  - first:
+      213: -7728967148048108506
+    second: weapon constructor_39
+  - first:
+      213: 1770538019662623985
+    second: weapon constructor_40
+  - first:
+      213: -4211028661879358974
+    second: weapon constructor_41
+  - first:
+      213: 8033242295771288148
+    second: weapon constructor_42
+  - first:
+      213: -2174010119351532687
+    second: weapon constructor_43
+  - first:
+      213: -5716473470838105675
+    second: weapon constructor_44
+  - first:
+      213: 4105192570906718590
+    second: weapon constructor_45
+  - first:
+      213: 6868695191122231824
+    second: weapon constructor_46
+  - first:
+      213: -7700685767039355756
+    second: weapon constructor_47
+  - first:
+      213: -8785115018040518831
+    second: weapon constructor_48
+  - first:
+      213: 8778197506683615503
+    second: weapon constructor_49
+  - first:
+      213: 886012200841490798
+    second: weapon constructor_50
+  - first:
+      213: 2451279757725685553
+    second: weapon constructor_51
+  - first:
+      213: -2228337104868337263
+    second: weapon constructor_52
+  - first:
+      213: 2757800353899264298
+    second: weapon constructor_53
+  - first:
+      213: -728563187482296908
+    second: weapon constructor_54
+  - first:
+      213: 4888907572373901994
+    second: weapon constructor_55
+  - first:
+      213: 472954297441465912
+    second: weapon constructor_56
+  - first:
+      213: 867698829798990286
+    second: weapon constructor_57
+  - first:
+      213: 5987921075508789078
+    second: weapon constructor_58
+  - first:
+      213: 3089913686612515085
+    second: weapon constructor_59
+  - first:
+      213: -1972339830691911673
+    second: weapon constructor_60
+  - first:
+      213: 7247275029606559965
+    second: weapon constructor_61
+  - first:
+      213: 1517030756527545036
+    second: weapon constructor_62
+  - first:
+      213: -7940934080676835175
+    second: weapon constructor_63
+  - first:
+      213: -3047000701568946311
+    second: weapon constructor_64
+  - first:
+      213: 4456138021394501742
+    second: weapon constructor_65
+  - first:
+      213: 7405781851139337199
+    second: weapon constructor_66
+  - first:
+      213: 5968198475162639728
+    second: weapon constructor_67
+  - first:
+      213: 4582249176226259598
+    second: weapon constructor_68
+  - first:
+      213: 6394103969574701791
+    second: weapon constructor_69
+  - first:
+      213: 1245329802302004472
+    second: weapon constructor_70
+  - first:
+      213: 6683417795714778475
+    second: weapon constructor_71
+  - first:
+      213: 3940332298564001629
+    second: weapon constructor_72
+  - first:
+      213: 2327056958783003644
+    second: weapon constructor_73
+  - first:
+      213: 7533315773613764764
+    second: weapon constructor_74
+  - first:
+      213: -5284774796394048079
+    second: weapon constructor_75
+  - first:
+      213: -7423482458552766687
+    second: weapon constructor_76
+  - first:
+      213: -5173130443533350834
+    second: weapon constructor_77
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: weapon constructor_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4575
+        width: 644
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa48bec6d48d63a00800000000000000
+      internalID: 736013416173110442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_1
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 4592
+        width: 548
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f46e9cf7c93cfc0800000000000000
+      internalID: -3475762414737797270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_2
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 4847
+        width: 1518
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61c5d96afc1f9650800000000000000
+      internalID: 6241739470401814890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_3
+      rect:
+        serializedVersion: 2
+        x: 5456
+        y: 4689
+        width: 676
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb629f5d72afedb0800000000000000
+      internalID: -4760407621749281861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_4
+      rect:
+        serializedVersion: 2
+        x: 6768
+        y: 4689
+        width: 1382
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057633e9f27c17a80800000000000000
+      internalID: -8470770416775633072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_5
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 4680
+        width: 1636
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3655a6545d859420800000000000000
+      internalID: 2636168550265738811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4013
+        width: 665
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded80ee4f712ae010800000000000000
+      internalID: 1218823479825042925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_7
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 4039
+        width: 561
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e497d075f769c80800000000000000
+      internalID: -8316319650028106223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_8
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 4377
+        width: 1746
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ede0e709cad02cd0800000000000000
+      internalID: -2584825629155201559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_9
+      rect:
+        serializedVersion: 2
+        x: 5268
+        y: 4268
+        width: 1158
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34438b29c1acb550800000000000000
+      internalID: 6177990674235999294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_10
+      rect:
+        serializedVersion: 2
+        x: 6703
+        y: 3982
+        width: 2283
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911f5e68eaef51d90800000000000000
+      internalID: -7127510809702960871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_11
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 4039
+        width: 912
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448ff4488800ab800800000000000000
+      internalID: 628815684306991172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_12
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 4088
+        width: 943
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f804a48242f27e40800000000000000
+      internalID: 5652846849810499830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_13
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 4088
+        width: 702
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9408a53fa5f9deff0800000000000000
+      internalID: -5172811578834871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_14
+      rect:
+        serializedVersion: 2
+        x: 3526
+        y: 4022
+        width: 443
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397480b6941d50600800000000000000
+      internalID: 433983052369643411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_15
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 3887
+        width: 1303
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91ec1fc7d9b52250800000000000000
+      internalID: 5919341621792268698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_16
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 3711
+        width: 105
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a5366cc61d633d0800000000000000
+      internalID: -3227161817849308580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_17
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 3921
+        width: 311
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7ccc3a89c1acc40800000000000000
+      internalID: 5533266534086789111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_18
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 3891
+        width: 390
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743929bf36eb33470800000000000000
+      internalID: 8373245468843610951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_19
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 3812
+        width: 421
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353a17743d56a88c0800000000000000
+      internalID: -3996269761226759341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_20
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3438
+        width: 557
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade4f486eaff5cab0800000000000000
+      internalID: -4988299887703535910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_21
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 3394
+        width: 360
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4f1d65756515ed0800000000000000
+      internalID: -2427063791057242896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_22
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 3785
+        width: 193
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e040e5181701e8be0800000000000000
+      internalID: -1473221948415802354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_23
+      rect:
+        serializedVersion: 2
+        x: 2921
+        y: 3671
+        width: 508
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccdc2bc23cb9fd00800000000000000
+      internalID: 1007042918037118157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_24
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 3518
+        width: 1285
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1c1b4df1ee4a3f0800000000000000
+      internalID: -890325005832699438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_25
+      rect:
+        serializedVersion: 2
+        x: 7102
+        y: 3438
+        width: 1083
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caee02286709c31a0800000000000000
+      internalID: -6828424096336777556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_26
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 3496
+        width: 395
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f725e38e7ed6680800000000000000
+      internalID: -8760090715501723878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_27
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 3342
+        width: 709
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28137b0e6621f5e50800000000000000
+      internalID: 6800174195418804610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_28
+      rect:
+        serializedVersion: 2
+        x: 3508
+        y: 3544
+        width: 956
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a4c7bcb9b9b70c0800000000000000
+      internalID: -4576893502855820718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_29
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 3412
+        width: 737
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfea6dd159ad03d0800000000000000
+      internalID: -3238746387937300548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_30
+      rect:
+        serializedVersion: 2
+        x: 4592
+        y: 3452
+        width: 96
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73e15b5816d52270800000000000000
+      internalID: 8225215694561731453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_31
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 3103
+        width: 1180
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d213223db850c5ea0800000000000000
+      internalID: -5882820915151883987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_32
+      rect:
+        serializedVersion: 2
+        x: 3653
+        y: 3226
+        width: 451
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de49f680d2387f3c0800000000000000
+      internalID: -4325844687627774739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_33
+      rect:
+        serializedVersion: 2
+        x: 4157
+        y: 3122
+        width: 123
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ee80a193250a670800000000000000
+      internalID: 8547922497952607900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_34
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 2890
+        width: 232
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7197ab5c4d3084e80800000000000000
+      internalID: -8194295309615335145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_35
+      rect:
+        serializedVersion: 2
+        x: 2921
+        y: 2855
+        width: 508
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316a484e0b668fba0800000000000000
+      internalID: -6054976789065456109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_36
+      rect:
+        serializedVersion: 2
+        x: 3578
+        y: 2920
+        width: 588
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72582104e1ae0310800000000000000
+      internalID: 1373212937038615166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_37
+      rect:
+        serializedVersion: 2
+        x: 3741
+        y: 2811
+        width: 364
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 179944d15a2f4f0c0800000000000000
+      internalID: -4542739333135427215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_38
+      rect:
+        serializedVersion: 2
+        x: 4324
+        y: 2859
+        width: 289
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a235e1fab177c80800000000000000
+      internalID: -8325154947229078907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_39
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 2543
+        width: 702
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624bde324513db490800000000000000
+      internalID: -7728967148048108506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_40
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 2547
+        width: 1009
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4705bb2f6329810800000000000000
+      internalID: 1770538019662623985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_41
+      rect:
+        serializedVersion: 2
+        x: 3749
+        y: 2675
+        width: 364
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20a31b53ebb6f85c0800000000000000
+      internalID: -4211028661879358974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_42
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 2411
+        width: 351
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452571a5e4fcb7f60800000000000000
+      internalID: 8033242295771288148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_43
+      rect:
+        serializedVersion: 2
+        x: 3587
+        y: 2443
+        width: 750
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17382f9905d54d1e0800000000000000
+      internalID: -2174010119351532687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_44
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 2368
+        width: 83
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b910ca5aa10ba0b0800000000000000
+      internalID: -5716473470838105675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_45
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2043
+        width: 350
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71b77b94e298f830800000000000000
+      internalID: 4105192570906718590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_46
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 2047
+        width: 351
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012464962e1825f50800000000000000
+      internalID: 6868695191122231824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_47
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 2056
+        width: 352
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49476b8481ba12590800000000000000
+      internalID: -7700685767039355756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_48
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1744
+        width: 173
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157deb6cf60051680800000000000000
+      internalID: -8785115018040518831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_49
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1744
+        width: 311
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09b81a9f1c62d970800000000000000
+      internalID: 8778197506683615503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_50
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 1025
+        width: 254
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61b1d1076fbb4c00800000000000000
+      internalID: 886012200841490798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_51
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 1038
+        width: 220
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1375854c3f1b40220800000000000000
+      internalID: 2451279757725685553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_52
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 998
+        width: 268
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1991088953b5311e0800000000000000
+      internalID: -2228337104868337263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_53
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 1284
+        width: 341
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29bc977fcca54620800000000000000
+      internalID: 2757800353899264298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_54
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 845
+        width: 522
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdf0bd14af93e5f0800000000000000
+      internalID: -728563187482296908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_55
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 805
+        width: 654
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa25017d883e8d340800000000000000
+      internalID: 4888907572373901994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_56
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 924
+        width: 268
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8363efd7d65409600800000000000000
+      internalID: 472954297441465912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_57
+      rect:
+        serializedVersion: 2
+        x: 3732
+        y: 647
+        width: 272
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1e03a0d7faa0c00800000000000000
+      internalID: 867698829798990286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_58
+      rect:
+        serializedVersion: 2
+        x: 4271
+        y: 634
+        width: 338
+        height: 650
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65fb6c82e7e591350800000000000000
+      internalID: 5987921075508789078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_59
+      rect:
+        serializedVersion: 2
+        x: 2471
+        y: 603
+        width: 370
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09182d702491ea20800000000000000
+      internalID: 3089913686612515085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_60
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 871
+        width: 206
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7082147bf57d0a4e0800000000000000
+      internalID: -1972339830691911673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_61
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 792
+        width: 175
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0f141ed3e739460800000000000000
+      internalID: 7247275029606559965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_62
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 450
+        width: 460
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca9a2c7f639d0510800000000000000
+      internalID: 1517030756527545036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_63
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 647
+        width: 197
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990d678c6822cc190800000000000000
+      internalID: -7940934080676835175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_64
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 544
+        width: 776
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97fed907101e6b5d0800000000000000
+      internalID: -3047000701568946311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_65
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 647
+        width: 302
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60d45bbbe167dd30800000000000000
+      internalID: 4456138021394501742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_66
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 173
+        width: 417
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febe1392b5f96c660800000000000000
+      internalID: 7405781851139337199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_67
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 261
+        width: 798
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dd81d64ec43d250800000000000000
+      internalID: 5968198475162639728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_68
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 156
+        width: 245
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82ea45195b679f30800000000000000
+      internalID: 4582249176226259598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_69
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 64
+        width: 535
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda4a63deab6cb850800000000000000
+      internalID: 6394103969574701791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_70
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 274
+        width: 272
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc1b6e6bdc484110800000000000000
+      internalID: 1245329802302004472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_71
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 0
+        width: 925
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b658a1f231540cc50800000000000000
+      internalID: 6683417795714778475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_72
+      rect:
+        serializedVersion: 2
+        x: 2791
+        y: 81
+        width: 173
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fd7e8495fdea630800000000000000
+      internalID: 3940332298564001629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_73
+      rect:
+        serializedVersion: 2
+        x: 4100
+        y: 59
+        width: 114
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb9c5889fd5b4020800000000000000
+      internalID: 2327056958783003644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_74
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 69
+        width: 28
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90781b68c6bb8860800000000000000
+      internalID: 7533315773613764764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_75
+      rect:
+        serializedVersion: 2
+        x: 4353
+        y: 68
+        width: 87
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5def69255b8a6b0800000000000000
+      internalID: -5284774796394048079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_76
+      rect:
+        serializedVersion: 2
+        x: 4443
+        y: 68
+        width: 21
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f6e95090e7af890800000000000000
+      internalID: -7423482458552766687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapon constructor_77
+      rect:
+        serializedVersion: 2
+        x: 4522
+        y: 50
+        width: 219
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e488f6025495538b0800000000000000
+      internalID: -5173130443533350834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

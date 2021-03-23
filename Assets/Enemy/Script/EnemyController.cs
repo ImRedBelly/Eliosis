@@ -222,24 +222,13 @@ public class EnemyController : MonoBehaviour
     }
     void DestroyEnemy()
     {
-        
         GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
         Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
         Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
 
+        TrajectoryRenderer.instance.RemoveBody(Rigidbody2D);
+
         Destroy(gameObject);
-
-
-
-        //CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
-        //capsule.size = new Vector2(1f, 0.25f);
-        //capsule.offset = new Vector2(0f, -0.8f);
-        //capsule.direction = CapsuleDirection2D.Horizontal;
-        //transform.GetComponent<Animator>().SetBool("IsDead", true);
-        //yield return new WaitForSeconds(0.25f);
-        //Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
-        //yield return new WaitForSeconds(1f);
-        //Destroy(gameObject);
     }
 }
 

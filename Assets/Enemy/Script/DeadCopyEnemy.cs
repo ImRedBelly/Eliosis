@@ -8,7 +8,6 @@ public class DeadCopyEnemy : MonoBehaviour
     public SpriteRenderer spriteBody;
     public Transform[] bodyParts;
     public GameObject deadEffect;
-
     void Start()
     {
 
@@ -27,6 +26,12 @@ public class DeadCopyEnemy : MonoBehaviour
         {
             Instantiate(deadEffect, bodyParts[i].transform.position, Quaternion.identity);
         }
+        yield return new WaitForSeconds(0.1f);
+        //for (int i = 0; i < bodyParts.Length; i++)
+        //{
+        //    Rigidbody2D rb = bodyParts[i].GetComponent<Rigidbody2D>();
+        //    TrajectoryRenderer.instance.RemoveBody(rb);
+        //}
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }

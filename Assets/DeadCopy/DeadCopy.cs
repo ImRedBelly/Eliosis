@@ -149,20 +149,13 @@ public class DeadCopy : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        Remove();
+        TrajectoryRenderer.instance.RemoveBody(rb);
         PlayerMovement.instance.GetComponent<Purse>().TakeMoney(money);
         yield return new WaitForSeconds(0.1f);
         Instantiate(deadEffect, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
         yield return new WaitForSeconds(0.1f);
 
         Destroy(gameObject);
-    }
-
-
-    private void Remove()
-    {
-        TrajectoryRenderer trajectoryRenderer = FindObjectOfType<TrajectoryRenderer>();
-        trajectoryRenderer.RemoveBody(rb);
     }
 
     private void OnDrawGizmos()
