@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public GameObject tower;
+
     public GameObject bullet;
     public GameObject shotPosition;
 
@@ -38,7 +39,6 @@ public class Turret : MonoBehaviour
         Vector3 targetDir = player.transform.position - tower.transform.position;
         float angle = Vector3.Angle(targetDir, -tower.transform.up);
 
-        print(angle);
         if (distToPlayer.magnitude < 10 && angle > patrolAngles[0] && angle < patrolAngles[1])
         {
             isPlayer = true;
@@ -67,7 +67,6 @@ public class Turret : MonoBehaviour
         {
             timeToLerp += Time.deltaTime;
             tower.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, patrolAngles[0]), Quaternion.Euler(0, 0, patrolAngles[1]), Mathf.Abs(Mathf.Sin(timeToLerp * 0.5f)));
-            print(tower.transform.rotation.z);
         }
         if (health <= 0)
         {
@@ -80,10 +79,10 @@ public class Turret : MonoBehaviour
     {
         if (timeToShot < 0)
         {
+            GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.identity);
+            bulletCopy.transform.right = -tower.transform.up;
 
-            GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.Euler(0, 0, tower.transform.rotation.z));
-
-            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up;
+            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up / 2;
             bulletCopy.gameObject.layer = LayerMask.NameToLayer("BulletEnemy");
 
             timeToShot = 4;
