@@ -1,0 +1,124 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Turret : MonoBehaviour
+{
+    public GameObject tower;
+    public GameObject bullet;
+    public GameObject shotPosition;
+
+    bool isPlayer = false;
+
+
+    public GameObject player;
+    private Vector2 distToPlayer;
+
+    public SpriteRenderer angleSprite;
+
+    public float[] patrolAngles;
+
+    float timeToLerp;
+    float timeToShot;
+
+
+    public GameObject deadEffect;
+    float health = 3;
+    bool isDestroy = true;
+    void Start()
+    {
+        player = GameObject.Find("Player _Yura");
+    }
+
+
+    void Update()
+    {
+        distToPlayer = player.transform.position - tower.transform.position;
+
+        Vector3 targetDir = player.transform.position - tower.transform.position;
+        float angle = Vector3.Angle(targetDir, -tower.transform.up);
+
+        print(angle);
+        if (distToPlayer.magnitude < 10 && angle > patrolAngles[0] && angle < patrolAngles[1])
+        {
+            isPlayer = true;
+
+            Color colorAngle = Color.red;
+            colorAngle.a = 0.5f;
+            angleSprite.color = colorAngle;
+        }
+        else
+        {
+            isPlayer = false;
+
+            Color colorAngle = Color.green;
+            colorAngle.a = 0.5f;
+            angleSprite.color = colorAngle;
+        }
+
+        if (isPlayer)
+        {
+            ShotInPlayer();
+
+            Vector2 directionToPlayerOffLerp = tower.transform.position - player.transform.position;
+            tower.transform.up = directionToPlayerOffLerp;
+        }
+        else
+        {
+            timeToLerp += Time.deltaTime;
+            tower.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, patrolAngles[0]), Quaternion.Euler(0, 0, patrolAngles[1]), Mathf.Abs(Mathf.Sin(timeToLerp * 0.5f)));
+            print(tower.transform.rotation.z);
+        }
+        if (health <= 0)
+        {
+            DestroyTurret();
+        }
+    }
+
+
+    void ShotInPlayer()
+    {
+        if (timeToShot < 0)
+        {
+
+            GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.Euler(0, 0, tower.transform.rotation.z));
+
+            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up;
+            bulletCopy.gameObject.layer = LayerMask.NameToLayer("BulletEnemy");
+
+            timeToShot = 4;
+        }
+        else
+        {
+            timeToShot -= Time.deltaTime;
+        }
+    }
+    void DestroyTurret()
+    {
+        if (isDestroy)
+        {
+            Instantiate(deadEffect, transform.position, Quaternion.identity);
+            isDestroy = false;
+        }
+        Destroy(gameObject, 0.5f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            health--;
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector3 lookDirection = -tower.transform.up;
+        Vector3 lookLeftDirection = Quaternion.AngleAxis(patrolAngles[0], Vector3.forward) * lookDirection;
+        Vector3 lookRightDirection = Quaternion.AngleAxis(patrolAngles[1], Vector3.forward) * lookDirection;
+
+        Gizmos.DrawRay(tower.transform.position, lookDirection * 10);
+        Gizmos.DrawRay(tower.transform.position, lookLeftDirection * 10);
+        Gizmos.DrawRay(tower.transform.position, lookRightDirection * 10);
+    }
+}

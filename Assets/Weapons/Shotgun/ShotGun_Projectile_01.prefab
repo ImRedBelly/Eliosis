@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4652087068274597365}
   m_Layer: 10
   m_Name: ShotGun_Projectile_01
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  speed: 20
   sandPrefab: {fileID: 1000011772094258, guid: e251c14d64604e54aaa5db2698951596, type: 3}
   platformPrefab: {fileID: 1000014022289910, guid: efc00ae131f8d86498732bf05e786740,
     type: 3}
