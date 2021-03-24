@@ -23,7 +23,7 @@ public class Turret : MonoBehaviour
     float timeToShot;
 
 
-    public GameObject deadEffect;
+    public GameObject[] deadEffect;
     float health = 3;
     bool isDestroy = true;
     void Start()
@@ -82,7 +82,7 @@ public class Turret : MonoBehaviour
             GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.identity);
             bulletCopy.transform.right = -tower.transform.up;
 
-            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up / 2;
+            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up;
             bulletCopy.gameObject.layer = LayerMask.NameToLayer("BulletEnemy");
 
             timeToShot = 4;
@@ -96,7 +96,8 @@ public class Turret : MonoBehaviour
     {
         if (isDestroy)
         {
-            Instantiate(deadEffect, transform.position, Quaternion.identity);
+            Instantiate(deadEffect[0], transform.position, Quaternion.identity);
+            Instantiate(deadEffect[1], transform.position, Quaternion.identity);
             isDestroy = false;
         }
         Destroy(gameObject, 0.5f);
