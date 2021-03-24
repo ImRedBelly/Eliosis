@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     public GameObject tower;
 
     public GameObject bullet;
+    public GameObject flashPrefab;
     public GameObject shotPosition;
 
     bool isPlayer = false;
@@ -84,6 +85,13 @@ public class Turret : MonoBehaviour
 
             bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up;
             bulletCopy.gameObject.layer = LayerMask.NameToLayer("BulletEnemy");
+
+
+
+            GameObject flash = Instantiate(flashPrefab, shotPosition.transform.position, Quaternion.identity);
+            flash.transform.right = -tower.transform.up;
+            Destroy(flash, 1f);
+
 
             timeToShot = 4;
         }
