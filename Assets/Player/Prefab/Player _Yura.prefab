@@ -2123,6 +2123,7 @@ MonoBehaviour:
   BashTime: 0.2
   Arrow: {fileID: 0}
   shield: {fileID: 0}
+  inventory: {fileID: 0}
   speedSlider: {fileID: 0}
   runSpeed: 40
   maxRunSpeed: 100
@@ -2279,6 +2280,7 @@ MonoBehaviour:
   hand2: {fileID: 0}
   handfist1: {fileID: 0}
   handfist2: {fileID: 0}
+  currentWeapon: 0
   cam: {fileID: 0}
   attackCheck: {fileID: 6841423364383874898}
   damageValue: 1

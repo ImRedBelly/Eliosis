@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 212000010879314992}
   - component: {fileID: 50000011914270990}
   - component: {fileID: 60000012080165962}
-  - component: {fileID: 1291752463419156534}
   - component: {fileID: 2052518057203299536}
   - component: {fileID: 1871452517}
   m_Layer: 0
@@ -275,22 +274,6 @@ PolygonCollider2D:
       - {x: -1.49, y: -1.755}
       - {x: -0.69, y: -1.555}
       - {x: -0.57, y: -1.505}
---- !u!114 &1291752463419156534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000010653749668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca62b7746e5c0045949f5801f367374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  sandPrefab: {fileID: 0}
-  platformPrefab: {fileID: 0}
-  bloodPrefab: {fileID: 0}
 --- !u!114 &2052518057203299536
 MonoBehaviour:
   m_ObjectHideFlags: 0

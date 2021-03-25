@@ -36,6 +36,8 @@ public class PickUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && isTriggered)
         {
             inventory.PutInInventory(this);
+
+            Destroy(gameObject);
         }
     }
 

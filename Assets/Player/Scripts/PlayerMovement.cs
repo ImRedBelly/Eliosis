@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Shield")]
     public GameObject shield;
 
+    [Header("Inventory")]
+    public Inventory inventory;
+
 
     [Header("Speed Parameters")]
     public Slider speedSlider;
@@ -55,8 +58,11 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
         BashTimeReset = BashTime;
 
-        speedSlider.maxValue = maxRunSpeed;
-        speedSlider.value = runSpeed;
+        //speedSlider.maxValue = maxRunSpeed;
+        //speedSlider.value = runSpeed;
+
+        inventory = GetComponent<Inventory>();
+        print("player start");
     }
     void Update()
     {

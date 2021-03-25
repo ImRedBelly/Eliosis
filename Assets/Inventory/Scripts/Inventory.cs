@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
 
     public void PutInInventory(PickUp pickUp)
 	{
-		Destroy(pickUp.gameObject);
+
 
 		for (int i = 0; i < slots.Length; i++) // поработать над условием
 		{
@@ -53,10 +53,12 @@ public class Inventory : MonoBehaviour
 			if (!slots[i].isFull)
 			{
 				slots[i].AddItem(pickUp);
-                break;
+
+				break;
 			}
 		}
 
+	
 
 	}
 

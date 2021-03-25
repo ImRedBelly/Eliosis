@@ -12,10 +12,13 @@ public class Bullet : MonoBehaviour
     public GameObject sandPrefab;
     public GameObject platformPrefab;
     public GameObject bloodPrefab;
+    Weapon weapon;
 
     Rigidbody2D rb;
     private void Awake()
     {
+        weapon = FindObjectOfType<Weapon>();
+
         valuePlayer = ValueManagerPlayer.instance;
         valueEnemy = ValueManagerEnemy.instance;
         rb = GetComponent<Rigidbody2D>();
@@ -24,6 +27,11 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        if (weapon.currentWeapon == Weapon.WeaponType.SNIPER)
+        {
+            rb.velocity = transform.right * direction * valuePlayer.bulletValue.speed;
+        }
+
         rb.velocity = Quaternion.AngleAxis(Random.Range(-5, 5), transform.forward) * direction * (valuePlayer.bulletValue.speed * Random.Range(0.75f, 1.25f));
     }
 
@@ -33,14 +41,12 @@ public class Bullet : MonoBehaviour
         {
             GameObject sand = Instantiate(sandPrefab, transform.position, transform.rotation);
             Destroy(sand, 1f);
-            return;
         }
 
         if (collision.gameObject.CompareTag("Platform"))
         {
             GameObject blood = Instantiate(platformPrefab, transform.position, transform.rotation);
             Destroy(blood, 1f);
-            return;
         }
 
         if (collision.gameObject.CompareTag("Player"))

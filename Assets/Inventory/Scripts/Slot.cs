@@ -20,24 +20,35 @@ public class Slot : MonoBehaviour
 
 	public PickUp pickUp;
 
-	Inventory inventory;
 	MainSlot mainSlot;
-
-
-	private void Start()
-	{
-		inventory = FindObjectOfType<Inventory>();
-
-		mainSlot = FindObjectOfType<MainSlot>();
-
-		textNumberOfItems.gameObject.SetActive(false);
+	Inventory inventory;
+	Inventory Inventory {
+		get
+		{
+			if (inventory == null)
+			{
+				inventory = PlayerMovement.instance.inventory;
+			}
+			return inventory;
+		} 
 	}
 
-
+	MainSlot MainSlot { 
+		get
+		{
+			if (mainSlot == null)
+			{
+				mainSlot = FindObjectOfType<MainSlot>();
+			}
+			return mainSlot;
+		} 
+	}
 
 public void AddItem(PickUp pickUp)
 	{
-		gameObjectPickUp = Instantiate(pickUp.gameObject);
+		print("add item");
+		print(pickUp.gameObject);
+		gameObjectPickUp = Instantiate(pickUp.gameObject, Inventory.placeItem);
 		gameObjectPickUp.SetActive(false);
 
 		this.pickUp = gameObjectPickUp.GetComponent<PickUp>();
@@ -63,10 +74,7 @@ public void AddItem(PickUp pickUp)
 
 		inventory.AddToTotalWeight(pickUp.itemWeigth);
 
-		if (numberOfItems > 1)
-		{
-			textNumberOfItems.gameObject.SetActive(true);
-		}
+		textNumberOfItems.gameObject.SetActive(numberOfItems > 1);
 		
 		textNumberOfItems.text = $"х {numberOfItems}";
 	}
@@ -74,15 +82,19 @@ public void AddItem(PickUp pickUp)
 	void SubNumberOfItems()
 	{
 		--numberOfItems;
-
-		if (numberOfItems <= 1)
-		{
-			textNumberOfItems.gameObject.SetActive(false);
-		}
+		
+		textNumberOfItems.gameObject.SetActive(numberOfItems > 1);
 
 		textNumberOfItems.text = $"х {numberOfItems}";
 	}
 
+	private void OnEnable()
+	{
+
+		textNumberOfItems.gameObject.SetActive(numberOfItems > 1);
+
+		textNumberOfItems.text = $"х {numberOfItems}";
+	}
 
 
 	public void RemoveItem()
@@ -154,15 +166,15 @@ public void AddItem(PickUp pickUp)
 
 	public void ChangeItemsSlotAndInventory()
 	{
-        if (!mainSlot.isFull)
+        if (!MainSlot.isFull)
         {
-			mainSlot.AddItem(pickUp);
+			MainSlot.AddItem(pickUp);
 			return;
 		}
 
-		mainSlot.PutCurrentItemToInventory();
-		mainSlot.ClearSlot();
-		mainSlot.AddItem(pickUp);
+		MainSlot.PutCurrentItemToInventory();
+		MainSlot.ClearSlot();
+		MainSlot.AddItem(pickUp);
 	}
 
 	private void ItemThrowOnScene()

@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
     public SpriteRenderer handfist1;
     public SpriteRenderer handfist2;
 
-    private WeaponType currentWeapon;
+    public WeaponType currentWeapon;
     private int numberOfWeapons;
     ReversLook reversLook;
 
