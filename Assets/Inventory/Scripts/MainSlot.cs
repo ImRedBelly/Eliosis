@@ -7,8 +7,7 @@ public class MainSlot : MonoBehaviour
 {
 	public bool isFull;
 
-	public Image imagePlayerWithItem;
-	public Button buttonRemove;
+	public Transform placeItemIconForMainSlot;
 
 	Inventory inventory;
     PickUp pickUp;
@@ -23,7 +22,7 @@ public class MainSlot : MonoBehaviour
         isFull = true;
 
         this.pickUp = pickUp;
-		imagePlayerWithItem.sprite = pickUp.itemUsedOnPlayer.GetComponent<SpriteRenderer>().sprite;
+        Instantiate(pickUp.itemIconForMainSlot, placeItemIconForMainSlot);
 	}
 
     public void RemoveItem()
@@ -39,7 +38,7 @@ public class MainSlot : MonoBehaviour
 
     public void ClearSlot()
     {
-        imagePlayerWithItem.sprite = null;
+        Destroy(placeItemIconForMainSlot.transform.GetChild(0).gameObject);
         pickUp = null;
         isFull = false;
     }
@@ -59,9 +58,9 @@ public class MainSlot : MonoBehaviour
 
     private void ItemThrowOnScene()
     {
-        pickUp.gameObject.transform.SetParent(null);
-        pickUp.gameObject.transform.position = inventory.transform.position + new Vector3(1, 0, 0);
-        pickUp.gameObject.SetActive(true);
+        GameObject clone = Instantiate(pickUp.item, inventory.placeItem.position
+        + new Vector3(1, 0, 0), Quaternion.identity);
+        clone.SetActive(true);
     }
 
 }

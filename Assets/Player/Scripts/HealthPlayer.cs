@@ -108,7 +108,7 @@ public class HealthPlayer : MonoBehaviour
         animator.SetBool("IsDead", true);
         controller2D.canMove = false;
         invincible = true;
-        GetComponent<Attack>().enabled = false;
+ 
         yield return new WaitForSeconds(0.4f);
         rb.velocity = new Vector2(0, rb.velocity.y);
 

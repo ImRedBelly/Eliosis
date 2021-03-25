@@ -81,8 +81,6 @@ public class Turret : MonoBehaviour
         {
             GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.identity);
             bulletCopy.transform.right = -tower.transform.up;
-
-            bulletCopy.GetComponent<Bullet>().direction = shotPosition.transform.up / 2;
             bulletCopy.gameObject.layer = LayerMask.NameToLayer("BulletEnemy");
 
             timeToShot = 4;

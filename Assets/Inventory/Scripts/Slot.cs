@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
@@ -9,15 +10,15 @@ public class Slot : MonoBehaviour
 	public bool isFull;
 
 	public GameObject placeForIcon;
+	public GameObject gameObjectPickUp;
+
 	public Text textName;
 	public Text textWeigth;
-	public Button buttonApply;
-	public Button buttonRemove;
 
 	public int numberOfItems;
 	public Text textNumberOfItems;
 
-	PickUp pickUp;
+	public PickUp pickUp;
 
 	Inventory inventory;
 	MainSlot mainSlot;
@@ -36,13 +37,16 @@ public class Slot : MonoBehaviour
 
 public void AddItem(PickUp pickUp)
 	{
-		this.pickUp = pickUp;
+		gameObjectPickUp = Instantiate(pickUp.gameObject);
+		gameObjectPickUp.SetActive(false);
+
+		this.pickUp = gameObjectPickUp.GetComponent<PickUp>();
 
 		isFull = true;
 
 		AddItem();
 
-		Instantiate(pickUp.itemIcon, placeForIcon.transform);
+		Instantiate(pickUp.itemIconForSlot, placeForIcon.transform);
 		textName.text = pickUp.itemName;
 		textWeigth.text = pickUp.itemWeigth.ToString();
 		
@@ -91,10 +95,7 @@ public void AddItem(PickUp pickUp)
 		SubNumberOfItems();
 		inventory.SubFromTotalWeight(pickUp.itemWeigth);
 
-		GameObject clone = Instantiate(pickUp.item, inventory.transform.position
-						   + new Vector3(1, 0, 0), Quaternion.identity);
-
-		clone.SetActive(true);
+		ItemThrowOnScene();
 
 		if (numberOfItems == 0)
 		{
@@ -164,13 +165,12 @@ public void AddItem(PickUp pickUp)
 		mainSlot.AddItem(pickUp);
 	}
 
-	private void ThrowOnScene()
+	private void ItemThrowOnScene()
 	{
-		pickUp.gameObject.transform.SetParent(null);
-		pickUp.gameObject.transform.position = inventory.transform.position + new Vector3(1, 0, 0);
-		pickUp.gameObject.SetActive(true);
+		GameObject clone = Instantiate(pickUp.item, inventory.placeItem.position
+		+ new Vector3(1, 0, 0), Quaternion.identity);
+		clone.SetActive(true);
 	}
-
 
 }
 

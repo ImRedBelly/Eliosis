@@ -5,16 +5,15 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-
-    [SerializeField] public GameObject item;
-    [SerializeField] public GameObject itemUsedOnPlayer; // для главного слота
-    [SerializeField] public GameObject itemIcon;
+    [SerializeField] public GameObject item; // для главного слота c руками
+    [SerializeField] public GameObject itemIconForMainSlot; // для главного слота c руками
+    [SerializeField] public GameObject itemIconForSlot;
     [SerializeField] public bool isOneOff; // например, аптечка. Оружие -нет.
     [SerializeField] public string itemName;
     [SerializeField] public int itemWeigth;
 
 
-    [SerializeField] private GameObject Glow;
+    //[SerializeField] private GameObject Glow;
 
     private bool isTriggered;
 
@@ -24,8 +23,10 @@ public class PickUp : MonoBehaviour
 
     private void Start()
     {
+
+
         inventory = FindObjectOfType<Inventory>();
-        Glow.SetActive(false);
+        //Glow.SetActive(false);
     }
 
 
@@ -40,15 +41,7 @@ public class PickUp : MonoBehaviour
 
     public void ApplyPickUp() // у каждого свой метод
     {
-        foreach (Transform child in appliedInventoryPlace)
-        {
-            if (child.gameObject)
-            {
-                Destroy(child.gameObject);
-            }          
-        }
-        Instantiate(itemUsedOnPlayer, itemUsedOnPlayer.transform);
-
+        print("applying");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +49,8 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player")) 
         {
             isTriggered = true;
-            PossibilityToTake(isTriggered);
+            print("могу взять" + isTriggered);
+            //PossibilityToTake(isTriggered);
         }
     }
 
@@ -65,13 +59,20 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isTriggered = false;
-            PossibilityToTake(isTriggered);
+            print("могу взять" + isTriggered);
+           // PossibilityToTake(isTriggered);
         }
     }
 
-    private void PossibilityToTake(bool enable)
+    //private void PossibilityToTake(bool enable)
+    //{
+    //    Glow.SetActive(enable);
+    //    print("могу взять" + enable);
+    //}
+
+    private void OnDestroy()
     {
-        Glow.SetActive(enable);
+        print("куку");
     }
 
 }

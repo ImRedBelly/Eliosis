@@ -6,28 +6,43 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+	public GameObject inventoryPanel;
+	public Transform placeItem;
+
+
 	public Slot[] slots;
 	public Text textTotalWeight;
 	public int totalWeight;
 
 
+
+
 	private void Start()
 	{
 		totalWeight = 0;
-		textTotalWeight.text = $"Общий вес: {totalWeight}";
+		textTotalWeight.text = $"TOTAL: {totalWeight}";
+
+		inventoryPanel.SetActive(false);
+
 	}
 
-	public void PutInInventory(PickUp pickUp)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+			inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+		}
+    }
+
+    public void PutInInventory(PickUp pickUp)
 	{
+		Destroy(pickUp.gameObject);
+
 		for (int i = 0; i < slots.Length; i++) // поработать над условием
 		{
 			if (slots[i].isFull && (slots[i].textName.text == pickUp.itemName)) // если такой pickup уже есть
 			{
 				slots[i].AddItem();
-
-				pickUp.gameObject.transform.SetParent(transform);
-				pickUp.gameObject.transform.localPosition = Vector3.zero;
-				pickUp.gameObject.SetActive(false);
 
 				return;
 			}
@@ -38,27 +53,24 @@ public class Inventory : MonoBehaviour
 			if (!slots[i].isFull)
 			{
 				slots[i].AddItem(pickUp);
-
-				pickUp.gameObject.transform.SetParent(transform);
-				pickUp.gameObject.transform.localPosition = Vector3.zero;
-				pickUp.gameObject.SetActive(false);
-
-				break;
+                break;
 			}
 		}
+
+
 	}
 
 
 	public void AddToTotalWeight(int weigth)
 	{
 		totalWeight += weigth;
-		textTotalWeight.text = $"Общий вес: {totalWeight}";
+		textTotalWeight.text = $"TOTAL: {totalWeight}";
 	}
 
 	public void SubFromTotalWeight(int weigth)
 	{
 		totalWeight -= weigth;
-		textTotalWeight.text = $"Общий вес: {totalWeight}";
+		textTotalWeight.text = $"TOTAL: {totalWeight}";
 	}
 }
 
