@@ -7,16 +7,14 @@ public class HealthPlayer : MonoBehaviour
 {
     public Slider healthSlider;
 
-    [Header("Options")]
-    public bool imLife = true;
-    public bool invincible = false;
-
     public float health = 15;
 
     float minHealth = 0;
     float maxHealth = 15;
-
     float sliderMaxValue = 30; //максимально допустимое значение
+
+    bool invincible = false;
+
     public float Life
     {
         get
@@ -47,15 +45,16 @@ public class HealthPlayer : MonoBehaviour
     }
 
     Rigidbody2D rb;
-    Animator animator;
     CharacterController2D controller2D;
+
+    public SpriteRenderer[] spriteForDeadCopy;
+    public GameObject deadCopy;
+    public GameObject[] playerComponent;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         controller2D = GetComponent<CharacterController2D>();
-
 
         healthSlider.maxValue = sliderMaxValue;
         healthSlider.value = maxHealth;
@@ -86,9 +85,6 @@ public class HealthPlayer : MonoBehaviour
     }
 
 
-
-
-
     IEnumerator MakeInvincible(float time)
     {
         invincible = true;
@@ -105,16 +101,25 @@ public class HealthPlayer : MonoBehaviour
 
     IEnumerator WaitToDead()
     {
-        animator.SetBool("IsDead", true);
         controller2D.canMove = false;
         invincible = true;
- 
-        yield return new WaitForSeconds(0.4f);
+
         rb.velocity = new Vector2(0, rb.velocity.y);
 
         GameManager.instance.SavePosition();
 
-        yield return new WaitForSeconds(1.1f);
+
+        GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
+        Copy.GetComponent<CopyScatterPlayer>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
+        Copy.GetComponent<CopyScatterPlayer>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
+
+        yield return new WaitForSeconds(0.1f);
+        for (int i = 0; i < playerComponent.Length; i++)
+        {
+            playerComponent[i].SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
     }
 }

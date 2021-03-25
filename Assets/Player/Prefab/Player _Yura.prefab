@@ -2139,9 +2139,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
-  imLife: 1
-  invincible: 0
   health: 15
+  spriteForDeadCopy:
+  - {fileID: 9204052352733490711}
+  - {fileID: 9204052347090208997}
+  deadCopy: {fileID: 6458806765693801822, guid: 5fc63dc4ec805b94ebaeac701a97904b,
+    type: 3}
+  playerComponent:
+  - {fileID: 9028025909272917237}
+  - {fileID: 9028025909353819181}
 --- !u!114 &124108335
 MonoBehaviour:
   m_ObjectHideFlags: 0
