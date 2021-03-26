@@ -42,8 +42,8 @@ public class ValueManagerPlayer : MonoBehaviour
         public void StartSlider()
         {
             //print("Start");
-            damageSlider.maxValue = sliderMaxValue;
-            damageSlider.value = damageBullet;
+            //damageSlider.maxValue = sliderMaxValue;
+            //damageSlider.value = damageBullet;
         }
         public void UpdateMaxDamage(float damagePoint)
         {

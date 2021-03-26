@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 212000010879314992}
   - component: {fileID: 50000011914270990}
   - component: {fileID: 60000012080165962}
-  - component: {fileID: 1291752463419156534}
+  - component: {fileID: 2052518057203299536}
+  - component: {fileID: 1871452517}
   m_Layer: 0
   m_Name: Assault_PowerUp
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -120007271
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 726b2b2584de4b34ebc149efc8fe56d9, type: 3}
@@ -92,14 +93,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010653749668}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -273,7 +274,7 @@ PolygonCollider2D:
       - {x: -1.49, y: -1.755}
       - {x: -0.69, y: -1.555}
       - {x: -0.57, y: -1.505}
---- !u!114 &1291752463419156534
+--- !u!114 &2052518057203299536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,8 +283,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010653749668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca62b7746e5c0045949f5801f367374, type: 3}
+  m_Script: {fileID: 11500000, guid: 07b9d2427fa239a44884dd1b47dcfd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  damage: -25
+  item: {fileID: 1000010653749668}
+  itemIconForMainSlot: {fileID: 1430145472425328054, guid: e81cfc8643295ad42a4e8e1b6287040c,
+    type: 3}
+  itemIconForSlot: {fileID: 8514402838732391126, guid: a82ab3c66d0469a4985f26ba8b319611,
+    type: 3}
+  isOneOff: 0
+  itemName: Assault
+  itemWeigth: 2
+--- !u!61 &1871452517
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010653749668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0050001144, y: -0.004999995}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5005429, y: 0.5013812}
+    oldSize: {x: 9.21, y: 3.62}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 13.334992, y: 6.6043777}
+  m_EdgeRadius: 0

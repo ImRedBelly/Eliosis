@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 212000013109757730}
   - component: {fileID: 50000014095515982}
   - component: {fileID: 60000011191662436}
-  - component: {fileID: -3707738655247937121}
+  - component: {fileID: -8224982324912756878}
   m_Layer: 13
   m_Name: Pistol_PowerUp
   m_TagString: Untagged
@@ -183,7 +183,7 @@ PolygonCollider2D:
       - {x: -0.955, y: -1.275}
       - {x: -0.935, y: -1.185}
       - {x: -1.005, y: -1.0649999}
---- !u!114 &-3707738655247937121
+--- !u!114 &-8224982324912756878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,8 +192,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013379212706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca62b7746e5c0045949f5801f367374, type: 3}
+  m_Script: {fileID: 11500000, guid: 07b9d2427fa239a44884dd1b47dcfd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
-  damage: -25
+  item: {fileID: 1000013379212706}
+  itemIconForMainSlot: {fileID: 0}
+  itemIconForSlot: {fileID: 0}
+  isOneOff: 0
+  itemName: Pistol
+  itemWeigth: 1
