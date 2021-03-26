@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    public GameObject light;
+    public SpriteRenderer button;
+    public Sprite buttonOn;
     LevelManager levelManager;
     void Start()
     {
@@ -15,7 +17,8 @@ public class Torch : MonoBehaviour
 
     public void Fire()
     {
-        spriteRenderer.color = Color.red;
+        light.GetComponent<BlinkGrenade>().enabled = true;
+        button.sprite = buttonOn;
         levelManager.Light();
     }
 
