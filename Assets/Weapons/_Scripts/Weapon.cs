@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
         public Transform placeFire;
         public Transform placeShell;
 
-
+        public bool isInInventory;
         public Animator animator;
     }
 
@@ -108,14 +108,9 @@ public class Weapon : MonoBehaviour
         // todo создавать enum на старте
         numberOfWeapons = Enum.GetNames(typeof(WeaponType)).Length;
 
-        currentWeapon = WeaponType.NONE;
-        SetWeaponAnimator((int)currentWeapon);
-        ShowWeapon((int)currentWeapon);
-
-
+        SetWeapon(WeaponType.NONE);
 
     }
-
 
 
     private void Update()
@@ -123,6 +118,12 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1))
         {
             ChangeWeapon();
+
+            foreach (var item in PlayerMovement.instance.inventory.slots)
+            {
+                item.ApplyItemFromKey();
+            }
+
         }
 
         ChangeDirection();
@@ -230,22 +231,22 @@ public class Weapon : MonoBehaviour
 
     private void ChangeWeapon()
     {
-        currentWeapon++;
 
-        // todo ротировть только те что находятся в инвентаре
-        if ((int)currentWeapon == numberOfWeapons)
+        for (int i = (int)currentWeapon + 1; i < weapons.Length; i++)
         {
-            currentWeapon = 0;
+            if (weapons[i].isInInventory)
+            {
+                currentWeapon = weapons[i].weaponType;
+                SetWeapon(currentWeapon);
+                return;
+            }
         }
-
-        ShowWeapon((int)currentWeapon);
-        SetWeaponAnimator((int)currentWeapon);
+       SetWeapon(WeaponType.NONE);
     }
 
     public void SetWeapon(WeaponType currentWeapon)
     {
         this.currentWeapon = currentWeapon;
-
         ShowWeapon((int)currentWeapon);
         SetWeaponAnimator((int)currentWeapon);
     }

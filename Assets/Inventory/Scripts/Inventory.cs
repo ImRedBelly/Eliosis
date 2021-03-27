@@ -6,15 +6,11 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-	public GameObject inventoryPanel;
 	public Transform placeItem;
-
-
 	public Slot[] slots;
+	public MainSlot mainSlot;
 	public Text textTotalWeight;
-	public int totalWeight;
-
-
+	public int totalWeight; // вес для Димы
 
 
 	private void Start()
@@ -22,28 +18,16 @@ public class Inventory : MonoBehaviour
 		totalWeight = 0;
 		textTotalWeight.text = $"TOTAL: {totalWeight}";
 
-		inventoryPanel.SetActive(false);
-
+		gameObject.SetActive(false);	
 	}
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-			inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-		}
-    }
 
     public void PutInInventory(PickUp pickUp)
 	{
-
-
 		for (int i = 0; i < slots.Length; i++) // поработать над условием
 		{
-			if (slots[i].isFull && (slots[i].textName.text == pickUp.itemName)) // если такой pickup уже есть
+			if (slots[i].isFull && (slots[i].textName.text == pickUp.itemName))
 			{
 				slots[i].AddItem();
-
 				return;
 			}
 		}
@@ -54,12 +38,11 @@ public class Inventory : MonoBehaviour
 			{
 				slots[i].AddItem(pickUp);
 
+				slots[i].gameObject.SetActive(true);
+
 				break;
 			}
 		}
-
-	
-
 	}
 
 
