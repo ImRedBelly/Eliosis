@@ -150,10 +150,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   placeForIcon: {fileID: 5968663840207386643}
+  gameObjectPickUp: {fileID: 0}
   textName: {fileID: 7676516769727021430}
   textWeigth: {fileID: 7651555902233130895}
   numberOfItems: 0
   textNumberOfItems: {fileID: 4202112242333856483}
+  line: {fileID: 21300000, guid: dfcef6a074e789849ab2f1f80cbc8f72, type: 3}
+  bg: {fileID: 21300000, guid: 85a8b916480cb404c9835fc95aa37804, type: 3}
   pickUp: {fileID: 0}
 --- !u!1 &3334605573008694384
 GameObject:
@@ -232,7 +235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10 KG
+  m_Text: 
 --- !u!1 &4136911980431802205
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +516,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ENERGY
+  m_Text: 
 --- !u!1 &4889444469488635808
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +594,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 3
+  m_Text: 
 --- !u!1 &5968663840207386643
 GameObject:
   m_ObjectHideFlags: 0

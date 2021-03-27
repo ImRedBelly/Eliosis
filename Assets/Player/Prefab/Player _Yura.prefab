@@ -1843,7 +1843,6 @@ GameObject:
   - component: {fileID: 6841423363569015482}
   - component: {fileID: 1376555370}
   - component: {fileID: 2046448618896675287}
-  - component: {fileID: 2138909374}
   m_Layer: 8
   m_Name: Player _Yura
   m_TagString: Player
@@ -2189,6 +2188,7 @@ MonoBehaviour:
     placeFire: {fileID: 0}
     placeShell: {fileID: 0}
     animator: {fileID: 1249051238307715540}
+    inInventory: 1
   - weaponType: 1
     fireRate: 1
     bulletPrefab: {fileID: 0}
@@ -2201,6 +2201,7 @@ MonoBehaviour:
     placeFire: {fileID: 0}
     placeShell: {fileID: 0}
     animator: {fileID: 8943007810704754457}
+    inInventory: 1
   - weaponType: 2
     fireRate: 0.5
     bulletPrefab: {fileID: 1000012176153370, guid: 93c3cfa0b5e89d14d91510b5f09bde3a,
@@ -2216,6 +2217,7 @@ MonoBehaviour:
     placeFire: {fileID: 9026416278272212523}
     placeShell: {fileID: 9026416275878251123}
     animator: {fileID: 8943007821138025131}
+    inInventory: 0
   - weaponType: 3
     fireRate: 0.5
     bulletPrefab: {fileID: 1000013256060682, guid: 8482466905b6d3946a69ed5b3fe2ccd4,
@@ -2231,6 +2233,7 @@ MonoBehaviour:
     placeFire: {fileID: 9026416277288873439}
     placeShell: {fileID: 9026416274959976987}
     animator: {fileID: 8943007821478787409}
+    inInventory: 0
   - weaponType: 4
     fireRate: 0.5
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2246,6 +2249,7 @@ MonoBehaviour:
     placeFire: {fileID: 9026416270008639769}
     placeShell: {fileID: 9026416277466609049}
     animator: {fileID: 8943007821942525413}
+    inInventory: 0
   - weaponType: 5
     fireRate: 1
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2261,6 +2265,7 @@ MonoBehaviour:
     placeFire: {fileID: 9026416274844518237}
     placeShell: {fileID: 9026416276006277065}
     animator: {fileID: 8943007821380696571}
+    inInventory: 0
   - weaponType: 6
     fireRate: 0.1
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2276,6 +2281,7 @@ MonoBehaviour:
     placeFire: {fileID: 9026416277474762417}
     placeShell: {fileID: 9026416276397177021}
     animator: {fileID: 8943007809618965759}
+    inInventory: 0
   hand1: {fileID: 0}
   hand2: {fileID: 0}
   handfist1: {fileID: 0}
@@ -2416,31 +2422,6 @@ MonoBehaviour:
   damageValue: 5
   power: 50
   cam: {fileID: 0}
---- !u!114 &2138909374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028025907648731851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9c1befddbb5a594d9d53206694a7bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 0}
-  placeItem: {fileID: 6347718688848189898}
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  textTotalWeight: {fileID: 0}
-  totalWeight: 0
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0
@@ -60330,15 +60311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03821a03049e6fb4a9291e1f525eb25c, type: 3}
---- !u!4 &6836809787801039112 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4683964150826710, guid: 03821a03049e6fb4a9291e1f525eb25c,
-    type: 3}
-  m_PrefabInstance: {fileID: 6841423362729883614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &6642895508024745824 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198668599249397950, guid: 03821a03049e6fb4a9291e1f525eb25c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6841423362729883614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6836809787801039112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4683964150826710, guid: 03821a03049e6fb4a9291e1f525eb25c,
     type: 3}
   m_PrefabInstance: {fileID: 6841423362729883614}
   m_PrefabAsset: {fileID: 0}

@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    [SerializeField] public GameObject item; // для главного слота c руками
+
+    public Weapon.WeaponType weaponType;
+
+    [Space]
+
     [SerializeField] public GameObject itemIconForMainSlot; // для главного слота c руками
     [SerializeField] public GameObject itemIconForSlot;
     [SerializeField] public bool isOneOff; // например, аптечка. Оружие -нет.
@@ -21,11 +25,9 @@ public class PickUp : MonoBehaviour
 
     private Transform appliedInventoryPlace;
 
+
     private void Start()
     {
-
-
-        inventory = FindObjectOfType<Inventory>();
         //Glow.SetActive(false);
     }
 
@@ -35,7 +37,7 @@ public class PickUp : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L) && isTriggered)
         {
-            inventory.PutInInventory(this);
+            PlayerMovement.instance.inventory.PutInInventory(this);
 
             Destroy(gameObject);
         }
@@ -43,7 +45,7 @@ public class PickUp : MonoBehaviour
 
     public void ApplyPickUp() // у каждого свой метод
     {
-        print("applying");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +53,6 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player")) 
         {
             isTriggered = true;
-            print("могу взять" + isTriggered);
             //PossibilityToTake(isTriggered);
         }
     }
@@ -61,7 +62,6 @@ public class PickUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isTriggered = false;
-            print("могу взять" + isTriggered);
            // PossibilityToTake(isTriggered);
         }
     }
@@ -71,10 +71,5 @@ public class PickUp : MonoBehaviour
     //    Glow.SetActive(enable);
     //    print("могу взять" + enable);
     //}
-
-    private void OnDestroy()
-    {
-        print("куку");
-    }
 
 }

@@ -9,12 +9,35 @@ public class MainSlot : MonoBehaviour
 
 	public Transform placeItemIconForMainSlot;
 
-	Inventory inventory;
+    public GameObject emptyHand;
+
+    Inventory inventory;
+
     PickUp pickUp;
 
-    private void Start()
+    Weapon weapon;
+    Weapon Weapon
     {
-        inventory = FindObjectOfType<Inventory>();
+        get
+        {
+            if (weapon == null)
+            {
+                weapon = PlayerMovement.instance.weapon;
+            }
+            return weapon;
+        }
+    }
+
+    Inventory Inventory
+    {
+        get
+        {
+            if (inventory == null)
+            {
+                inventory = PlayerMovement.instance.inventory;
+            }
+            return inventory;
+        }
     }
 
     public void AddItem(PickUp pickUp)
@@ -22,8 +45,17 @@ public class MainSlot : MonoBehaviour
         isFull = true;
 
         this.pickUp = pickUp;
+        print("AddItem in Main: " + pickUp.weaponType);
+
+        emptyHand.SetActive(false);
+
         Instantiate(pickUp.itemIconForMainSlot, placeItemIconForMainSlot);
-	}
+    }
+
+    public void ShowHand()
+    {
+        emptyHand.SetActive(true);
+    }
 
     public void RemoveItem()
     {
@@ -31,14 +63,18 @@ public class MainSlot : MonoBehaviour
         {
 			return;
         }
-        inventory.SubFromTotalWeight(pickUp.itemWeigth);
+        Inventory.SubFromTotalWeight(pickUp.itemWeigth);
         ItemThrowOnScene();
+        ShowHand();
+
         ClearSlot();
     }
 
     public void ClearSlot()
     {
+
         Destroy(placeItemIconForMainSlot.transform.GetChild(0).gameObject);
+
         pickUp = null;
         isFull = false;
     }
@@ -50,15 +86,36 @@ public class MainSlot : MonoBehaviour
             return;
         }
 
-        inventory.PutInInventory(pickUp);
-        inventory.SubFromTotalWeight(pickUp.itemWeigth);
+        Inventory.PutInInventory(pickUp);
+        Inventory.SubFromTotalWeight(pickUp.itemWeigth);
+    }
+
+    public void ButtonPutCurrentItemToInventory()
+    {
+        if (!isFull)
+        {
+            return;
+        }
+
+        Weapon.SetWeapon(Weapon.WeaponType.NONE);
+        ShowHand();
+
+        Inventory.PutInInventory(pickUp);
+        Inventory.SubFromTotalWeight(pickUp.itemWeigth);
+
         ClearSlot();
     }
 
 
     private void ItemThrowOnScene()
     {
-        GameObject clone = Instantiate(pickUp.item, inventory.placeItem.position
+        Weapon.weapons[(int)pickUp.weaponType].isInInventory = false;
+
+        Weapon.SetWeapon(Weapon.WeaponType.NONE);
+
+        //TODO включить пустые руки
+
+        GameObject clone = Instantiate(pickUp.gameObject, Inventory.placeItem.position
         + new Vector3(1, 0, 0), Quaternion.identity);
         clone.SetActive(true);
     }

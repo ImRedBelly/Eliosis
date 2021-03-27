@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Inventory")]
     public Inventory inventory;
 
+    [Header("Weapon")]
+    public Weapon weapon;
+
 
     [Header("Speed Parameters")]
     public Slider speedSlider;
@@ -58,14 +61,21 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
         BashTimeReset = BashTime;
 
+        weapon = GetComponent<Weapon>();
+
         //speedSlider.maxValue = maxRunSpeed;
         //speedSlider.value = runSpeed;
-
-        inventory = GetComponent<Inventory>();
-        print("player start");
     }
     void Update()
     {
+        // включает инвентарь
+        // TODO перенести в UImanager
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventory.gameObject.SetActive(!inventory.gameObject.activeSelf);
+        }
+
+
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
@@ -168,8 +178,6 @@ public class PlayerMovement : MonoBehaviour
                 BashDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 BashDir.z = 0;
                 BashDir = BashDir.normalized;
-
-                print(BashDir.magnitude);
 
                 BashAbleObj.GetComponent<Rigidbody2D>().AddForce(-BashDir * 1, ForceMode2D.Impulse);
                 Arrow.SetActive(false);

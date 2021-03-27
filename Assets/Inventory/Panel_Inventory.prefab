@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  imagePlayerWithItem: {fileID: 5822119135137080661}
+  placeItemIconForMainSlot: {fileID: 0}
 --- !u!1001 &2637766267615106311
 PrefabInstance:
   m_ObjectHideFlags: 0
