@@ -2123,6 +2123,7 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   shield: {fileID: 0}
   inventory: {fileID: 0}
+  weapon: {fileID: 0}
   speedSlider: {fileID: 0}
   runSpeed: 40
   maxRunSpeed: 100
@@ -2140,16 +2141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
   health: 15
-  deadCopy: {fileID: 4255850023169748089, guid: a1818678b94672f458c47546faed4166,
-    type: 3}
-  spriteForDeadCopy:
-  - {fileID: 9204052352733490711}
-  - {fileID: 9204052347090208997}
-  explosiveCopy: {fileID: 6458806765693801822, guid: 5fc63dc4ec805b94ebaeac701a97904b,
-    type: 3}
   playerComponent:
   - {fileID: 9028025909272917237}
   - {fileID: 9028025909353819181}
+  effectDead: {fileID: 100000, guid: 489a25f171918bf4ba7629b50c82641f, type: 3}
+  deadCopy: {fileID: 4255850023169748089, guid: a1818678b94672f458c47546faed4166,
+    type: 3}
 --- !u!114 &124108335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,8 +2186,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 1876759219023450428}
     placeFire: {fileID: 0}
     placeShell: {fileID: 0}
+    isInInventory: 0
     animator: {fileID: 1249051238307715540}
-    inInventory: 1
   - weaponType: 1
     fireRate: 1
     bulletPrefab: {fileID: 0}
@@ -2202,8 +2199,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416275480677089}
     placeFire: {fileID: 0}
     placeShell: {fileID: 0}
+    isInInventory: 0
     animator: {fileID: 8943007810704754457}
-    inInventory: 1
   - weaponType: 2
     fireRate: 0.5
     bulletPrefab: {fileID: 1000012176153370, guid: 93c3cfa0b5e89d14d91510b5f09bde3a,
@@ -2218,8 +2215,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416270167812519}
     placeFire: {fileID: 9026416278272212523}
     placeShell: {fileID: 9026416275878251123}
+    isInInventory: 0
     animator: {fileID: 8943007821138025131}
-    inInventory: 0
   - weaponType: 3
     fireRate: 0.5
     bulletPrefab: {fileID: 1000013256060682, guid: 8482466905b6d3946a69ed5b3fe2ccd4,
@@ -2234,8 +2231,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416277065119697}
     placeFire: {fileID: 9026416277288873439}
     placeShell: {fileID: 9026416274959976987}
+    isInInventory: 0
     animator: {fileID: 8943007821478787409}
-    inInventory: 0
   - weaponType: 4
     fireRate: 0.5
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2250,8 +2247,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416276392918851}
     placeFire: {fileID: 9026416270008639769}
     placeShell: {fileID: 9026416277466609049}
+    isInInventory: 0
     animator: {fileID: 8943007821942525413}
-    inInventory: 0
   - weaponType: 5
     fireRate: 1
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2266,8 +2263,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416275608350713}
     placeFire: {fileID: 9026416274844518237}
     placeShell: {fileID: 9026416276006277065}
+    isInInventory: 0
     animator: {fileID: 8943007821380696571}
-    inInventory: 0
   - weaponType: 6
     fireRate: 0.1
     bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
@@ -2282,8 +2279,8 @@ MonoBehaviour:
     placeWeapon: {fileID: 9026416274730702405}
     placeFire: {fileID: 9026416277474762417}
     placeShell: {fileID: 9026416276397177021}
+    isInInventory: 0
     animator: {fileID: 8943007809618965759}
-    inInventory: 0
   hand1: {fileID: 0}
   hand2: {fileID: 0}
   handfist1: {fileID: 0}

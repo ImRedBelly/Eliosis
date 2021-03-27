@@ -45,6 +45,7 @@ public class Purse : MonoBehaviour
     public void GiveMoney()
     {
         GameManager.instance.GiveMoney(money);
+        money = 0;
     }
     public void TakeMoney(int ghostMoney)
     {

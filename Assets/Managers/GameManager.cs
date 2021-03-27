@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
     {
         PlayerMovement.instance.GetComponent<Purse>().GiveMoney();
 
-        countDeath++;
-
         PositionX = PlayerMovement.instance.transform.position.x;
         PositionY = PlayerMovement.instance.transform.position.y;
     }

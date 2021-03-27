@@ -15,6 +15,9 @@ public class HealthPlayer : MonoBehaviour
 
     bool invincible = false;
 
+    public GameObject[] playerComponent;
+    public GameObject effectDead;
+    GameObject emptyEffectDead;
     public float Life
     {
         get
@@ -99,15 +102,25 @@ public class HealthPlayer : MonoBehaviour
 
     IEnumerator WaitToDead()
     {
-        controller2D.canMove = false;
+        if (emptyEffectDead == null)
+        {
+            emptyEffectDead = Instantiate(effectDead, transform.position, Quaternion.identity);
+            emptyEffectDead.transform.localScale = new Vector2(2, 2);
+        }
+
+        playerComponent[0].SetActive(false);
+        playerComponent[1].SetActive(false);
         rb.velocity = new Vector2(0, rb.velocity.y);
 
         GameManager.instance.SavePosition();
 
         yield return new WaitForSeconds(1f);
 
-        controller2D.canMove = false;
-        DeathController.deathController.LoadCheckPoint(gameObject);
+        playerComponent[0].SetActive(true);
+        playerComponent[1].SetActive(true);
 
+        DeathController.deathController.CreadDeadCopy();
+        DeathController.deathController.LoadCheckPoint(gameObject);
+        health = maxHealth;
     }
 }

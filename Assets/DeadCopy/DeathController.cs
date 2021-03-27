@@ -5,6 +5,7 @@ public class DeathController : MonoBehaviour
     public static DeathController deathController;
 
     public GameObject deathCopy;
+    GameObject emptyDeathCopy;
 
     public Transform checkPoint;
 
@@ -14,9 +15,11 @@ public class DeathController : MonoBehaviour
             Destroy(gameObject);
         else
             deathController = this;
-
-        if (GameManager.instance.countDeath > 0)
-            Instantiate(deathCopy, new Vector2(GameManager.instance.PositionX, GameManager.instance.PositionY), Quaternion.identity);
+    }
+    public void CreadDeadCopy()
+    {
+        if (emptyDeathCopy == null)
+            emptyDeathCopy = Instantiate(deathCopy, new Vector2(GameManager.instance.PositionX, GameManager.instance.PositionY), Quaternion.identity);
     }
     public void LoadCheckPoint(GameObject player)
     {
