@@ -48,9 +48,6 @@ public class HealthPlayer : MonoBehaviour
     CharacterController2D controller2D;
     public GameObject deadCopy;
 
-    public SpriteRenderer[] spriteForDeadCopy;
-    public GameObject explosiveCopy;
-    public GameObject[] playerComponent;
 
     void Start()
     {
@@ -103,27 +100,14 @@ public class HealthPlayer : MonoBehaviour
     IEnumerator WaitToDead()
     {
         controller2D.canMove = false;
-        invincible = true;
-
         rb.velocity = new Vector2(0, rb.velocity.y);
 
         GameManager.instance.SavePosition();
 
-
-        //enemy copy of mine
-
-        //explosive copy
-        GameObject Copy = Instantiate(explosiveCopy, transform.position, Quaternion.identity);
-        Copy.GetComponent<CopyScatterPlayer>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
-        Copy.GetComponent<CopyScatterPlayer>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
-
-        yield return new WaitForSeconds(0.1f);
-        for (int i = 0; i < playerComponent.Length; i++)
-        {
-            playerComponent[i].SetActive(false);
-        }
-
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(0);
+
+        controller2D.canMove = false;
+        DeathController.deathController.LoadCheckPoint(gameObject);
+
     }
 }

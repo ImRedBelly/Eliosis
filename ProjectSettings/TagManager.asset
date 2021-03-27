@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Money
   - DeadCopy
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

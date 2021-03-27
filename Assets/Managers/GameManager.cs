@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public float PositionX;
     public float PositionY;
+
     void Awake()
     {
         if (instance == null)
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
+
 
     public void SavePosition()
     {
