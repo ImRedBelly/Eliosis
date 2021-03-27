@@ -587,7 +587,7 @@ MonoBehaviour:
   speed: 1
   enemy: {fileID: 0}
   attackCheck: {fileID: 1781088965535427040}
-  dmgValue: 4
+  dmgValue: 2
   meleeDist: 1.5
   enemyMask:
     serializedVersion: 2
@@ -595,7 +595,7 @@ MonoBehaviour:
   fire:
   - {fileID: 9150095011517546894}
   - {fileID: 6093146468607867233}
-  deadEffect: {fileID: 1280141305896002, guid: 987b7da36284f234598f1f78e82e7ecc, type: 3}
+  deadEffect: {fileID: 100000, guid: 489a25f171918bf4ba7629b50c82641f, type: 3}
 --- !u!1 &4255850023718208071
 GameObject:
   m_ObjectHideFlags: 0

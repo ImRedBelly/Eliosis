@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     public GameObject sandPrefab;
     public GameObject platformPrefab;
     public GameObject bloodPrefab;
+
     Weapon weapon;
 
     Rigidbody2D rb;
@@ -31,6 +32,7 @@ public class Bullet : MonoBehaviour
         {
             rb.velocity = transform.right * direction * valuePlayer.bulletValue.speed;
         }
+
 
         rb.velocity = Quaternion.AngleAxis(Random.Range(-5, 5), transform.forward) * direction * (valuePlayer.bulletValue.speed * Random.Range(0.75f, 1.25f));
     }

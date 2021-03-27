@@ -46,9 +46,10 @@ public class HealthPlayer : MonoBehaviour
 
     Rigidbody2D rb;
     CharacterController2D controller2D;
+    public GameObject deadCopy;
 
     public SpriteRenderer[] spriteForDeadCopy;
-    public GameObject deadCopy;
+    public GameObject explosiveCopy;
     public GameObject[] playerComponent;
 
     void Start()
@@ -109,7 +110,10 @@ public class HealthPlayer : MonoBehaviour
         GameManager.instance.SavePosition();
 
 
-        GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
+        //enemy copy of mine
+
+        //explosive copy
+        GameObject Copy = Instantiate(explosiveCopy, transform.position, Quaternion.identity);
         Copy.GetComponent<CopyScatterPlayer>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
         Copy.GetComponent<CopyScatterPlayer>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
 

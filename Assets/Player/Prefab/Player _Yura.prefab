@@ -2141,10 +2141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
   health: 15
+  deadCopy: {fileID: 4255850023169748089, guid: a1818678b94672f458c47546faed4166,
+    type: 3}
   spriteForDeadCopy:
   - {fileID: 9204052352733490711}
   - {fileID: 9204052347090208997}
-  deadCopy: {fileID: 6458806765693801822, guid: 5fc63dc4ec805b94ebaeac701a97904b,
+  explosiveCopy: {fileID: 6458806765693801822, guid: 5fc63dc4ec805b94ebaeac701a97904b,
     type: 3}
   playerComponent:
   - {fileID: 9028025909272917237}

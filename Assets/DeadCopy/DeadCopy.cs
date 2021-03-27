@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class DeadCopy : MonoBehaviour
 {
     public int money = 0;
+    bool returnedTheMoney = false;
 
     [Header("Components")]
     public Animator animator;
@@ -40,8 +41,8 @@ public class DeadCopy : MonoBehaviour
     }
     private void Start()
     {
-
         money = GameManager.instance.countMoney;
+        returnedTheMoney = false;
     }
     void FixedUpdate()
     {
@@ -91,7 +92,7 @@ public class DeadCopy : MonoBehaviour
         }
     }
 
-    
+
     void Flip()
     {
         facingRight = !facingRight;
@@ -149,8 +150,13 @@ public class DeadCopy : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
+        if (!returnedTheMoney)
+        {
+            PlayerMovement.instance.GetComponent<Purse>().TakeMoney(money);
+            returnedTheMoney = true;
+        }
+
         TrajectoryRenderer.instance.RemoveBody(rb);
-        PlayerMovement.instance.GetComponent<Purse>().TakeMoney(money);
         yield return new WaitForSeconds(0.1f);
         Instantiate(deadEffect, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
         yield return new WaitForSeconds(0.1f);

@@ -286,7 +286,6 @@ public class Weapon : MonoBehaviour
         {
             numberOfBullets = 1;
         }
-
         for (int i = 0; i < numberOfBullets; i++)
         {
             GameObject bullet = Instantiate(weapons[(int)currentWeapon].bulletPrefab,
@@ -294,6 +293,7 @@ public class Weapon : MonoBehaviour
                             weapons[(int)currentWeapon].placeFire.rotation);
 
             bullet.GetComponent<Bullet>().direction = weapons[(int)currentWeapon].placeFire.right * transform.localScale.x * 5;
+
             bullet.gameObject.layer = LayerMask.NameToLayer(bulletMask);
         }
 

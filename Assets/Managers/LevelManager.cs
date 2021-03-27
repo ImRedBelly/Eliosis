@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int torchCount;
     public GameObject portal;
+    public int torchCount;
 
     public void CreateTorch()
     {
