@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public Animator animator;
     public Rigidbody2D Rigidbody2D;
     public Animator animatorWeapon;
+    public AudioSource audioSource;
+    public AudioSource audioSourceWeapon;
     public EnemyWeapon enemyWeapon;
 
     public LineRenderer lineRenderer;
@@ -28,6 +30,12 @@ public class EnemyController : MonoBehaviour
     [Header("Attack")]
     public Transform attackCheck;
     public Transform placeFire;
+    public Transform lazerSocket;
+
+    [Header("Audio")]
+    public AudioClip sniperShot;
+    public AudioClip dead;
+
 
     public GameObject enemy;
 
@@ -60,9 +68,9 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if (life <= 0)
             DestroyEnemy();
+
 
         else if (enemy != null)
         {
@@ -183,10 +191,10 @@ public class EnemyController : MonoBehaviour
 
     void ShotSniper()
     {
-        var directionToEndPoint = placeFire.position - placeFire.right * transform.localScale.x * -50; // конечная точка луча если не видит игрока
-        var directionToPlayer = placeFire.transform.position - directionToEndPoint; //расстояние RayCast до игрока
+        var directionToEndPoint = lazerSocket.position - lazerSocket.right * transform.localScale.x * -50; // конечная точка луча если не видит игрока
+        var directionToPlayer = lazerSocket.transform.position - directionToEndPoint; //расстояние RayCast до игрока
 
-        RaycastHit2D hit = Physics2D.Raycast(placeFire.position, placeFire.right * transform.localScale.x * 4, directionToPlayer.magnitude, player);
+        RaycastHit2D hit = Physics2D.Raycast(lazerSocket.position, lazerSocket.right * transform.localScale.x * 4, directionToPlayer.magnitude, player);
 
         if (hit.collider != null)
         {
@@ -194,7 +202,7 @@ public class EnemyController : MonoBehaviour
                 StartCoroutine(TimerShotSniper());
             else    // нацеливает луч на игрока если тот попадает на луч
             {
-                Vector2 directionToPlayerOffLerp = enemy.transform.position - placeFire.transform.position;
+                Vector2 directionToPlayerOffLerp = enemy.transform.position - lazerSocket.transform.position;
                 directionToPlayerOffLerp.y += 1;
                 rootSniper.transform.right = directionToPlayerOffLerp;
             }
@@ -204,7 +212,7 @@ public class EnemyController : MonoBehaviour
             time += Time.deltaTime;
             rootSniper.transform.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, patrolAngles[0]), Quaternion.Euler(0, 0, patrolAngles[1]), Mathf.Abs(Mathf.Sin(time * 0.5f)));
         }
-        lineRenderer.SetPosition(0, placeFire.position);
+        lineRenderer.SetPosition(0, lazerSocket.position);
         lineRenderer.SetPosition(1, directionToEndPoint);
     }
 
@@ -215,6 +223,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(1);
         lineRenderer.enabled = false;
         yield return new WaitForSeconds(0.25f);
+        audioSourceWeapon.PlayOneShot(sniperShot);
         enemyWeapon.Shoot();
 
         lineRenderer.enabled = true;
@@ -222,12 +231,13 @@ public class EnemyController : MonoBehaviour
     }
     void DestroyEnemy()
     {
+        audioSource.volume = 0.8f;
+        audioSource.PlayOneShot(dead);
+
         GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
         Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
         Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
-
         TrajectoryRenderer.instance.RemoveBody(Rigidbody2D);
-
         Destroy(gameObject);
     }
 }

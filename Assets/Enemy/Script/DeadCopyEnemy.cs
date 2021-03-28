@@ -22,17 +22,13 @@ public class DeadCopyEnemy : MonoBehaviour
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(0.5f);
+
         for (int i = 0; i < bodyParts.Length; i++)
         {
             Instantiate(deadEffect, bodyParts[i].transform.position, Quaternion.identity);
         }
-        yield return new WaitForSeconds(0.1f);
-        //for (int i = 0; i < bodyParts.Length; i++)
-        //{
-        //    Rigidbody2D rb = bodyParts[i].GetComponent<Rigidbody2D>();
-        //    TrajectoryRenderer.instance.RemoveBody(rb);
-        //}
-        yield return new WaitForSeconds(0.1f);
+
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
 }
