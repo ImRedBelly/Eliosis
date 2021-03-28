@@ -370,7 +370,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -405,7 +405,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -9391,7 +9391,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  speed: 40
   sandPrefab: {fileID: 1000011772094258, guid: e251c14d64604e54aaa5db2698951596, type: 3}
   platformPrefab: {fileID: 1000014022289910, guid: efc00ae131f8d86498732bf05e786740,
     type: 3}
