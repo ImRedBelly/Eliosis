@@ -2100,6 +2100,9 @@ MonoBehaviour:
     damageSlider: {fileID: 0}
     speed: 20
     damageBullet: 2
+  weightValue:
+    weightSlider: {fileID: 0}
+    weightPlayer: 2
 --- !u!114 &6841423363569015483
 MonoBehaviour:
   m_ObjectHideFlags: 0

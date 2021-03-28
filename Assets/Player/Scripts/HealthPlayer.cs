@@ -22,7 +22,7 @@ public class HealthPlayer : MonoBehaviour
     {
         get
         {
-            healthSlider.value = maxHealth;
+            healthSlider.value = health;
             return health;
         }
         set

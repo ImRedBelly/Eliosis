@@ -18,6 +18,8 @@ public class Turret : MonoBehaviour
 
     public SpriteRenderer angleSprite;
 
+    public float distanceToPlayer;
+
     public float[] patrolAngles;
 
     float timeToLerp;
@@ -40,7 +42,7 @@ public class Turret : MonoBehaviour
         Vector3 targetDir = player.transform.position - tower.transform.position;
         float angle = Vector3.Angle(targetDir, -tower.transform.up);
 
-        if (distToPlayer.magnitude < 10 && angle > patrolAngles[0] && angle < patrolAngles[1])
+        if (distToPlayer.magnitude < distanceToPlayer && angle > patrolAngles[0] && angle < patrolAngles[1])
         {
             isPlayer = true;
 
@@ -113,11 +115,13 @@ public class Turret : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject)
         {
             health--;
         }
     }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -125,8 +129,8 @@ public class Turret : MonoBehaviour
         Vector3 lookLeftDirection = Quaternion.AngleAxis(patrolAngles[0], Vector3.forward) * lookDirection;
         Vector3 lookRightDirection = Quaternion.AngleAxis(patrolAngles[1], Vector3.forward) * lookDirection;
 
-        Gizmos.DrawRay(tower.transform.position, lookDirection * 10);
-        Gizmos.DrawRay(tower.transform.position, lookLeftDirection * 10);
-        Gizmos.DrawRay(tower.transform.position, lookRightDirection * 10);
+        Gizmos.DrawRay(tower.transform.position, lookDirection * distanceToPlayer);
+        Gizmos.DrawRay(tower.transform.position, lookLeftDirection * distanceToPlayer);
+        Gizmos.DrawRay(tower.transform.position, lookRightDirection * distanceToPlayer);
     }
 }
