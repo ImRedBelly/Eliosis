@@ -31,6 +31,7 @@ public class EnemyWeapon : MonoBehaviour
         public Transform placeFire;
         public Transform placeShell;
         public Animator animator;
+        public AudioClip audioShot;
     }
     private float nextFire;
     public string bulletMask;
@@ -40,6 +41,7 @@ public class EnemyWeapon : MonoBehaviour
 
 
     public WeaponType currentWeapon;
+    public AudioSource audioSource;
     private int numberOfWeapons;
 
     Animator currentWeaponAnimator;
@@ -86,6 +88,7 @@ public class EnemyWeapon : MonoBehaviour
 
     public void CheckFire()
     {
+       
         if (currentWeapon == WeaponType.KNIFE && nextFire <= 0)
         {
             nextFire = weapons[(int)currentWeapon].fireRate;
@@ -111,7 +114,7 @@ public class EnemyWeapon : MonoBehaviour
     }
     public void Shoot()
     {
-
+        audioSource.PlayOneShot(weapons[(int)currentWeapon].audioShot);
         int numberOfBullets;
         if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби
         {

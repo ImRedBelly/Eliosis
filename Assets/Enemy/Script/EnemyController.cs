@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D Rigidbody2D;
     public Animator animatorWeapon;
     public AudioSource audioSource;
-    public AudioSource audioSourceWeapon;
     public EnemyWeapon enemyWeapon;
 
     public LineRenderer lineRenderer;
@@ -31,10 +30,6 @@ public class EnemyController : MonoBehaviour
     public Transform attackCheck;
     public Transform placeFire;
     public Transform lazerSocket;
-
-    [Header("Audio")]
-    public AudioClip sniperShot;
-    public AudioClip dead;
 
 
     public GameObject enemy;
@@ -166,6 +161,7 @@ public class EnemyController : MonoBehaviour
 
     public void MeleeAttack()
     {
+        enemyWeapon.audioSource.PlayOneShot(enemyWeapon.weapons[0].audioShot);
         Collider2D[] player = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
         for (int i = 0; i < player.Length; i++)
         {
@@ -223,7 +219,6 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(1);
         lineRenderer.enabled = false;
         yield return new WaitForSeconds(0.25f);
-        audioSourceWeapon.PlayOneShot(sniperShot);
         enemyWeapon.Shoot();
 
         lineRenderer.enabled = true;
@@ -231,9 +226,6 @@ public class EnemyController : MonoBehaviour
     }
     void DestroyEnemy()
     {
-        audioSource.volume = 0.8f;
-        audioSource.PlayOneShot(dead);
-
         GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
         Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
         Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
