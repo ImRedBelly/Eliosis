@@ -7435,18 +7435,15 @@ MonoBehaviour:
   Rigidbody2D: {fileID: 6417741307387342650}
   animatorWeapon: {fileID: 0}
   audioSource: {fileID: 6458806765693801824}
-  audioSourceWeapon: {fileID: 6651363827101131001}
   enemyWeapon: {fileID: 167281900165245410}
   lineRenderer: {fileID: 4916764271840668445}
+  isShotGun: 0
+  isAssault: 1
   life: 5
   speed: 5
   attackCheck: {fileID: 523821173379362406}
   placeFire: {fileID: 3102299953434731153}
   lazerSocket: {fileID: 4207923743748621822}
-  sniperShot: {fileID: 8300000, guid: 66e93c37c05c6264c93d62047ef8769a, type: 3}
-  shotgunShot: {fileID: 0}
-  knifeShot: {fileID: 0}
-  dead: {fileID: 0}
   enemy: {fileID: 0}
   dmgValue: 4
   meleeDist: 1.5

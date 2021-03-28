@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
             menuShop.SetActive(true);
             ShopOn();
         }
-        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

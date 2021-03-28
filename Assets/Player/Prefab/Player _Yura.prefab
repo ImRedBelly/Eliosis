@@ -2312,6 +2312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf4523d9ced1d6c4183d4dfb7e5e78ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goodBuy: {fileID: 8300000, guid: d507f02efc7ffa84f9c560322e520a85, type: 3}
+  badBuy: {fileID: 8300000, guid: 7a5efbf6e24da8b49ad782db3d356deb, type: 3}
   money: 0
 --- !u!120 &1376555370
 LineRenderer:

@@ -21,6 +21,9 @@ public class EnemyController : MonoBehaviour
     public LineRenderer lineRenderer;
 
     [Header("Options")]
+    public bool isShotGun;
+    public bool isAssault;
+
     public float life = 5;
     public float speed = 5f;
 
@@ -99,7 +102,14 @@ public class EnemyController : MonoBehaviour
 
                         if (!meleeAttack)
                         {
-                            enemyWeapon.SetShotgun();
+                            if (isShotGun)
+                            {
+                                enemyWeapon.SetShotgun();
+                            }
+                            if (isAssault)
+                            {
+                                enemyWeapon.SetAssault();
+                            }
                             enemyWeapon.CheckFire();
                         }
                         else
