@@ -10,6 +10,8 @@ public class Boss : MonoBehaviour
     public Rigidbody2D Rigidbody2D;
     public Animator animator;
     public Animator animatorHand;
+    AudioSource audioSource;
+    public AudioSource audioSourceWeapon;
 
 
     [Header("Options")]
@@ -17,6 +19,8 @@ public class Boss : MonoBehaviour
     public float speed = 5f;
 
     private bool facingRight = true;
+
+    public AudioClip punchHammer;
 
     [Header("Melee Attack")]
     float timerIsAttack = 4;
@@ -46,14 +50,19 @@ public class Boss : MonoBehaviour
         MELEEEASYATTACK,
         MELEEHARDATTACK
     }
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         activState = BossState.IDLE;
+
     }
 
     void FixedUpdate()
     {
-       // print(Mathf.Abs(distToPlayer));
+        // print(Mathf.Abs(distToPlayer));
 
         if (life <= 0)
             StartCoroutine(DestroyEnemy());
@@ -86,7 +95,7 @@ public class Boss : MonoBehaviour
                         int randomAct = Random.Range(0, 2);
                         if (randomAct == 0)
                         {
-                           // print("0");
+                            // print("0");
 
                             activState = BossState.MELEEEASYATTACK;
 
@@ -95,7 +104,7 @@ public class Boss : MonoBehaviour
                         }
                         else if (randomAct == 1)
                         {
-                           // print("1");
+                            // print("1");
 
                             activState = BossState.MELEEHARDATTACK;
 
@@ -177,7 +186,10 @@ public class Boss : MonoBehaviour
             Flip();
         }
     }
-
+    public void PlaySound()
+    {
+        audioSourceWeapon.PlayOneShot(punchHammer);
+    }
     void Flip()
     {
 
@@ -194,6 +206,8 @@ public class Boss : MonoBehaviour
     public void MeleeAttack()
     {
         print("Melee Atatack");
+
+        audioSourceWeapon.PlayOneShot(punchHammer);
         Collider2D[] player = Physics2D.OverlapCircleAll(attackCheck.position, 0.9f);
         for (int i = 0; i < player.Length; i++)
         {
@@ -221,6 +235,7 @@ public class Boss : MonoBehaviour
 
     public void ShotSpecialBullet()
     {
+        audioSourceWeapon.PlayOneShot(punchHammer);
         GameObject wave = Instantiate(shockWave, positionWave.position, Quaternion.Euler(0, 0, 90));
         wave.GetComponent<ShockWave>().direction = -transform.up * transform.localScale.x * 1.5f;
 

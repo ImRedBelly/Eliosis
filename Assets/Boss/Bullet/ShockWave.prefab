@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6718355767904221114}
   - component: {fileID: 6913548243682490034}
   - component: {fileID: 6915004323759434506}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: COL Smaller Rocks
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
@@ -4561,7 +4561,7 @@ GameObject:
   - component: {fileID: 6718464273069048962}
   - component: {fileID: 6913643986136732028}
   - component: {fileID: 6914695887616389970}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: COL Small Rocks
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
@@ -9053,7 +9053,7 @@ GameObject:
   - component: {fileID: 6784715016398106358}
   - component: {fileID: 6784715016412261300}
   - component: {fileID: 6784715016412287508}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13718,7 +13718,9 @@ GameObject:
   - component: {fileID: 8610697735526877492}
   - component: {fileID: 8610697735526877493}
   - component: {fileID: -3819079150033528954}
-  m_Layer: 0
+  - component: {fileID: 2459004819903309946}
+  - component: {fileID: 4453541723916222965}
+  m_Layer: 17
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18502,6 +18504,118 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
+--- !u!82 &2459004819903309946
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610697735526877490}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0f9e1e18cdfb45a4dbbc2c332e05721e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 7
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!58 &4453541723916222965
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610697735526877490}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018673291, y: -420388.97}
+  serializedVersion: 2
+  m_Radius: 0.4405201
 --- !u!1 &8610697735662006147
 GameObject:
   m_ObjectHideFlags: 0
@@ -18513,7 +18627,7 @@ GameObject:
   - component: {fileID: 8610697735662006146}
   - component: {fileID: 8610697735662006148}
   - component: {fileID: 8610697735662006149}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Electricity Anim inward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23198,7 +23312,7 @@ GameObject:
   - component: {fileID: 8610697735886579489}
   - component: {fileID: 8610697735886579491}
   - component: {fileID: 8610697735886579488}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Electricity Anim outward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27883,7 +27997,7 @@ GameObject:
   - component: {fileID: 8610697735933376996}
   - component: {fileID: 8610697735933376998}
   - component: {fileID: 8610697735933376999}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Electricity Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32569,7 +32683,7 @@ GameObject:
   - component: {fileID: 8610697736009357401}
   - component: {fileID: 8610697736009357414}
   - component: {fileID: 8610697736009357415}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3_Hit_Electric_C_Air (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37468,7 +37582,7 @@ GameObject:
   - component: {fileID: 8610697736033339246}
   - component: {fileID: 8610697736033339232}
   - component: {fileID: 8610697736033339233}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42211,7 +42325,7 @@ GameObject:
   - component: {fileID: 8610697736303757128}
   - component: {fileID: 8610697736303757130}
   - component: {fileID: 8610697736303757131}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46879,7 +46993,7 @@ GameObject:
   - component: {fileID: 8610697736511117794}
   - component: {fileID: 8610697736511117795}
   - component: {fileID: 8610697736511117792}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3_Hit_Electric_C_Air
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51781,7 +51895,7 @@ GameObject:
   - component: {fileID: 8610697737296489411}
   - component: {fileID: 8610697737296489413}
   - component: {fileID: 8610697737296489410}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CFX3 Sparkles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
