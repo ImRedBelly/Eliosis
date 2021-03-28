@@ -31,6 +31,7 @@ public class Turret : MonoBehaviour
     bool isDestroy = true;
     public AudioSource audioSource;
     public AudioClip shoot;
+    public AudioClip destroy;
     void Start()
     {
         player = GameObject.Find("Player _Yura");
@@ -110,11 +111,12 @@ public class Turret : MonoBehaviour
     {
         if (isDestroy)
         {
+            audioSource.PlayOneShot(destroy);
             Instantiate(deadEffect[0], transform.position, Quaternion.identity);
             Instantiate(deadEffect[1], transform.position, Quaternion.identity);
             isDestroy = false;
         }
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.9f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

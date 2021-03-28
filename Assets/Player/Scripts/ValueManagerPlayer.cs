@@ -58,7 +58,7 @@ public class ValueManagerPlayer : MonoBehaviour
         float weightMaxValue = 15;
 
         public float weightPlayer = 2;
-        public float Damage
+        public float Power
         {
             get
             {
@@ -78,7 +78,7 @@ public class ValueManagerPlayer : MonoBehaviour
         }
         public void UpdateMaxWeight(float weightPoint)
         {
-            Damage += weightPoint;
+            Power += weightPoint;
         }
     }
 }

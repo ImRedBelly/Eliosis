@@ -189,11 +189,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4937211719291371777}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -1.59, z: 0}
+  m_LocalPosition: {x: 0, y: -1.24, z: 0}
   m_LocalScale: {x: 1, y: 0.95011353, z: 1}
   m_Children:
   - {fileID: 5355079047565153009}
-  - {fileID: 5355079047512683763}
   m_Father: {fileID: 4937211718119870190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 179.91}
@@ -236,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300004, guid: 23a10fa0df1140746adb7bda3d420aba, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 23a10fa0df1140746adb7bda3d420aba, type: 3}
   m_Color: {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -328,36 +327,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &5355079047512683760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5355079047512683763}
-  m_Layer: 0
-  m_Name: Shot_Position_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5355079047512683763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355079047512683760}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.166, y: 1.529, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4937211719291371776}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5355079047565152974
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5355079047565152974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.118, y: 1.529, z: 0}
+  m_LocalPosition: {x: -0.04, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937211719291371776}
@@ -451,6 +420,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 10cc149177de3db4da171b97053b1a6d, type: 3}
   audioSource: {fileID: 8265229554417710430}
   shoot: {fileID: 8300000, guid: 820db915eb6d56447ad0b4916e1ec39e, type: 3}
+  destroy: {fileID: 8300000, guid: 8c29c786ac28f88428d9e2d7411684dd, type: 3}
 --- !u!61 &5355079047618280611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -464,7 +434,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.42354965, y: 1.6140671}
+  m_Offset: {x: 0.09019661, y: 0.032794952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -475,7 +445,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5723648, y: 1.5265732}
+  m_Size: {x: 1.4789543, y: 1.2730331}
   m_EdgeRadius: 0
 --- !u!82 &8265229554417710430
 AudioSource:
@@ -489,7 +459,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

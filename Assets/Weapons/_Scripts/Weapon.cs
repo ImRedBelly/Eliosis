@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
 
         public bool isInInventory;
         public Animator animator;
+        public AudioClip soundShoot;
     }
 
     public string bulletMask;
@@ -50,6 +51,7 @@ public class Weapon : MonoBehaviour
     public SpriteRenderer handfist2;
 
     public WeaponType currentWeapon;
+    public AudioSource audioSource;
     private int numberOfWeapons;
     ReversLook reversLook;
 
@@ -276,7 +278,7 @@ public class Weapon : MonoBehaviour
     private void Shoot()
     {
         //todo sound
-
+        audioSource.PlayOneShot(weapons[(int)currentWeapon].soundShoot);
         //вылетают пули
         int numberOfBullets;
         if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби

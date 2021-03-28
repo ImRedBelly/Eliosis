@@ -63,6 +63,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 10cc149177de3db4da171b97053b1a6d, type: 3}
   audioSource: {fileID: 6022865545332486403}
   shoot: {fileID: 8300000, guid: 820db915eb6d56447ad0b4916e1ec39e, type: 3}
+  destroy: {fileID: 8300000, guid: 8c29c786ac28f88428d9e2d7411684dd, type: 3}
 --- !u!61 &1563107050092792085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -101,7 +102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
