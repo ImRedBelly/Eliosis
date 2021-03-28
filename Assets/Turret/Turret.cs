@@ -29,6 +29,8 @@ public class Turret : MonoBehaviour
     public GameObject[] deadEffect;
     float health = 3;
     bool isDestroy = true;
+    public AudioSource audioSource;
+    public AudioClip shoot;
     void Start()
     {
         player = GameObject.Find("Player _Yura");
@@ -82,6 +84,8 @@ public class Turret : MonoBehaviour
     {
         if (timeToShot < 0)
         {
+            audioSource.PlayOneShot(shoot);
+
             GameObject bulletCopy = Instantiate(bullet, shotPosition.transform.position, Quaternion.identity);
             bulletCopy.transform.right = -tower.transform.up;
 
