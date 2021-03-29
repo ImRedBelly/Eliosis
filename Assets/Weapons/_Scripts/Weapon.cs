@@ -313,7 +313,6 @@ public class Weapon : MonoBehaviour
         Rigidbody2D shellRb = shell.GetComponent<Rigidbody2D>();
         shellRb.AddForce(weapons[(int)currentWeapon].placeShell.up * Random.Range(8, 12), ForceMode2D.Impulse);
         shellRb.AddTorque(Random.Range(-250, 250), ForceMode2D.Force);
-        Destroy(shell, 3f);
 
         //сверкает вспышка
         GameObject flash = Instantiate(weapons[(int)currentWeapon].flashPrefab,

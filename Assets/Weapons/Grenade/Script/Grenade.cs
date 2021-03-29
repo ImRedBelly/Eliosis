@@ -12,7 +12,12 @@ public class Grenade : MonoBehaviour
 
 
     public Camera cam;
-
+    AudioSource audioSource;
+    public AudioClip boom;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         cam = Camera.main;
@@ -48,6 +53,7 @@ public class Grenade : MonoBehaviour
     {
         TrajectoryRenderer.instance.RemoveBody(rb);
         yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(boom);
         DoDashDamage();
         Instantiate(effectBoom, transform.position, Quaternion.identity);
         Destroy(gameObject);

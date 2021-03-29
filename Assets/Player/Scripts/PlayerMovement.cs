@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 Time.timeScale = 0;
-                BashAbleObj.transform.localScale = new Vector2(0.12f, 0.12f);
+                BashAbleObj.transform.localScale = new Vector2(1.1f, 1.1f);
                 Arrow.SetActive(true);
                 Arrow.transform.position = BashAbleObj.transform.transform.position;
                 IsChosingDir = true;
@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
             else if (IsChosingDir && Input.GetMouseButtonUp(1))
             {
                 Time.timeScale = 1f;
-                BashAbleObj.transform.localScale = new Vector2(0.1f, 0.1f);
+                BashAbleObj.transform.localScale = new Vector2(1, 1);
                 IsChosingDir = false;
                 IsBashing = true;
                 transform.position = BashAbleObj.transform.position;

@@ -59,6 +59,7 @@ public class EnemyController : MonoBehaviour
     public GameObject deadCopy;
 
     float time = 0;
+
     private void Start()
     {
         activState = BossState.IDLE;
@@ -67,7 +68,11 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         if (life <= 0)
+        {
+
+            TrajectoryRenderer.instance.RemoveBody(Rigidbody2D);
             DestroyEnemy();
+        }
 
 
         else if (enemy != null)
@@ -236,6 +241,7 @@ public class EnemyController : MonoBehaviour
     }
     void DestroyEnemy()
     {
+
         GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
         Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
         Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;

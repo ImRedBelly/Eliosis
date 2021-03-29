@@ -1081,6 +1081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6841423364080703877}
   - component: {fileID: 6841423364080703876}
+  - component: {fileID: 7792217685062823529}
   m_Layer: 8
   m_Name: Grenade
   m_TagString: Untagged
@@ -1118,6 +1119,103 @@ MonoBehaviour:
   trajectoryRenderer: {fileID: 197592988}
   grenadePrefab: {fileID: 6031483753634655041, guid: f90ea296a08948c42b4748e0241838d4,
     type: 3}
+  check: {fileID: 8300000, guid: 6e0352dc727e19a449a7670c3bee6b59, type: 3}
+--- !u!82 &7792217685062823529
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841423364080703878}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6841423364207951884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1941,7 @@ GameObject:
   - component: {fileID: 6841423363569015482}
   - component: {fileID: 1376555370}
   - component: {fileID: 2046448618896675287}
+  - component: {fileID: 1387898062}
   m_Layer: 8
   m_Name: Player _Yura
   m_TagString: Player
@@ -2043,6 +2142,9 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 53
+  m_WhatIsWall:
+    serializedVersion: 2
+    m_Bits: 262144
   m_GroundCheck: {fileID: 6841423364494603641}
   m_WallCheck: {fileID: 6841423363519378533}
   m_Rigidbody2D: {fileID: 6841423363569015462}
@@ -2435,6 +2537,14 @@ MonoBehaviour:
   damageValue: 5
   power: 50
   cam: {fileID: 0}
+--- !u!81 &1387898062
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028025907648731851}
+  m_Enabled: 1
 --- !u!1 &9028025907673211877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5368,7 +5478,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5606,7 +5716,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

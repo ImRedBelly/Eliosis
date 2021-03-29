@@ -8,7 +8,12 @@ public class GrenadeManager : MonoBehaviour
     public GameObject grenadePrefab;
 
     GameObject grenade;
-
+    AudioSource audioSource;
+    public AudioClip check;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         float enter;
@@ -29,7 +34,7 @@ public class GrenadeManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-
+            audioSource.PlayOneShot(check);
         }
 
         if (Input.GetKeyUp(KeyCode.G))

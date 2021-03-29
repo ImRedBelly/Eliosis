@@ -9,6 +9,7 @@ public class CharacterController2D : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
     [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField] private LayerMask m_WhatIsWall;                          // A mask determining what is ground to the character
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_WallCheck;                             //Posicion que controla si el personaje toca una pared
 
@@ -93,7 +94,7 @@ public class CharacterController2D : MonoBehaviour
         if (!m_Grounded)
         {
             OnFallEvent.Invoke();
-            Collider2D[] collidersWall = Physics2D.OverlapCircleAll(m_WallCheck.position, k_GroundedRadius, m_WhatIsGround);
+            Collider2D[] collidersWall = Physics2D.OverlapCircleAll(m_WallCheck.position, k_GroundedRadius, m_WhatIsWall);
             for (int i = 0; i < collidersWall.Length; i++)
             {
                 if (collidersWall[i].gameObject != null)
