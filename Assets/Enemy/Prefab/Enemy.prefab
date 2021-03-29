@@ -7233,7 +7233,6 @@ GameObject:
   - component: {fileID: 6458806765693801824}
   - component: {fileID: 6458806765693801817}
   - component: {fileID: 167281900165245410}
-  - component: {fileID: 4598581400878082827}
   - component: {fileID: 4916764271840668445}
   m_Layer: 9
   m_Name: Enemy
@@ -7536,7 +7535,7 @@ MonoBehaviour:
     audioShot: {fileID: 8300000, guid: 978562cb396bef245a9d9296537de93b, type: 3}
   - weaponType: 2
     fireRate: 3
-    bulletPrefab: {fileID: 1000010704940470, guid: 762769bee4c94384ca16e5228bc9328c,
+    bulletPrefab: {fileID: 1000010704940470, guid: 67b40ebfa678d6e469f2b1c4f3c7147b,
       type: 3}
     shellPrefab: {fileID: 1000012363013230, guid: ca31063a8dfa29848b644d743a77e607,
       type: 3}
@@ -7568,21 +7567,6 @@ MonoBehaviour:
     audioShot: {fileID: 8300000, guid: 66e93c37c05c6264c93d62047ef8769a, type: 3}
   currentWeapon: 0
   audioSource: {fileID: 6651363827101131001}
---- !u!114 &4598581400878082827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6458806765693801822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44267a129f744da44ac824d160436add, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletValue:
-    speed: 20
-    damageBullet: 1
 --- !u!120 &4916764271840668445
 LineRenderer:
   m_ObjectHideFlags: 0

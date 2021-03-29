@@ -2189,7 +2189,7 @@ MonoBehaviour:
     placeWeapon: {fileID: 1876759219023450428}
     placeFire: {fileID: 0}
     placeShell: {fileID: 0}
-    isInInventory: 0
+    isInInventory: 1
     animator: {fileID: 1249051238307715540}
     soundShoot: {fileID: 0}
   - weaponType: 1
