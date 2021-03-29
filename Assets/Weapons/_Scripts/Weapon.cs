@@ -52,6 +52,7 @@ public class Weapon : MonoBehaviour
 
     public WeaponType currentWeapon;
     public AudioSource audioSource;
+    public AudioSource audioSourceMashineGun;
     private int numberOfWeapons;
     ReversLook reversLook;
 
@@ -243,7 +244,7 @@ public class Weapon : MonoBehaviour
                 return;
             }
         }
-       SetWeapon(WeaponType.NONE);
+        SetWeapon(WeaponType.NONE);
     }
 
     public void SetWeapon(WeaponType currentWeapon)
@@ -279,6 +280,7 @@ public class Weapon : MonoBehaviour
     {
         //todo sound
         audioSource.PlayOneShot(weapons[(int)currentWeapon].soundShoot);
+
         //вылетают пули
         int numberOfBullets;
         if (currentWeapon == WeaponType.SHOTGUN)  // количество дроби
@@ -329,6 +331,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
         {
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
+            audioSourceMashineGun.Play();
 
             if (nextFire <= 0)
             {
@@ -339,6 +342,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetButtonUp("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
         {
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", false);
+            audioSourceMashineGun.Stop();
         }
 
 
@@ -392,6 +396,8 @@ public class Weapon : MonoBehaviour
 
             if (currentWeapon == WeaponType.NONE || currentWeapon == WeaponType.KNIFE)
             {
+
+                PlaySoundMeleeAttack();
                 DoDashDamage();
                 return;
             }
@@ -426,6 +432,11 @@ public class Weapon : MonoBehaviour
                 collidersEnemies[i].GetComponent<Torch>().Fire();
             }
         }
+    }
+
+    public void PlaySoundMeleeAttack()
+    {
+        audioSource.PlayOneShot(weapons[(int)currentWeapon].soundShoot);
     }
 
     public void UpdateMaxDamage(float damagePoint)
