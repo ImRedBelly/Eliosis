@@ -50,6 +50,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 3196647245
+    locked: 0
+  - name: BG
+    uniqueID: 2886953907
+    locked: 0
+  - name: Mid
+    uniqueID: 3300752055
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
