@@ -99,7 +99,7 @@ public class HealthPlayer : MonoBehaviour
         yield return new WaitForSeconds(time);
         controller2D.canMove = true;
     }
-
+   
     IEnumerator WaitToDead()
     {
         if (emptyEffectDead == null)
@@ -122,5 +122,6 @@ public class HealthPlayer : MonoBehaviour
         DeathController.deathController.CreadDeadCopy();
         DeathController.deathController.LoadCheckPoint(gameObject);
         health = maxHealth;
+        healthSlider.value = maxHealth;
     }
 }
