@@ -4,8 +4,15 @@ using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header("Sniper Options")]
+    [Header("Melee Enemy")]
+    public bool isMelee;
+    public bool isKnife;
+
+    [Header("Shooting Enemy")]
     public bool isSniper;
+    public bool isShotGun;
+    public bool isAssault;
+    [Header("Sniper Options")]
     bool isShotSniper = true;
     public float[] patrolAngles;
     public GameObject rootSniper;
@@ -21,8 +28,6 @@ public class EnemyController : MonoBehaviour
     public LineRenderer lineRenderer;
 
     [Header("Options")]
-    public bool isShotGun;
-    public bool isAssault;
 
     public float life = 5;
     public float speed = 5f;
@@ -79,12 +84,39 @@ public class EnemyController : MonoBehaviour
         {
             distToPlayer = enemy.transform.position.x - transform.position.x;
 
+            if (isMelee || isKnife)
+            {
+                if (isMelee)
+                {
+                    enemyWeapon.SetMelee();
+                }
+                if (isKnife)
+                {
+                    enemyWeapon.SetKnife();
+                }
+
+                if (Mathf.Abs(distToPlayer) > shootDist)
+                    Idle();
+
+                if (Mathf.Abs(distToPlayer) < shootDist && Mathf.Abs(distToPlayer) > 1)
+                    Run(distToPlayer);
+
+                if (Mathf.Abs(distToPlayer) < 1)
+                {
+                    Idle();
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
+                    if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                        Flip();
+                    enemyWeapon.CheckFire();
+                }
+
+            }
             if (isSniper)
             {
                 Idle();
                 ShotSniper();
             }
-            else
+            if (isShotGun || isAssault)
             {
                 switch (activState)
                 {

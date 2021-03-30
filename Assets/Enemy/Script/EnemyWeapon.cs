@@ -12,7 +12,8 @@ public class EnemyWeapon : MonoBehaviour
         KNIFE,
         SHOTGUN,
         ASSAULT,
-        SNIPER
+        SNIPER,
+        MELEE
     }
     [Serializable]
     public class WeaponSlot
@@ -88,9 +89,10 @@ public class EnemyWeapon : MonoBehaviour
 
     public void CheckFire()
     {
-       
-        if (currentWeapon == WeaponType.KNIFE && nextFire <= 0)
+
+        if (currentWeapon == WeaponType.KNIFE && nextFire <= 0 || currentWeapon == WeaponType.MELEE && nextFire <= 0)
         {
+            print("каждую секунду");
             nextFire = weapons[(int)currentWeapon].fireRate;
             enemyController.MeleeAttack();
             weapons[(int)currentWeapon].animator.SetTrigger("IsAttacking");
@@ -179,6 +181,13 @@ public class EnemyWeapon : MonoBehaviour
     public void SetSniper()
     {
         currentWeapon = WeaponType.SNIPER;
+
+        ShowWeapon((int)currentWeapon);
+        SetWeaponAnimator((int)currentWeapon);
+    }
+    public void SetMelee()
+    {
+        currentWeapon = WeaponType.MELEE;
 
         ShowWeapon((int)currentWeapon);
         SetWeaponAnimator((int)currentWeapon);

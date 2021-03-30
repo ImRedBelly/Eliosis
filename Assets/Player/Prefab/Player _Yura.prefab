@@ -2141,7 +2141,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 53
+    m_Bits: 2048
   m_WhatIsWall:
     serializedVersion: 2
     m_Bits: 262144
