@@ -5,7 +5,11 @@ using UnityEngine;
 public class ShockWave : MonoBehaviour
 {
     public Vector2 direction;
+    private void Start()
+    {
 
+        Destroy(gameObject, 10);
+    }
     void Update()
     {
         Fly();
@@ -22,10 +26,13 @@ public class ShockWave : MonoBehaviour
             collision.gameObject.GetComponent<HealthPlayer>().ApplyDamage(2f, transform.position);
             Destroy(gameObject);
         }
+        else
+        {
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+
     }
     private void OnBecameInvisible()
     {

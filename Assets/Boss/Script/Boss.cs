@@ -41,6 +41,9 @@ public class Boss : MonoBehaviour
     private bool canAttack = true;
     public float dmgValue = 4;
 
+    [Header("Dead Effect")]
+    public SpriteRenderer[] spriteForDeadCopy;
+    public GameObject deadCopy;
     public BossState activState;
     public enum BossState
     {
@@ -62,113 +65,118 @@ public class Boss : MonoBehaviour
 
     void FixedUpdate()
     {
-        // print(Mathf.Abs(distToPlayer));
+        print(Mathf.Abs(distToPlayer));
 
         if (life <= 0)
-            StartCoroutine(DestroyEnemy());
+            DestroyEnemy();
 
         else if (enemy != null)
         {
             distToPlayer = enemy.transform.position.x - transform.position.x;
-
-            if (Mathf.Abs(distToPlayer) < meleeDist && timerMeleeAttack <= 0)
+            if (Mathf.Abs(distToPlayer) > 50)
             {
-
-
-                activState = BossState.MELEEATTACK;
-                timerMeleeAttack = 3;
+                Idle();
             }
             else
             {
-                timerMeleeAttack -= Time.deltaTime;
+                if (Mathf.Abs(distToPlayer) < meleeDist && timerMeleeAttack <= 0)
+                {
+                    activState = BossState.MELEEATTACK;
+                    timerMeleeAttack = 3;
+                }
+                else
+                {
+                    timerMeleeAttack -= Time.deltaTime;
+                }
+
+                switch (activState)
+                {
+                    case BossState.IDLE:
+                        Idle();
+
+                        if (timerIsAttack > 0)
+                            timerIsAttack -= Time.deltaTime;
+                        else
+                        {
+                            int randomAct = Random.Range(0, 2);
+                            if (randomAct == 0)
+                            {
+                                // print("0");
+
+                                activState = BossState.MELEEEASYATTACK;
+
+                                animator.SetTrigger("MeleeEasyAttack");
+                                animatorHand.SetTrigger("MeleeEasyAttack");
+                            }
+                            else if (randomAct == 1)
+                            {
+                                // print("1");
+
+                                activState = BossState.MELEEHARDATTACK;
+
+                                animator.SetTrigger("MeleeHardAttack");
+                                animatorHand.SetTrigger("MeleeHardAttack");
+                            }
+                            else if (randomAct == 2)
+                            {
+                                activState = BossState.MOVE;
+                            }
+                        }
+                        break;
+
+
+                    case BossState.MOVE:
+
+                        animator.SetBool("IsWaiting", false);
+                        animatorHand.SetBool("IsWaiting", false);
+
+                        Run(distToPlayer);
+
+                        if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist)
+                            activState = BossState.MELEEATTACK;
+                        break;
+
+
+
+                    case BossState.MELEEATTACK:
+
+                        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
+                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                            Flip();
+
+
+                        if (canAttack)
+                        {
+                            //MeleeAttack()        вызывается с ивента
+                            animator.SetTrigger("MeleeAttack");
+                            animatorHand.SetTrigger("MeleeAttack");
+                            StartCoroutine(WaitToAttack(0.5f));
+                        }
+
+
+                        break;
+
+
+
+                    case BossState.MELEEEASYATTACK:
+
+                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                            Flip();
+                        shooting.SetActive(true);
+                        timerIsAttack = 3;
+                        break;
+
+
+                    case BossState.MELEEHARDATTACK:
+
+                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                            Flip();
+                        //ShotSpecialBullet();  вызывается с ивента
+                        timerIsAttack = 3;
+                        break;
+                }
             }
 
-            switch (activState)
-            {
-                case BossState.IDLE:
-                    Idle();
-
-                    if (timerIsAttack > 0)
-                        timerIsAttack -= Time.deltaTime;
-                    else
-                    {
-                        int randomAct = Random.Range(0, 2);
-                        if (randomAct == 0)
-                        {
-                            // print("0");
-
-                            activState = BossState.MELEEEASYATTACK;
-
-                            animator.SetTrigger("MeleeEasyAttack");
-                            animatorHand.SetTrigger("MeleeEasyAttack");
-                        }
-                        else if (randomAct == 1)
-                        {
-                            // print("1");
-
-                            activState = BossState.MELEEHARDATTACK;
-
-                            animator.SetTrigger("MeleeHardAttack");
-                            animatorHand.SetTrigger("MeleeHardAttack");
-                        }
-                        else if (randomAct == 2)
-                        {
-                            activState = BossState.MOVE;
-                        }
-                    }
-                    break;
-
-
-                case BossState.MOVE:
-
-                    animator.SetBool("IsWaiting", false);
-                    animatorHand.SetBool("IsWaiting", false);
-
-                    Run(distToPlayer);
-
-                    if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist)
-                        activState = BossState.MELEEATTACK;
-                    break;
-
-
-
-                case BossState.MELEEATTACK:
-
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
-                    if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                        Flip();
-
-
-                    if (canAttack)
-                    {
-                        //MeleeAttack()        вызывается с ивента
-                        animator.SetTrigger("MeleeAttack");
-                        animatorHand.SetTrigger("MeleeAttack");
-                        StartCoroutine(WaitToAttack(0.5f));
-                    }
-
-
-                    break;
-
-
-
-                case BossState.MELEEEASYATTACK:
-
-                    if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                        Flip();
-                    shooting.SetActive(true);
-                    timerIsAttack = 3;
-                    break;
-
-
-                case BossState.MELEEHARDATTACK:
-
-                    if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                        Flip();
-                    //ShotSpecialBullet();  вызывается с ивента
-                    timerIsAttack = 3;
-                    break;
-            }
         }
         else
         {
@@ -253,17 +261,20 @@ public class Boss : MonoBehaviour
 
 
 
-    IEnumerator DestroyEnemy()
+    void DestroyEnemy()
     {
         dead.Invoke();
-        CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
-        capsule.size = new Vector2(1f, 0.25f);
-        capsule.offset = new Vector2(0f, -0.8f);
-        capsule.direction = CapsuleDirection2D.Horizontal;
-        transform.GetComponent<Animator>().SetBool("IsDead", true);
-        yield return new WaitForSeconds(0.25f);
         Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
-        yield return new WaitForSeconds(1f);
+
+
+        GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
+
+        Copy.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+        Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
+        Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
+
+        TrajectoryRenderer.instance.RemoveBody(Rigidbody2D);
+
         Destroy(gameObject);
     }
 
