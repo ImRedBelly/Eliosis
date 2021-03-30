@@ -59,6 +59,15 @@ TagManager:
   - name: Mid
     uniqueID: 3300752055
     locked: 0
+  - name: Ground
+    uniqueID: 3498991129
+    locked: 0
+  - name: Sand
+    uniqueID: 1836690301
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Chips
+    uniqueID: 1283656575
     locked: 0

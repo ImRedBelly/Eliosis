@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
 	public float FollowSpeed = 2f;
 	public Transform Target;
+	public float distanceToTarget;
 
 	// Transform of the camera to shake. Grabs the gameObject's transform
 	// if null.
@@ -37,6 +38,7 @@ public class CameraFollow : MonoBehaviour
 	private void Update()
 	{
 		Vector3 newPosition = Target.position;
+		newPosition.y = newPosition.y + distanceToTarget;
 		newPosition.z = -10;
 		transform.position = Vector3.Slerp(transform.position, newPosition, FollowSpeed * Time.deltaTime);
 
