@@ -5,10 +5,13 @@ using UnityEngine;
 public class ShockWave : MonoBehaviour
 {
     public Vector2 direction;
+    Rigidbody2D rb;
+
     private void Start()
     {
+        //Destroy(gameObject, 10);
+        rb = GetComponent<Rigidbody2D>();
 
-        Destroy(gameObject, 10);
     }
     void Update()
     {
@@ -16,7 +19,9 @@ public class ShockWave : MonoBehaviour
     }
     public void Fly()
     {
-        transform.Translate(direction * 8 * Time.deltaTime);
+        //transform.Translate(direction * 8 * Time.deltaTime);
+        rb.velocity = (PlayerMovement.instance.transform.position - transform.position) * 4; // хрен увернешся
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,9 +30,13 @@ public class ShockWave : MonoBehaviour
             print("Shock Player");
             collision.gameObject.GetComponent<HealthPlayer>().ApplyDamage(2f, transform.position);
             Destroy(gameObject);
+            return;
         }
-        else
+
+        if (collision.gameObject.CompareTag("Respawn"))
         {
+            print("Shock Respawn");
+            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

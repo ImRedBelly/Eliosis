@@ -65,7 +65,7 @@ public class Boss : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(Mathf.Abs(distToPlayer));
+        //print(Mathf.Abs(distToPlayer));
 
         if (life <= 0)
             DestroyEnemy();

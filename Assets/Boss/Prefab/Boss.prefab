@@ -289,6 +289,8 @@ MonoBehaviour:
   meleeDist: 5
   attackCheck: {fileID: 6729359400479057893}
   dmgValue: 1
+  spriteForDeadCopy: []
+  deadCopy: {fileID: 0}
   activState: 0
 --- !u!1 &253831760242648563
 GameObject:

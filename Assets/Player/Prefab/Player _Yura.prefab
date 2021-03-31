@@ -60703,6 +60703,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198341621129356860, guid: 2c4b21b0621cc6b44abb4f7aa888b37d,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198341621129356860, guid: 2c4b21b0621cc6b44abb4f7aa888b37d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198341621129356860, guid: 2c4b21b0621cc6b44abb4f7aa888b37d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198341621129356860, guid: 2c4b21b0621cc6b44abb4f7aa888b37d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 199044442277482184, guid: 2c4b21b0621cc6b44abb4f7aa888b37d,
         type: 3}
       propertyPath: m_Materials.Array.size
