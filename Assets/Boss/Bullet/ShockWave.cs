@@ -6,23 +6,23 @@ public class ShockWave : MonoBehaviour
 {
     public Vector2 direction;
     Rigidbody2D rb;
-
-    private void Start()
+    private void Awake()
     {
-        //Destroy(gameObject, 10);
         rb = GetComponent<Rigidbody2D>();
 
     }
-    void Update()
+    private void Start()
     {
-        Fly();
-    }
-    public void Fly()
-    {
-        //transform.Translate(direction * 8 * Time.deltaTime);
-        rb.velocity = (PlayerMovement.instance.transform.position - transform.position) * 4; // хрен увернешся
+        Destroy(gameObject, 10);
+        rb.velocity = (PlayerMovement.instance.transform.position - transform.position); // хрен увернешся
 
     }
+
+    //public void Fly()
+    //{
+    //    transform.Translate(direction * 8 * Time.deltaTime);
+
+    //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

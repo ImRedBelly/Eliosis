@@ -89,6 +89,9 @@ public class Boss : MonoBehaviour
                     timerMeleeAttack -= Time.deltaTime;
                 }
 
+                if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                    Flip();
+
                 switch (activState)
                 {
                     case BossState.IDLE:
@@ -141,8 +144,8 @@ public class Boss : MonoBehaviour
                     case BossState.MELEEATTACK:
 
                         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, Rigidbody2D.velocity.y);
-                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                            Flip();
+                        //if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                        //    Flip();
 
 
                         if (canAttack)
@@ -160,8 +163,8 @@ public class Boss : MonoBehaviour
 
                     case BossState.MELEEEASYATTACK:
 
-                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                            Flip();
+                        //if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                        //    Flip();
                         shooting.SetActive(true);
                         timerIsAttack = 3;
                         break;
@@ -169,8 +172,8 @@ public class Boss : MonoBehaviour
 
                     case BossState.MELEEHARDATTACK:
 
-                        if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
-                            Flip();
+                        //if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
+                        //    Flip();
                         //ShotSpecialBullet();  вызывается с ивента
                         timerIsAttack = 3;
                         break;
