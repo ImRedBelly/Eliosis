@@ -53,7 +53,8 @@ public class Grenade : MonoBehaviour
     {
         TrajectoryRenderer.instance.RemoveBody(rb);
         yield return new WaitForSeconds(2f);
-        audioSource.PlayOneShot(boom);
+        audioSource.Play();
+        yield return new WaitForSeconds(0.25f);
         DoDashDamage();
         Instantiate(effectBoom, transform.position, Quaternion.identity);
         Destroy(gameObject);

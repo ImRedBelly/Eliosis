@@ -74,7 +74,7 @@ MonoBehaviour:
   damageValue: 5
   power: 50
   cam: {fileID: 0}
-  boom: {fileID: 8300000, guid: f8bfe89738d1d0945b59fcf4dcb4eca8, type: 3}
+  boom: {fileID: 0}
 --- !u!58 &-1182187405233023517
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -101,8 +101,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: f8bfe89738d1d0945b59fcf4dcb4eca8, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.814
   m_Pitch: 1
   Loop: 0
