@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -326,7 +327,10 @@ public class Weapon : MonoBehaviour
     private void CheckFire()
     {
         //---------- MACHINEGUN
-
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire1") && currentWeapon == WeaponType.MACHINEGUN)
         {
             weapons[(int)currentWeapon].animator.SetBool("IsAttacking", true);
