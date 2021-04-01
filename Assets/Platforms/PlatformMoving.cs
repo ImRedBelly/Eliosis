@@ -8,6 +8,8 @@ public class PlatformMoving : MonoBehaviour
     private Vector3[] waypoints;
     public float speed;
 
+    public bool stopAfterMoving;
+
     private int currentWaypoint;
     Rigidbody2D rb;
 
