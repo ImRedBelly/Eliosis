@@ -16,6 +16,7 @@ TagManager:
   - Money
   - DeadCopy
   - CheckPoint
+  - Mirror
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - ShockWave
   - Wall
   - Mirror
-  - 
+  - MirrorRotate
   - 
   - 
   - 

@@ -7,9 +7,6 @@ public class PlatformMoving : MonoBehaviour
     public Transform[] points;
     private Vector3[] waypoints;
     public float speed;
-
-    public bool stopAfterMoving;
-
     private int currentWaypoint;
     Rigidbody2D rb;
 
@@ -28,8 +25,8 @@ public class PlatformMoving : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate ()
     {
 
         if (waypoints == null || waypoints.Length <= 1)
@@ -64,13 +61,14 @@ public class PlatformMoving : MonoBehaviour
 
         }
 
-        print(isCountDown + " / " + currentWaypoint);
-
-
-
         Vector3 direction = waypoints[currentWaypoint] - transform.position;
         direction.z = 0;
         rb.velocity = direction.normalized * speed;
 
+    }
+
+    private void OnDisable()
+    {
+        rb.velocity = Vector2.zero;
     }
 }
