@@ -91,7 +91,14 @@ public class Boss : MonoBehaviour
 
                 if ((distToPlayer > 0f && transform.localScale.x < 0f) || (distToPlayer < 0f && transform.localScale.x > 0f))
                     Flip();
-
+                //if (transform.localScale.x * Rigidbody2D.velocity.x > 0 && !facingRight && life > 0)
+                //{
+                //    Flip();
+                //}
+                //else if (transform.localScale.x * Rigidbody2D.velocity.x < 0 && facingRight && life > 0)
+                //{
+                //    Flip();
+                //}
                 switch (activState)
                 {
                     case BossState.IDLE:
@@ -188,14 +195,7 @@ public class Boss : MonoBehaviour
 
 
 
-        if (transform.localScale.x * Rigidbody2D.velocity.x > 0 && !facingRight && life > 0)
-        {
-            Flip();
-        }
-        else if (transform.localScale.x * Rigidbody2D.velocity.x < 0 && facingRight && life > 0)
-        {
-            Flip();
-        }
+       
     }
     public void PlaySound()
     {
