@@ -38,9 +38,9 @@ TagManager:
   - ShockWave
   - Wall
   - Mirror
-  - MirrorRotate
-  - 
-  - 
+  - MirrorBase
+  - MirrorButton
+  - Platform_Light_Transparen
   - 
   - 
   - 

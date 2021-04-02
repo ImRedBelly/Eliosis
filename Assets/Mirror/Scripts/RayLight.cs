@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RayLight : MonoBehaviour
 {
-	//[SerializeField] LayerMask whatIsMirror;
+	[SerializeField] private LayerMask whatIsObstacles;
 
 	Vector2 startPoint, direction;
 	List<Vector3> points = new List<Vector3>();
@@ -33,7 +33,7 @@ public class RayLight : MonoBehaviour
 	{
 		RayAnimation();
 
-		var hitData = Physics2D.Raycast(startPoint, direction, distance);
+		var hitData = Physics2D.Raycast(startPoint, direction, distance, whatIsObstacles);
 
 		points.Clear();
 		points.Add(startPoint);
@@ -68,14 +68,12 @@ public class RayLight : MonoBehaviour
 		Vector2 inDirection = (hitData.point - origin).normalized;
 		Vector2 newDirection = Vector2.Reflect(inDirection, hitData.normal);
 
-		var newHitData = Physics2D.Raycast(hitData.point + (newDirection * 0.001f), newDirection, distance);
+		var newHitData = Physics2D.Raycast(hitData.point + (newDirection * 0.001f), newDirection, distance, whatIsObstacles);
 		if (newHitData)
 		{
 			if (!newHitData.collider.CompareTag("Mirror")) 
 			{
 				points.Add(newHitData.point);
-
-				//newHitData.collider.GetComponent<SpriteRenderer>().color = Color.red;
 				return;
 			}
 

@@ -8,14 +8,14 @@ public class PlatformMoving : MonoBehaviour
     private Vector3[] waypoints;
     public float speed;
     private int currentWaypoint;
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
 
     bool isCountDown;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
 
         waypoints = new Vector3[points.Length];
 
@@ -61,14 +61,31 @@ public class PlatformMoving : MonoBehaviour
 
         }
 
-        Vector3 direction = waypoints[currentWaypoint] - transform.position;
-        direction.z = 0;
-        rb.velocity = direction.normalized * speed;
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint], Time.deltaTime * speed);
+
+        //Vector3 direction = waypoints[currentWaypoint] - transform.position;
+        //direction.z = 0;
+        //rb.velocity = direction.normalized * speed;
 
     }
 
-    private void OnDisable()
+    //private void OnDisable()
+    //{
+    //    rb.velocity = Vector2.zero;
+    //}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.velocity = Vector2.zero;
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.transform.SetParent(transform);
+        }
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.transform.SetParent(null);
     }
 }
