@@ -11,6 +11,8 @@ public class RayLight : MonoBehaviour
 	int distance = 100;
 	LineRenderer lr;
 
+	public GameObject lightEffect;
+
 
 	private float timeCounter;
 	private float timeChangeSprite = 0.1f;
@@ -27,6 +29,7 @@ public class RayLight : MonoBehaviour
 		lr.enabled = true;
 		startPoint = transform.position;
 		direction = -transform.up;
+		lightEffect.SetActive(false);
 	}
 
 	private void Update()
@@ -46,10 +49,12 @@ public class RayLight : MonoBehaviour
 				points.Add(hitData.point);
 				lr.positionCount = points.Count;
 				lr.SetPositions(points.ToArray());
+				lightEffect.SetActive(true);
 				return;
 			}
 
 			ReflectFurther(startPoint, hitData);
+			lightEffect.SetActive(false);
 		}
 		else
 		{
@@ -71,11 +76,20 @@ public class RayLight : MonoBehaviour
 		var newHitData = Physics2D.Raycast(hitData.point + (newDirection * 0.001f), newDirection, distance, whatIsObstacles);
 		if (newHitData)
 		{
+			if (newHitData.collider.CompareTag("Boss"))
+			{
+				points.Add(newHitData.point);
+				newHitData.collider.GetComponent<Boss>().DestroyEnemy();
+				return;
+			}
+
 			if (!newHitData.collider.CompareTag("Mirror")) 
 			{
 				points.Add(newHitData.point);
 				return;
 			}
+
+
 
 			ReflectFurther(hitData.point, newHitData);
 

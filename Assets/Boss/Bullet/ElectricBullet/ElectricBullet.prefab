@@ -4684,6 +4684,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fcb97c6faf083ca4f978210036f3832b, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4739,7 +4740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
+  OnlyDeactivate: 1
 --- !u!114 &268828813604010916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4753,7 +4754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
-  hasHit: 0
   speed: 10
   enemyMask: BulletEnemy
   playerMask: BulletPlayer
@@ -9733,6 +9733,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 503ba37627ac18c4ebe9bbe73d6ea9ad, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

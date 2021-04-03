@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class RocketMovement : MonoBehaviour
 {
+    public float speed = 10f;
+
     public int pointsNumbers;
 
     List<Vector2> points = new List<Vector2>();
@@ -28,7 +30,6 @@ public class RocketMovement : MonoBehaviour
     public GameObject prefabRocket;
     public GameObject prefabBoom;
 
-    Rigidbody2D rb;
     GameObject rocket;
 
     ValueManagerPlayer valuePlayer;
@@ -38,10 +39,18 @@ public class RocketMovement : MonoBehaviour
 
     public Camera cam;
 
+    AudioSource audioSource;
+    public AudioClip fly;
+    public AudioClip boom;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         cam = Camera.main;
-
         valuePlayer = ValueManagerPlayer.instance;
     }
 
@@ -50,13 +59,13 @@ public class RocketMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isCanStarted)
+        if (Input.GetKeyDown(KeyCode.X) && !isCanStarted)
         {
             // TODO надо изменить курсор
         }
 
 
-        if (Input.GetKey(KeyCode.R) && !isCanStarted)
+        if (Input.GetKey(KeyCode.X) && !isCanStarted)
         {
 
             if (Input.GetMouseButtonDown(0))
@@ -73,20 +82,20 @@ public class RocketMovement : MonoBehaviour
 
                 points.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-                GameObject clonText = Instantiate(prefabAimRocket, points[pointIndex], Quaternion.identity);
-                pointsAim.Add(clonText);
+                GameObject cloneText = Instantiate(prefabAimRocket, points[pointIndex], Quaternion.identity);
+                pointsAim.Add(cloneText);
 
-                clonText.GetComponent<Text>().text = (pointIndex + 1).ToString();
+                cloneText.GetComponent<Text>().text = (pointIndex + 1).ToString();
 
                 if (pointIndex == pointsNumbers - 2)
                 {
-                    clonText.GetComponent<Text>().color = Color.red;
-                    clonText.GetComponentInChildren<Image>().color = Color.red;
+                    cloneText.GetComponent<Text>().color = Color.red;
+                    cloneText.GetComponentInChildren<Image>().color = Color.red;
                 }
                 else
                 {
-                    clonText.GetComponent<Text>().color = Color.cyan;
-                    clonText.GetComponentInChildren<Image>().color = Color.cyan;
+                    cloneText.GetComponent<Text>().color = Color.cyan;
+                    cloneText.GetComponentInChildren<Image>().color = Color.cyan;
                 }
 
                 pointIndex++;
@@ -94,7 +103,7 @@ public class RocketMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.R) && !isCanStarted)
+        if (Input.GetKeyUp(KeyCode.X) && !isCanStarted)
         {
 
             if (isCanMove  &&  !isCanFinished)
@@ -103,7 +112,6 @@ public class RocketMovement : MonoBehaviour
 
                 return;
             }
-
 
 
             foreach (var item in pointsAim)
@@ -142,6 +150,7 @@ public class RocketMovement : MonoBehaviour
             pointIndex = 0;
 
             Instantiate(prefabBoom, rocket.transform.position, Quaternion.identity);
+            audioSource.PlayOneShot(boom);
             DoDashDamage();
 
             Destroy(rocket);
@@ -158,11 +167,15 @@ public class RocketMovement : MonoBehaviour
     private void CreatRocket()
     {
         rocket = Instantiate(prefabRocket, placeRocket.position, Quaternion.identity);
-        rb = rocket.GetComponent<Rigidbody2D>();
     }
 
     void Move()
     {
+        if (pointIndex == 0)
+        {
+            audioSource.PlayOneShot(fly);
+        }
+
         SetPath();
 
         if (isCanFinished)
@@ -175,7 +188,7 @@ public class RocketMovement : MonoBehaviour
 
         dir = nextPoint - currentPoint;
         rocket.transform.right = dir;
-        rb.velocity = dir.normalized * 8f;
+        rocket.transform.position = Vector2.MoveTowards(rocket.transform.position, nextPoint, Time.deltaTime * speed);
 
 
         if (distanceCurrent < 1f)
@@ -188,6 +201,7 @@ public class RocketMovement : MonoBehaviour
         if (distanceCurrent < 0.2f)
         {
             pointIndex++;
+            audioSource.PlayOneShot(fly);
         }
 
 
@@ -197,7 +211,6 @@ public class RocketMovement : MonoBehaviour
     {
         if (pointIndex == pointsNumbers-1)
         {
-            rb.velocity = Vector2.zero;
             isCanMove = false;
             isCanFinished = true;
             return;

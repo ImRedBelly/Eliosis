@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1104944396467313131}
   - component: {fileID: 1104944396467313129}
   - component: {fileID: 1104944396467313130}
-  m_Layer: 12
+  m_Layer: 23
   m_Name: Platform_Moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   points:
   - {fileID: 1106681467077771944}
   - {fileID: 1106681468387346546}
-  speed: 1
+  speed: 3
 --- !u!61 &1104944396467313130
 BoxCollider2D:
   m_ObjectHideFlags: 0

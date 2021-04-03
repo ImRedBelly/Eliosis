@@ -130,6 +130,11 @@ public class Weapon : MonoBehaviour
 
         }
 
+        if (Input.GetKey(KeyCode.X))
+        {
+            return;
+        }
+
         ChangeDirection();
 
         CheckFire();

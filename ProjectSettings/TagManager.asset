@@ -17,6 +17,7 @@ TagManager:
   - DeadCopy
   - CheckPoint
   - Mirror
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - MirrorBase
   - MirrorButton
   - Platform_Light_Transparen
-  - 
+  - Platform_Moving
   - 
   - 
   - 

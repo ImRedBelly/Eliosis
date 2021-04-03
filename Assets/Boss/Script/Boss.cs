@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     [Header("Options")]
     public float life = 10;
     public float speed = 5f;
+    public bool isStatic;
 
     private bool facingRight = true;
 
@@ -137,10 +138,13 @@ public class Boss : MonoBehaviour
 
                     case BossState.MOVE:
 
-                        animator.SetBool("IsWaiting", false);
-                        animatorHand.SetBool("IsWaiting", false);
-
-                        Run(distToPlayer);
+                        if (!isStatic)
+                        {
+                            animator.SetBool("IsWaiting", false);
+                            animatorHand.SetBool("IsWaiting", false);
+                            print("test");
+                            Run(distToPlayer);
+                        }
 
                         if (Mathf.Abs(distToPlayer) > 0.25f && Mathf.Abs(distToPlayer) < meleeDist)
                             activState = BossState.MELEEATTACK;
@@ -264,17 +268,21 @@ public class Boss : MonoBehaviour
 
 
 
-    void DestroyEnemy()
+    public void DestroyEnemy()
     {
         dead.Invoke();
         Rigidbody2D.velocity = new Vector2(0, Rigidbody2D.velocity.y);
 
+        if (deadCopy != null)
+        {
+            GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
+            Copy.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+            Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
+            Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
+        }
 
-        GameObject Copy = Instantiate(deadCopy, transform.position, Quaternion.identity);
 
-        Copy.transform.localScale = new Vector3(0.6f, 0.6f, 1);
-        Copy.GetComponent<DeadCopyEnemy>().spriteHead.sprite = spriteForDeadCopy[0].sprite;
-        Copy.GetComponent<DeadCopyEnemy>().spriteBody.sprite = spriteForDeadCopy[1].sprite;
+
 
         TrajectoryRenderer.instance.RemoveBody(Rigidbody2D);
 

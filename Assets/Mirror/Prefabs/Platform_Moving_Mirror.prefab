@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1104944396467313131}
   - component: {fileID: 1104944396467313129}
   - component: {fileID: 1104944396467313130}
-  m_Layer: 12
+  m_Layer: 23
   m_Name: Platform_Moving_Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104944396467313132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36ddcc05d3cac59448588c60805575df, type: 3}
   m_Name: 
